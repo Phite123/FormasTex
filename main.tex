@@ -1,0 +1,1172 @@
+\documentclass[12pt]{amsart}
+
+%Fuente
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{epigraph}
+\usepackage{lipsum}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage[shortlabels]{enumitem}
+\usepackage{listings}
+\DeclareMathOperator{\mcd}{mcd}
+
+\renewcommand{\refname}{Bibliografía}
+
+%diagramas
+\usepackage{tikz-cd}
+
+%enumerar páginas y encabezados
+\pagestyle{headings}
+
+%Comandos para escribir C más rápido
+\usepackage{mathrsfs}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\cont}{\mathcal{C}}
+
+\newcommand{\aaa}{\mathbf{a}}
+\newcommand{\bbb}{\mathbf{b}}
+
+\newcommand{\OO}{\mathcal{O}}
+
+\newcommand{\leg}[2]{\left( \frac{#1}{#2} \right)}
+
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\lb}{\left|}
+\newcommand{\rb}{\right|}
+\newcommand{\lc}{\left<}
+\newcommand{\rc}{\right>}
+\newcommand{\lco}{\left[}
+\newcommand{\rco}{\right]}
+
+%dobles implicaciones
+\usepackage{csquotes}
+
+%Entornos con estilo 'tipo teorema'
+\theoremstyle{plain}
+\newtheorem{teo}[equation]{Teorema}
+\newtheorem{ej}[equation]{Ejercicio}
+\newtheorem{prop}[equation]{Proposición}
+\newtheorem{lem}[equation]{Lema}
+\newtheorem{coro}[equation]{Corolario}
+\newtheorem{defi}[equation]{Definición}
+\newtheorem{obs}[equation]{Observación}
+\newtheorem*{nota*}{Notación}
+\renewcommand*{\proofname}{Demostración}
+
+
+
+%Hipervínculos cliqueables, en color azul
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\title{Entrega de ejercicios de formas cuadráticas}
+
+\author{Pedro Nicolas Peña}
+
+\begin{document}
+
+% \begin{abstract}
+%     Buee quien era
+% \end{abstract}
+
+\maketitle
+
+\section*{Guía 1}
+
+4, 11 (código y output), 13 (código y output), 20 (tres ítems)
+y 25.
+
+% \subsection*{Ejercicio 4}
+% Sea $f(x) = x^2 + x + N$ con $N>0$ entero.
+
+% \begin{itemize}
+%     \item Si $f(k)$ es primo para todo 
+%     $0\leq k \leq \sqrt{\frac{N}{3}}$ entero. Probar que 
+%     $h(1-4N) = 1$.
+%     \item Si $h(1-4N) = 1$ entonces $f(k)$ es primo para 
+%     todo $k=0, \dots , N-2$
+% \end{itemize}
+
+
+\subsection*{Ejercicio 11}
+Sea $p = 2^{9689} - 1$ un primo de Mersenne.
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item Hallar la raíz cuadrada de $-163 \pmod{p}$.
+    \item Hallar $a, b \in \ZZ$ tales que $p = a^2 + 163 \cdot 
+    b^2$.
+\end{itemize}
+\end{multicols}
+
+\subsection*{Ejercicio 12}
+Sea $p = 313$.
+
+\begin{multicols}{2}
+\begin{itemize}
+    \item Calcular con buena precisión
+    $$u := \prod_{k=1}^{p} \sin^{-\lp \frac{k}{p}\rp} \lp 
+    \frac{k\pi}{p} \rp.$$
+    \item Hallar $\frac{u + u^{-1}}{2}$.
+    \item Resolver en enteros $x^2 - 313y^2 = 1$.
+    \item Sea $v = \sqrt{u}.$ Hallar $\frac{v - v^{-1}}{2}$.
+    \item Resolver en enteros $x^2 - 313y^2 = -1$.
+\end{itemize}
+\end{multicols}
+
+\subsection*{Ejercicio 13}
+Imitar el método del ejercicio 12 para $x^2 - 1093y^2 = 1$. 
+¿Qué sucede?
+
+% \subsection*{Ejercicio 20}
+% En cada caso, hallar $Cl (\ZZ[\sqrt{d}])$ y $Cl^+ 
+% (\ZZ[\sqrt{d}])$:
+
+
+% \begin{multicols}{2}
+% \begin{itemize}
+%     \item $d = 6$,
+%     \item $d = 10$,
+%     \item $d = 5$,
+%     \item $d = 45$,
+%     \item $d = 10 \cdot 5^2$,
+%     \item $d = 10 \cdot 7^2$.
+% \end{itemize}
+% \end{multicols}
+
+\subsection*{Ejercicio 25}
+Hallar el grupo de unidades de $\OO = \ZZ[\sqrt{17}]$. 
+Calcular el orden del grupo de unidades de $\OO/97\OO$. 
+Deducir el grupo de unidades de $\ZZ[97\sqrt{17}]$ 
+(la compu puede ayudar acá). Resolver en enteros 
+$x^2-17\cdot 97^2\cdot y^2=1$.
+
+\section*{Guía 2}
+
+4, 8, 12, 16 (un ítem) y 22.
+
+% \subsection*{Ejercicio 4}
+% Sea $q$ regular e isotrópica sobre $k^n$. Probar que hay 
+% $\aaa, \bbb \in k^n$ tales que
+% $q \lp \aaa + t \bbb \rp = t$.
+
+\subsection*{Ejercicio 8}
+Sea $q$ ternaria sobre $\QQ_p$ con $p \geq 3$ primo. 
+Supongamos que $|\det(q) |_p = 1 = c_p(q)$. Probar que $q$ es isotrópica.
+
+% \subsection*{Ejercicio 12}
+% Sean $a, b, a', b' \in \QQ_p^\times$. Probar que:
+% \begin{itemize}
+%     \item El núcleo de $x \mapsto \lp x, a \rp_p$ es un subgrupo 
+%     de $\QQ_p^\times$ de índice $\leq 2$.
+%     \item La ecuación $(x, -ab)_p = (a, b)_p$ tiene solución.
+% \end{itemize}
+
+% Concluir que si el sistema
+% $
+% \begin{cases}
+% (x, -ab)_p & = (a, b)_p \\
+% (x, -a'b')_p & = (a', b')_p
+% \end{cases}
+% $
+% no tiene solución en $\QQ_p^\times$, entonces $(a, b)_p 
+% \neq (a', b')_p$ y $ab a'b' \in \lp \QQ_p^\times \rp^2$.
+
+% \subsection*{Ejercicio 16}
+% Probar que el anillo $W(\QQ_p)$ es isomorfo (como anillo) a:
+% \begin{enumerate}[a)]
+%     \item $(\ZZ / 2\ZZ)[C_2 \times C_2]$ si $p \equiv 1 
+%     \pmod{4}$.
+%     \item $(\ZZ / 4\ZZ)[C_2]$ si $p \equiv 3 \pmod{4}$.
+%     \item $(\ZZ / 8\ZZ)[s, t] / \lp 2s, 2t, s^2, t^2, st - 4 \rp$
+%     si $p = 2$.
+% \end{enumerate}
+
+\subsection*{Ejercicio 22}
+Hallar todos los $\lambda \in \QQ$ tales que 
+$\lp \lambda + 1 \rp \lp x^2+y^2+z^2 \rp + \lambda w^2$ y 
+$x^2 + y^2 + z^2 + \lambda \lp \lambda + 1 \rp w^2$
+son equivalentes.
+
+\section*{Guía 3}
+
+3 items del 3, 5, 6(b), 8 y 9
+
+\subsection*{Ejercicio 3} Probar las equivalencias de las siguientes
+formas cuadráticas sobre $\ZZ_2$:
+
+\begin{enumerate}[a)]
+    \item $x^2+y^2\sim 5x^2+5y^2$.
+    \item $x^2+2y^2\sim 3x^2+6y^2$.
+    \item $x^2+4y^2\sim 5x^2+20y^2$.
+    \item $ux^2+2yz\sim ux^2+y^2-z^2$ (con $|u|_2=1$).
+    \item $ux^2+(2y^2+2yz+2z^2)\sim u(3x^2-y^2-z^2)$ (con $|u|_2=1$).
+    \item $(2x^2+2xy+2y^2)+(2z^2+2zw+2w^2)\sim 2xy+2z$.
+\end{enumerate}
+
+En particular, la cuarta relación dice que no hay un Teorema de 
+cancelación de Witt general en $\ZZ_2$. Deducir que tampoco lo hay 
+en $\ZZ$.
+
+\subsection*{Ejercicio 5}
+
+Probar que $5x^2 + 11y^2$ y $x^2+55y^2$ son $\ZZ_p$-equivalentes
+para todo $p$ primo pero no son $\ZZ$-equivalentes.
+
+\subsection*{Ejercicio 6, b}
+
+Determinar los primos $p$ tales que las siguientes formas son
+equivalentes en $\ZZ_p$: $5x^2 + 13y^2 + 11z^2 + 2yz + 2xz +
+16xy$ con $x^2 + 16y^2 + 10z^2 + 14yz - 4xz + 2xy$.
+
+\subsection*{Ejercicio 8}
+
+\begin{enumerate}[1.]
+\item Probar que las formas cuadráticas
+    \begin{itemize}
+        \item $g(x,y)=3x^2+2xy+23y^2$
+        \item $h(x,y)=7x^2+6xy+11y^2$
+    \end{itemize}
+    estan en el mismo género pero no son equivalentes.
+\item Probar que las formas ternarias indefinidas $z^2-g(x,y)$ y 
+    $z^2-h(x,y)$ son equivalentes propiamente.
+
+    \textit{Sugerencia: hallar un vector no canonico de norma 1 para 
+    la segunda y hacer un cambio de variables.}
+\end{enumerate}
+
+\section*{Guía 4}
+
+del 1 al 5
+
+\subsection*{Ejercicio 2} Sea $q=x^2+xy+3y^2-2z^2$. Describir 
+$\mathcal{C}(V,q)$ por generadores y relaciones. Hallar la matriz 
+de $\tilde{q}$, la forma cuadrática inducida por $\tilde{q}:=u
+\varepsilon (u)$.
+
+
+
+
+\newpage
+
+\section*{Soluciones}
+
+% \subsection*{Guía 1, ejercicio 4}
+
+% Sea $D=1-4N$. Para ver que $h(D)=1$ tenemos que ver que no hay 
+% otra forma reducida de discriminante $D$, es decir otra manera 
+% de escribir $D=b^2-4ac$ con $|b|\leq|a|\leq|c|$ (y si hay un 
+% $=$ entonces $b\geq0$) que no sea $D=1^2-4\cdot 1 \cdot N$. 
+% Observemos que $1-4N=b^2-4ac \iff \frac{b^2-1+4N}{4}=ac \iff 
+% \frac{b^2-1}{4} + N = ac$.
+
+% Supongamos que $g(x,y)=Ax^2+Bxy+Cy^2$ es una forma cuadrática 
+% reducida de discriminante $D$, osea $D=B^2-4AC$ y en particular 
+% $|B|\leq|A|\leq\sqrt{\frac{-D}{3}}$. Como $D\equiv 1\mod 4$ 
+% entonces $B$ es impar y $\frac{B-1}{2}$ es entero. Observemos 
+% también que (con $B>0$) vale $B\leq \sqrt{\frac{-D}{3}} \iff 
+% \frac{B-1}{2} \leq \sqrt{\frac{4N-1}{12}}-\frac{1}{2} \leq 
+% \sqrt{\frac{4N}{12}}=\sqrt{\frac{N}{3}}$.
+
+% Ahora evaluando en $f$:
+
+% $$f\lp\frac{B-1}{2}\rp = \lp\frac{B-1}{2}\rp^2 + \frac{B-1}{2} 
+% + N = \frac{B^2-1}{4}+N$$ 
+
+% Nos quedó que $\frac{B^2-1}{4}+N = AC$ debe ser primo por 
+% hipótesis, por lo que $A=1$, $C=N$ y entonces $|B| = 1$ 
+% ($B\neq 0$ porque erá impar) pero como son iguales en módulo 
+% necesariamente $g(x,y)=x^2+xy+Ny^2$ es la única reducida de 
+% discriminante $D$.
+
+% Falta el punto b
+
+
+
+
+
+
+\subsection*{Guía 1, ejercicio 11}
+
+El ejercicio 8 nos dice que si tenemos un primo congruente a 
+$-1$ módulo $4$ (como lo es nuestro $p=2^{9689}-1$ pues es 
+$4\cdot 2^{9687} -1$) y un resto cuadrático $a$ entonces 
+$a^{\frac{p+1}{4}}$ es una raíz de $a$ módulo $p$. Veamos que 
+$a = -163$ es un resto cuadrático:
+
+$$\leg{-163}{p} =\leg{-1}{p}\leg{163}{p} = (-1)^{\frac{p-1}{2}}
+(-1)^{\lp\frac{163-1}{2}\rp\lp\frac{p-1}{2}\rp} \leg{p}{163} =$$
+$$= \leg{2^{9689}-1}{163}=\leg{2^{131}-1}{163}$$
+
+En la segunda igualdad usamos la definición de $\leg{-1}{p}$ y 
+reciprocidad cuadrática, que nos dan dos $-1$ (pues $p$ y $163$ 
+son ambos $3\mod{4}$) que se cancelan y nos dejan con la tarea 
+de determinar $\leg{p}{163}$, cuya complejidad pudimos reducir 
+por ``fermatito'' ($9689 = 59*162 + 131$) pero sigue siendo 
+grande así que vamos a buscar un número congruente a $2^{131}-1$ 
+módulo $163$ con la computadora, el \hyperref[codigo1]{código} 
+nos dice que $2^{131}-1\equiv 74 \mod{163}$ y nos queda 
+encontrar $\leg{74}{163}$:
+
+$$\leg{74}{163} = \leg{2}{163}\leg{37}{163} = (-1)^{\frac{163^2-1}{8}}
+\leg{163}{37}= (-1) \leg{15}{37} =$$
+$$= (-1)\leg{3}{37}\leg{5}{37} = (-1)\leg{1}{3}\leg{2}{5}$$
+
+Con lo que nos queda $(-1)^2$ y resulta que $-163$ era un 
+cuadrado módulo $2^{9689}-1$. 
+
+Ahora tenemos que calcular $(-163)^{\frac{2^{9689}-1+1}{4}} 
+\equiv 163^{2^{9687}} \mod{2^{9689}-1}$ y a falta de algún 
+método simplificador lo metemos en sage 
+($\texttt{power\_mod(163, 2\^{}9687, 2\^{}9689-1)}$) y nos
+da un número de 2917 cifras que llamaremos $r$.
+
+Tomando un consejo de un sabio, miremos un poco el ejercicio anterior, 
+que para encontrar solución a $a^2 +b^2 = p$ nos hace calcular
+$d=\mcd(p,c+i)$ para $c$ una raíz de $-1\mod p$. Ayudándonos de
+$\overline{d} = \mcd\lp\overline{p},\overline{c+i}\rp = \mcd\lp p,c-i\rp$ 
+tenemos $d\cdot \overline{d} |p^2$ y a su vez 
+$d\cdot \overline{d} |(c+i)(c-i)=c^2+1 = k\cdot p$ para algún 
+$k<p$ pues $c<p$. Luego $d\cdot \overline{d} = p$ (o $1$), y como
+$d$ es de la forma $a+bi$, entonces cumple $d\cdot \overline{d}=a^2+b^2 = p$.
+Para encontrar el análogo en nuestro ejercicio precisamos 
+$d=\mcd \lp p,r+\sqrt{-163} \rp$, que obtenemos con un simple 
+\hyperref[codigo2]{código} de sage y nos da la 
+\hyperref[solucion2]{solución}.
+
+\subsection*{Guía 1, ejercicio 13}
+
+El enunciado sugiere que hablemos un poco del ejercicio 12 
+previamente. Una posible solución es la de calcular el valor 
+que pide el punto $a$, redondear al entero siguiente y dividir 
+por 2 como sugiere el punto $b$, meter ciegamente ese número en 
+el $x$ de la ecuación del $c$ y chequear si el $\frac{x^2-1}
+{313}$ es un cuadrado (que efectivamente lo es), y llamándolo 
+$y^2$ encontramos $x^2-313y^2=1$. También estaría bueno saber 
+por que funcionó.
+
+Con la fórmula de $\sen(\alpha) = \frac{e^{i\alpha}-
+e^{-i\alpha}}{2i} = \frac{e^{-i\alpha}(e^{2i\alpha}-1
+)}{2i}$ tenemos que:
+
+$$\prod^{p-1}_{k=1} \sen\lp\frac{k\pi}{p}\rp
+^{-\lp\frac{k}{p} \rp} = \prod^{p-1}_{k=1} \lp e^{-\frac
+{ik\pi}{p}} - e^{-\frac{ik\pi}{p}}\rp^{-\lp
+\frac{k}{p} \rp}= \prod^{p-1}_{k=1} \lp e^{\frac
+{ik\pi}{p}}\rp^{-\lp \frac{k}{p} \rp} \prod^{p-1}_{k=1}
+\lp e^{\frac{2ik\pi}{p}}-1\rp^{-\lp\frac{k}{p} \rp}$$
+
+pues como la mitad son cuadrados y la otra no entonces:
+
+$$\prod^{p-1}_{k=1} \frac{1}{2i} ^ {-\lp \frac{k}{p} \rp} = 1$$
+
+Entonces $u$ es una unidad pues $\prod^{p-1}_{k=1} \lp 
+\xi_p^k-1\rp^{-\lp\frac{k}{p} \rp}$ tiene norma $1$ por el 
+teorema 90 de Hilbert (es un cociente de elementos conjugados
+por el grupo de Galois), y el otro factor es una potencia de 
+una unidad por lo que $u$ es produto de unidades. Pero esta
+unidad vive en un lugar particular. Notemos que al aplicar los 
+automorfismos de Galois $\sigma_j: \xi_{p}^n \to \xi_{p}^{jn}$
+(como $\QQ(\xi_p) = \QQ(\xi_{2p})$ estos son todos),
+se factorizan por el producto, si $j$ es un cuadrado dejan
+fijo a $u$ y sinó lo invierten:
+
+$$\sigma_a(u) = \prod_{k=1}^{p-1} \sigma_a \lp
+(\xi_{2p}^k - \xi_{2p}^{-k})^{\lp\frac{k}{p}\rp}
+\rp = \prod_{k=1}^{p-1} \lp\sigma_a \lp\xi_{2p}^k\rp
+- \sigma_a \lp\xi_{2p}^{-k}\rp\rp^{\lp\frac{k}{p}\rp} = $$
+
+$$=\prod_{k=1}^{p-1} \lp\xi_{2p}^{ak}
+- \xi_{2p}^{-ak}\rp^{\lp\frac{k}{p}\rp}=\prod_{k=1}^{p-1}
+\lp\xi_{2p}^{k} - \xi_{2p}^{-k}\rp^{\lp\frac{a}{p}\rp} = 
+u^{\lp\frac{a}{p}\rp}$$
+
+Entonces $u$ vive en el subcuerpo que fijan los $\sigma_a$ con
+$a$ un resto cuadrático$\mod p$, que es el que queremos: 
+$\QQ(\sqrt{p})$, y tambien es una unidad allí pues lo era en
+el cuerpo más grande. Y $u^{-1}$ pertenece a $\QQ(\sqrt{p})$
+por la misma razón y aparte cumple que $u^{-1}=\bar{u}$ (la
+norma en $\QQ(\sqrt{p})$ es $u\bar{u}=1$). Si $u=x+\sqrt{p}y$
+entonces $u^{-1}=x-\sqrt{p}y$ y el producto tiene la forma 
+que queremos. Y luego $u+\bar{u}=2x$ es la forma de encontrar
+la solución a la ecuación $x^2-py^2=1$. 
+
+No necesariamente $u$
+nos queda una unidad fundamental de $\QQ(\sqrt{p})$ y esto
+va a ser importante para el siguiente ejercicio. Nos falta 
+decir por qué $2x$ es un entero, pero es suma de 
+enteros algebraicos y aparte queda fijo por todos los 
+automorfismos de Galois, asi que tiene que serlo (ojo, no 
+necesariamente $x$ es entero).
+
+Por otro lado, en el ejercicio 13, cuando calculamos para 
+$p=1093$ el $u$:
+
+$$u= \prod^{1092}_{k=1} \sen\lp\frac{k\pi}{1093}\rp ^{-\lp
+\frac{k}{1093} \rp}$$
+
+nos queda (casi) impar $u = 1545688332149050.999999999999999353
+\cdots$, sabemos que $u+u^{-1} = 1545688332149051$. Esto nos 
+dice que la solución a la ecuación que obtuvimos es:
+
+$$\lp\frac{1545688332149051}{2}\rp^2 - 1093 
+\lp\frac{46753254507927}{2}\rp^2 = 1$$
+
+(despejando el segundo valor). Esto no nos dio una solución 
+en números enteros y tampoco nos dio la más pequeña posible.
+
+Primero busquemos la más chica: sabemos que si $u$ es unidad 
+en $\QQ(\sqrt{1093})$, entonces tiene que ser una potencia de 
+la unidad fundamental pues $\OO_{\QQ(\sqrt{p})}$ tiene 
+dimensión 1; y podemos buscar esta potencia numericamente.
+Con un simple \hyperref[codigo3]{código} encontramos que $u$
+es potencia quinta de la solución fundamental, y tenemos 
+la siguiente solución:
+
+$$\lp\frac{1091}{2}\rp^2 - 1093 \lp\frac{33}{2}\rp^2 = 1$$
+
+Como las soluciones son potencias de la más pequeña,
+elevando al cubo $\frac{1091}{2} + \sqrt{1093}
+\frac{33}{2}$ (esto siempre funciona para sacar los 
+denominadores) nos queda:
+
+$$\lp\frac{1091}{2}\rp^3 +3\cdot1093
+\lp\frac{1091}{2}\rp \lp\frac{33}{2}\rp^2 + \sqrt{1093} 
+\lp 3\lp\frac{1091}{2}\rp^2\lp\frac{33}{2}\rp + 1093
+\lp\frac{33}{2}\rp^3\rp$$
+
+y viendo módulo 8 nos quedan enteras las coordenadas, es decir
+encontramos la solución a la ecuación de Pell que buscabamos:
+
+$$649296649^2 - 1093\cdot19639620^2 = 1$$
+
+Si no hubiesemos querido la menor solución podriamos haber 
+encontrado tambien una con el $u$ que habíamos encontrado
+elevandolo al cubo, y esta sería:
+
+$$1846442509769358115211770346218978772257666249^2 - $$
+$$1093\cdot 55850325578557669515530976378442112225078100^2 = 1$$
+
+
+% \subsection*{Guía 1, ejercicio 20}
+
+% Para cada $d$ precisamos el discriminante $D$ del cuerpo 
+% $\QQ[\sqrt{d}]$ que será igual a $d'$ si $d'\equiv 1\mod 4$ o 
+% $4d$ si $d' \equiv 2,3 \mod 4$ para $d'$ la parte libre de 
+% cuadrados de $d$. Luego tambien es util conocer el anillo de 
+% enteros de ese cuerpo, que siempre es $\OO_k = 
+% \ZZ\lco\frac{D+\sqrt{D}}{2}\rco$, pues todo orden se puede escribir como 
+% $\OO = \ZZ + f \OO_k$ y el discriminante de $\OO$, que será
+% $f^2 D$ para el $f$ mínimo, lo determina univocamente.
+
+% Para calcular el orden de $Cl(\ZZ[\sqrt{d}])$ podemos usar 
+% la siguiente sucesion exacta:
+
+% $$1\to \OO_k^\times/\OO^\times \to 
+% \frac{(\OO_k/\mathfrak{f})^\times}{(\OO/\mathfrak{f})^\times}
+% \to Cl(\OO) \to Cl(\OO_k) \to 1 $$
+
+% O como corolario que:
+
+% $$h(\OO) = \frac{h(\OO_k)\cdot \lco (\OO_k/\mathfrak{f})
+% ^\times : (\OO/\mathfrak{f})^\times \rco}{\lco \OO_k^\times
+% : \OO^\times \rco}$$
+
+% Recordando que si $\OO_k^\times =\{\pm1\} \lc \varphi \rc$ 
+% entonces $\OO^\times = \{\pm1\} \lc \varphi^k \rc$ para algun 
+% $k$ y con eso $\lco \OO_k^\times : \OO^\times \rco = k$.
+% Tambien nos facilita la cuenta que $\lco (\OO_k/\mathfrak{f})
+% ^\times : (\OO/\mathfrak{f}) ^\times \rco$ será isomorfo a
+% $(\ZZ/\mathfrak{f}\ZZ)^\times$.
+
+% Busquemos los conductores de cada uno de esos órdenes:
+
+% En $\QQ(\sqrt{5})$ el $\OO_k$ es $\ZZ\lco\frac{1+
+% \sqrt{5}}{2}\rco$. $\ZZ[\sqrt{5}]$ tiene conductor $2$, 
+% $\ZZ[3\sqrt{5}]$ tiene conductor 
+
+% En $\QQ(\sqrt{10})$ el $\OO_k$ es $\ZZ\lco\sqrt{5}\rco$.
+% $\ZZ[5\sqrt{10}]$ tiene conductor y $\ZZ[7\sqrt{10}]$ 
+% tiene conductor 
+
+% O una prop que nos dice que el cardinal del conjunto de 
+% ideales fraccionario inversibles cocientado por la accion de
+% $\QQ^\times$ es igual al cardinal de elementos en el siguiente
+% conjunto:
+
+% $$\left\{ \tau = \frac{-b+\sqrt{D}}{2a}:a>0, 4a|D-b^2, 
+% \mcd(a,b,c)=1 \right\} / \ZZ$$
+
+% ojo que las formas reducidas son solo para disc < 0
+
+% Entonces veamos las formas de escribir $D=b^2-4ac$ con 
+% $|b|\leq|a|\leq|c|$ y $\mcd(a,b,c)=1$ para $D=5, 24, 40$:
+
+% $5=1^2 + 4 \cdot 1 \cdot 1$
+
+% $24=0^2+4\cdot1\cdot6 = 0^2 + 4\cdot2\cdot3$
+
+% $40 = 0^2+4\cdot1\cdot10 = 0^2+4\cdot2\cdot5 =
+% 2^2+4\cdot3\cdot3$
+
+
+% Luego para calcular $Cl(\OO)$ veremos si es igual o el doble
+% del $Cl^+(\OO)$ debido a que esas son las unicas posibilidades.
+
+% Hay elementos de norma $-1$ en nuestro anillo? 
+
+% en $\ZZ[\sqrt{5}]$ si pues $-1 = 2^2-5$
+
+% en $\ZZ[\sqrt{6}]$ no pues $-1 = x^2- 6y^2$ no tiene 
+% solución módulo 3.
+
+% en $\ZZ[\sqrt{10}]$ si pues $-1 = 3^2-10$
+
+% en $\ZZ[\sqrt{45}]$ no, de vuelta por módulo 3
+
+% en $\ZZ[5\sqrt{10}]$ nose xd
+
+% en $\ZZ[7\sqrt{10}]$ no, por módulo 7
+
+
+
+\subsection*{Guía 1, ejercicio 25}
+
+Para encontrar un elemento que genere el grupo de unidades de
+$\OO=\ZZ[\sqrt{17}]$ primero notemos que $4^2-17\cdot 1=-1$. 
+Entonces facilmente tenemos $\OO^\times = \{\pm 1\} \times 
+\lc4+\sqrt{17}\rc_\ZZ$. 
+
+Ahora usemos algunos resultados teoricos para facilitar el calculo de 
+$\OO / 97\OO$. El anillo de enteros del cuerpo $A=\QQ[\sqrt{17}]$ es 
+$\OO_K = \ZZ[\frac{1+\sqrt{17}}{2}]$, por lo que nuestro
+orden tiene conductor $2$ y el ideal $97\OO$ es coprimo con ese conductor
+por lo que $\OO /97\OO \cong \OO_K / 97 \OO_K$
+y ahora podemos ver el comportamiento de $97\OO_K$
+en función de si $17$ es un cuadrado módulo $97$:
+
+$$\leg{17}{97} = \leg{97}{17} = \leg{12}{17} = \leg{3}{17} =
+\leg{17}{3} = \leg{2}{3} = -1$$
+
+Ahora, como $17$ no es un cuadrado módulo $97$, el ideal 
+$97\OO_K$ es un primo (porque nos quedó inerte)
+y $\OO/97\OO \cong \OO_K / 97\OO_K \cong\ZZ/97\ZZ$ tiene orden $97$.
+
+El grupo de unidades de $\ZZ[97\sqrt{17}]$ será generado por
+una potencia del de $\ZZ[\sqrt{17}]^\times$. Ayudandonos de la 
+computadora para encontrar una que tenga segunda coordenada divisible
+por $97$ iteramos $\verb|Zsqrt17((4+a)^i)|$ hasta obtener que 
+$(4+\sqrt{17})^{49}$ tiene el coeficiente que acompaña a $\sqrt{17}$
+divisible por $97$ (¿tal vez era obvio que iba a ser $\frac{97+1}{2}$?)
+por lo que tiene que generar las unidades de $\ZZ[97\sqrt{17}]$.
+
+El número obtenido tiene norma $-1$, porque tambien la tenía el 
+$4+\sqrt{17}$, por lo que para obtener una solución a 
+$x^2+17\cdot97^2\cdot y^2 = 1$ todavía necesitamos elevar el generador
+al cuadrado. 
+\hyperref[solucion25]{$(4+\sqrt{17})^{98}\cdot(4-\sqrt{17})^{98} = 1$} 
+y será de la forma deseada.
+
+\subsection*{Guía 2, ejercicio 8}
+
+Queremos ver que $q = \lc a,b,c\rc $ con $a,b,c \in \QQ_p$ es 
+isotrópica si $|\det (q)|_p =1$ y $C_p(q) = 1$.
+
+
+
+Usaremos la propiedad de la teorica que nos dice que para ternarias,
+$q$ isotropica si y solo si $C_p(q)=(-1,-\det (q))_p$. La vuelta se 
+demuestra viendo que si reescalamos $\lc a,b,c\rc \sim \lc\lambda a,
+\lambda b,\lambda c\rc \sim \lc-a/c,-b/c,-1\rc$ preserva isotropia, 
+y la ultima es isotrópica si y solo si $(-a/c,-b/c)_p = 1$. 
+Esta condicion es equivalente a la que pediamos porque:
+$$C_p(\lc a,b,-1\rc) = (a,b)(-1,a)(-1,b)=(a,b)(-1,ab)=(a,b)
+(-1,-\det(q))$$
+son iguales solo si $(a,b)=1$.
+
+Al reescalar, el invariante de Hasse y el valor de $(-1,-\det(q))_p$ 
+cambian de la siguiente forma:
+$$C_p(\lambda q) = C_p(q) (\lambda,\lambda)_p^3 = C_p(q) 
+(\lambda, -1)_p$$
+$$(-1,-\det(\lambda q))_p = (-1,-\lambda^3\det(q))_p=
+(-1,\lambda)(-1,-\det(q))_p$$
+es decir, cambian por el mismo factor de $(-1,\lambda)$ entonces siguen
+siendo iguales si antes lo eran.
+
+Llamemos $d = -\det (q)$. Con esto, $q$ isotrópica si y solo si 
+$(-1,d)_p =1$, que es lo mismo que $(d,d)_p =1$, y esto vale
+pues $|d|_p =1$ y la ecuación $d x^2 + d y^2 = 1$ en 
+$\FF_p$ siempre tiene solución ($d\neq 0$ en $\FF_p$), y
+podemos llevarla a $\QQ_p$ por el lema de Hensel.
+
+\subsection*{Guía 2, ejercicio 22}
+
+Calculemos los invariantes de ambas formas, sabiendo que estos 
+califican completamente las formas sobre $\QQ$: Seguro tienen 
+la misma dimensión, como estan diagonalizadas sus respectivos
+determinantes son: $\det(q_1) =\lambda (\lambda+1)^3$ y 
+$\det(q_2)= \lambda (\lambda+1)$.
+
+El invariante de Hasse cumple la siguiente propiedad que nos 
+será útil para calcularlo: $C_p(q\perp q') = C_p(q)C_p(q')
+(\det(q),\det(q'))_p$. Entonces: 
+$$C_p(q_1) = (\lambda+1,\lambda+1)_p^3 ((\lambda+1)^3,
+\lambda)_p = (\lambda+1,\lambda+1)_p(\lambda+1,\lambda)_p = 
+(\lambda+1,-\lambda)_p = 1$$
+$$C_p(q_2)=(1,1)_p^3(\lambda (\lambda+1),\lambda (\lambda+1))_p
+(\lambda(\lambda+1),1)_p = (\lambda (\lambda+1),-1)_p = 
+(\lambda,-1)_p (\lambda+1,-1)_p = $$
+
+Donde en $C_p(q_1)=1$ usamos que $(a,1-a)_p=1$ para $a\neq 1$ 
+pues $\lc a,1-a,-1\rc \sim \lc a,-a\rc \perp\lc 1,-1\rc $ es re
+isotrópica.
+
+\subsection*{Guía 3, ejercicio 3}
+
+
+\subsection*{Guía 3, ejercicio 5}
+
+Veamos en tres partes: las formas son equivalentes en $\ZZ_5$
+y $\ZZ_{11}$, luego en $\ZZ_p$ y luego que no lo son en $\ZZ$.
+
+En $\ZZ_5$ tengo que $11$ es un cuadrado pues podemos levantar
+la solución de $x^2 \equiv 11\equiv 1 \mod 5$ por Hensel. Luego en 
+ambas formas podemos meterlo en la variable y nos quedan 
+$5x^2+y^2$ y $x^2+5y^2$ que son equivalentes.
+
+En $\ZZ_{11}$ tengo que, como $4^2 \equiv 5\mod 11$ 
+entonces puedo hacer un razonamiento similar al anterior.
+
+Para cualquier otro $p$ (salvo el innombrable) los números 
+$5$ y $11$ son unidades, lo que implica que la ecuación 
+$5x^2 + 11y^2=1$ tiene solución en $\FF_p$, y como podemos
+representar el $1$ entonces nuestra forma cuadrática es
+equivalente a $x^2+ d y^2$ para $d$ el determinante, que 
+era $5\cdot 11 = 55$, la otra forma que teniamos. 
+
+En $\ZZ_2$ veamos que tambien podemos representar el 1, que 
+basta verlo para las formas módulo 8, y con eso repetimos el 
+razonamiento anterior. Probando un poquito vemos que $5x^2
++3y^2$ es congruente a 1 en el vector $(1,2)$.
+
+Es facil ver que las formas no son equivalentes sobre $\ZZ$
+porque la primera puede representar primitivamente el $5$ o el 
+$11$ con los vectores $(1,0)$ o $(0,1)$ mientras que la segunda
+no pues $x^2 + 55y^2 < 55 \iff y=0$ pero en ese caso solo 
+podemos representar cuadrados. Tambien porque son formas
+reducidas del mismo discriminante y definidas positivas, pero 
+no iguales.
+
+\subsection*{Guía 3, ejercicio 6, item b}
+
+Las matrices de nuestras formas son:
+
+\begin{multicols}{2}
+$$\phi_1 = \lp
+\begin{matrix}
+    5&8&1 \\
+    8&13&1 \\
+    1&1&11 \\
+\end{matrix}\rp$$
+
+$$\phi_2 = \lp
+\begin{matrix}
+    1&1&-2 \\
+    1&16&7 \\
+    -2&7&10 \\
+\end{matrix}\rp$$
+\end{multicols}
+
+Diagonalicemos las formas cuadráticas (las operaciones 
+marcadas se realizan en filas y en columnas tambien):
+
+$$
+\lp\begin{matrix}
+    5&8&1 \\
+    8&13&1 \\
+    1&1&11 \\
+\end{matrix}\rp
+\xrightarrow[f_3 \to f_3-\frac{1}{5}f_1]{f_2 \to f_2-
+\frac{8}{5}f_1}
+\lp\begin{matrix}
+    5&0&0 \\
+    0&\frac{1}{5}&-\frac{3}{5} \\
+    0&-\frac{3}{5}&\frac{54}{5} \\
+\end{matrix}\rp
+\xrightarrow{f_3 \to f_3+3f_2}
+\lp\begin{matrix}
+    5&0&0 \\
+    0&\frac{1}{5}&0 \\
+    0&0&9 \\
+\end{matrix}\rp
+$$
+
+$$
+\lp\begin{matrix}
+    1&1&-2 \\
+    1&16&7 \\
+    -2&7&10 \\
+\end{matrix}\rp
+\xrightarrow[f_3 \to f_3+2f_1]{f_2 \to f_2-f_1}
+\lp\begin{matrix}
+    1&0&0 \\
+    0&15&9 \\
+    0&9&6 \\
+\end{matrix}\rp
+\xrightarrow{f_3 \to f_3-\frac{3}{5}f_2}
+\lp\begin{matrix}
+    1&0&0 \\
+    0&15&0 \\
+    0&0&\frac{3}{5} \\
+\end{matrix}\rp
+$$
+
+Y entonces tenemos $q_1 \sim \lc 5,\frac{1}{5},9\rc \sim
+\lc 5,5,9\rc$ y $q_2 \sim \lc 1,15,\frac{3}{5}\rc\sim 
+\lc 1,15,15\rc$ donde las segundas equivalencias solo valen
+si 5 es unidad y podemos usarlo en la variable, es decir
+para todo $\ZZ_p$ con $p\neq 5$. Notemos que los coeficientes 
+solo tienen multiplos de 3 y 5 asi que para cualquier $p$ que
+no sea 2, 3, 5 ni $\infty$ las formas van a ser equivalentes 
+en $\ZZ_p$. Tambien descartemos rapidamente $\infty$ pues 
+ambas formas son definidas positivas.
+
+Primero veamos $\ZZ_5$, donde las formas asi como las 
+diagonalizamos no estan definidas pero podemos ver la 
+equivalencia entre $5q_1$ y $5q_2$ (cancelamos 
+denominadores):
+$$5q_1 \sim \lc 25,1,45\rc\sim\lc 1,1,5\rc$$
+$$5q_2 \sim \lc 5,75,3\rc \sim\lc 5,3,3\rc$$
+
+Entonces resta ver si $\lc 1,1\rc\sim_{\ZZ_5}\lc 3,3\rc$. 
+Como $3\cdot 1^2+3\cdot 1^2=6\equiv 1 \mod 5$ entonces la 
+segunda puede representar el 1, y como su determinante es
+un cuadrado es equivalente a $\lc 1,1\rc$ como queriamos ver.
+
+Segundo $\ZZ_3$ donde podemos comparar $\lc 5,5,9\rc$ con 
+$\lc 1,15,15\rc$. Como los bloques de cada valuación son 
+distintos entonces las formas canonicas no van a ser iguales
+y podemos descartar directamente la equivalencia incluso en
+$\QQ_3$.
+
+Finalmente nos queda $\ZZ_2$ pero tenemos la suerte de poder
+evitarlo: como las formas eran equivalentes en $\QQ_p$ para
+todo $p\neq 2,3$ y no lo eran en $\QQ_3$ entonces no pueden 
+serlo en $\QQ_2$ porque (tienen el mismo determinante en 
+$\QQ$ y) el producto de todos los símbolos de Hasse es 1, y 
+como $C_3(q_1)\neq C_3(q_2)$ entonces necesariamente 
+$C_2(q_1)\neq C_2(q_2)$ y no son equivalentes sobre $\QQ_2$
+(mucho menos sobre $\ZZ_2$). 
+
+
+\subsection*{Guía 3, ejercicio 8} 
+Las formas son $q_1=3x^2+2xy+23y^2\sim 3x^2+\frac{68}{3}y^2$ 
+y $q_2=7x^2+6xy+11y^2\sim7x^2+\frac{68}{7}y^2$. Son 
+equivalentes en $\ZZ_p$ para todo $p\neq2,17$ por ser el 
+determinante una unidad (ambas son $\ZZ_p$ equivalentes 
+a $x^2+68y^2$ porque siempre podemos poner el determinante
+como el ultimo coeficiente y todo el resto unos). Veamos 
+esos primos aparte:
+
+$\ZZ_2$: Existe una solución de $q_1(x,y)=7$ para hacer 
+el primer cambio de coordenadas, porque mirando módulo 8 
+tenemos $3x^2+2xy-y^2 \equiv -1$ que con (0,1) nos da y 
+armamos la solución con Hensel. Luego
+tenemos $q_1 \sim 7x'^2 + ax'y' + by'^2$, y sabemos que el 
+coeficiente $a$ lo podemos cambiar transformando por 
+$\left(\begin{smallmatrix} 1 & c \\ 0 & 1 \end{smallmatrix}
+\right)$ sumando $7c$ a su variable, pero como 7 es unidad
+entonces podemos encontrar solución para $c = \frac{6-a}{7}$ 
+en $\ZZ_2$ que nos dará $q_1\sim 7x'^2 + 6x'y' + b'y'^2$ y 
+sabemos que el determinante tiene que ser el mismo asi que 
+vamos a poder encontrar $b'= 11$ y listo.
+
+$\ZZ_{17}$: Vamos con otra estrategia, usando las formas 
+diagonalizadas. Como $3$ y $7$ son unidades, entonces 
+$3x^2+\frac{68}{3}y^2\sim 3x^2+3\cdot68y^2$ y lo mismo con
+la otra. Tomando la descomposición canonica, como
+necesitamos ver que cada componente de distinta valuación 
+$17$-adica es equivalente, nos queda unicamente ver que 
+$\lc3\rc \sim\lc7\rc$. Veamos que $\leg{3}{17}=\leg{7}{17}$:
+
+$$\leg{3}{17} = \leg{17}{3} = \leg{2}{3} =-1$$
+$$\leg{7}{17} = \leg{17}{7} = \leg{3}{7} = (-1)\leg{7}{3} 
+= -1$$
+
+Las formas no son $\ZZ$-equivalentes por ejemplo porque la 
+primera representa al 3 y el minimo valor que representa la 
+segunda es 7 (es definida positiva, esta reducida y es 
+primitiva).
+
+Ahora consideremos las formas $q_1=z^2-3x^2-2xy-23y^2$ y 
+$q_2=z^2-7x^2-6xy-11y^2$ y probemos que son propiamente 
+equivalentes encontrando la transformación entre una y la 
+otra.
+
+Es facil ver que $q_2(1,1,z)=z^2-24$ entonces poniendo la 
+variable $z=5$ tenemos una representación del 1 no canonica.
+Entonces si transformamos la matriz de $q_2$ tendremos un 
+uno en la primera casilla, y con eso podemos buscar la 
+transformación a $q_1$ con matrices en $\ZZ$:
+
+$$\lp\begin{matrix}
+    1&1&5 \\
+    0&1&0 \\
+    0&0&1 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    -7&-3&0 \\
+    -3&-11&0 \\
+    0&0&1 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    1&0&0 \\
+    1&1&0 \\
+    5&0&1 \\
+\end{matrix}\rp = 
+\lp\begin{matrix}
+    1&-14&5 \\
+    -14&-11&0 \\
+    5&0&1 \\
+\end{matrix}\rp$$
+
+Para completar la matriz, en la segunda columna podemos 
+poner el vector $(2,0,1)$ y obtenemos un 0 al medio arriba, 
+y para completar el tercer cero veamos:
+
+$$\lp\begin{matrix}
+    1&1&5 \\
+    1&0&2 \\
+    a&b&c \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    -7&-3&0 \\
+    -3&-11&0 \\
+    0&0&1 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    1&1&a \\
+    1&0&b \\
+    5&2&c \\
+\end{matrix}\rp = 
+\lp\begin{matrix}
+    1&0&C\\
+    0&-3&* \\
+    C&*&* \\
+\end{matrix}\rp$$
+
+donde en $C$ nos queda $-10a-14b+5c$, pero tambien tenemos 
+que asegurarnos que el determinante de la matriz, que nos 
+queda $2a+3b-c$, sea 1. Tenemos que resolver en enteros:
+
+$$\left\{
+\begin{matrix}
+    -10a-14b+5c &=0 \\
+    2a+3b-c &=1 \\
+\end{matrix}\right.$$
+
+que sale con $a=0$, $b=5$ y $c=14$. Eso nos dice que en la 
+base que encontramos ya logramos una equivalencia entera 
+propia entre $q_2$ y la forma $x^2-3y^2+26yz-79z^2$.
+
+Ahora solo nos queda encontrar una equivalencia entera
+entre el bloque $\left(\begin{smallmatrix} -3 & 13 \\ 
+13 & -79 \end{smallmatrix}\right)$ y el $\left(\begin
+{smallmatrix} -3 & -1 \\ -1 & -23 \end{smallmatrix}\right)$
+que con un poco de suerte ahora va a existir.
+
+$$\lp\begin{matrix}
+    a&c \\
+    b&d \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    -3&13 \\
+    13&-79 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    a&b \\
+    c&d \\
+\end{matrix}\rp = 
+\lp\begin{matrix}
+    -3&-1\\
+    -1&-23 \\
+\end{matrix}\rp$$
+
+Para hacerla facil ponemos el (1,0) en la primera columna que
+como el $-3$ esta en la primera casilla va bien, y luego 
+tenemos que resolver:
+
+$$\left\{
+\begin{matrix}
+    -3b+13d &=-1 \\
+    -3b^2-79d^2+26bd &=-23 \\
+\end{matrix}\right.$$
+
+$$d=\frac{3b-1}{13}$$
+
+$$-3b^2-\frac{79}{169}(9b^2-6b+1)+2(3b^2-b)=-23$$
+
+$$-\frac{204}{169}b^2-\frac{136}{169}b+\frac{3808}{169}=0$$
+
+$$b=-4, \frac{14}{3}$$
+
+Luego queda $d=-1$ y tenemos la siguiente transformación:
+
+$$\lp\begin{matrix}
+    1&0 \\
+    -4&-1 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    -3&13 \\
+    13&-79 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    1&-4 \\
+    0&-1 \\
+\end{matrix}\rp = 
+\lp\begin{matrix}
+    -3&-1 \\
+    -1&-23 \\
+\end{matrix}\rp$$
+
+pero tiene determinante $-1$. Por suerte nos queda un as 
+bajo la manga y es que en la matriz habríamos puesto un 1
+que correspondía a fijar la otra coordenada, y podemos poner
+un $-1$ pues al cuadrado eso no nos cambia. Finalmente:
+$$\lp\begin{matrix}
+    0&1&0 \\
+    0&-4&-1 \\
+    -1&0&0 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    1&1&5 \\
+    1&0&2 \\
+    0&5&14 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    -7&-3&0 \\
+    -3&-11&0 \\
+    0&0&1 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    1&1&0 \\
+    1&0&5 \\
+    5&2&14 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    0&0&-1 \\
+    1&-4&0 \\
+    0&-1&0 \\
+\end{matrix}\rp = 
+\lp\begin{matrix}
+    -3&-1&0 \\
+    -1&-23&0 \\
+    0&0&1 \\
+\end{matrix}\rp$$
+es un cambio de coordenadas entero de determinante 1 entre
+las formas $q_2$ y $q_1$, lo que nos dice que son propiamente
+equivalentes. Viendo la matriz final, noto que tal vez podía 
+ahorrarme la mitad de las cuentas si calculaba una solución 
+un poco mejor.
+
+\subsection*{Guía 4, ejercicio 2}
+Como sabemos que el álgebra de Clifford no depende de la base de 
+nuestro espacio $V$, entonces antes de arrancar diagonalicemos $q$:
+$x^2+xy+3y^2-2z^2 = (x+\frac{y}{2})^2+\frac{11}{4} y^2-2z^2$. Eso 
+es ver $q$ en la base $B=\{(1,1/2,0),(0,11/4,0),(0,0,1)\}$ y una 
+base para $\cont=\cont(V,q)$ es el producto ordenado de ellos:
+
+
+
+
+
+
+
+
+
+
+
+
+\newpage
+
+\vspace{1em}
+\noindent\textbf{Código 1.} Potencia grande de 2 menos 1 módulo 163
+\label{codigo1}
+
+\lstset{
+    language=Python,         % Cambiá si usás otro lenguaje
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\begin{lstlisting}
+import numpy as np
+#esto lo tendria que hacer con bits y no listas pero la idea esta
+def resta_binaria(cant_de_unos: int, tu_num:int):
+    bin_str = bin(tu_num)[2:]  # pasa a binario y elimina el prefijo '0b'
+    bits = [int(b) for b in bin_str]
+    el_chico = np.array(bits, dtype=int)
+
+    el_grandote = np.ones(cant_de_unos, dtype=int)
+    while(len(el_grandote) > len(el_chico)):  #no para exactamente donde deberia pero era mas simple
+        el_grandote = grande_chico(el_grandote, el_chico)
+        el_grandote = recortar_ceros_iniciales(el_grandote)
+        
+    valor_final = int(''.join(str(b) for b in el_grandote), 2)   #esta cosa fea pasa de lista de bits a representacion decimal
+    if(valor_final >= tu_num):   #aca por si me falto una iteracion
+        valor_final -= tu_num
+        
+    return valor_final
+
+def grande_chico(grande: np.ndarray , chico: np.ndarray): #osea grande-chico
+    #primero vemos si entra bien el num:
+    ind = 0
+    while(ind < len(chico) and grande[ind] == chico[ind]):  #el indice en que difieren
+        ind +=1
+    if(ind < len(chico) and grande[ind] < chico[ind]):  #depende para donde difieran
+        chico = np.insert(chico, 0, 0)
+    #ahora los restamos pq seguro entra bien (recorremos la resta como corresponde arrancando del menor)
+    for i in range(len(chico) - 1, -1, -1):  #resta coord a coord
+        if(grande[i] < chico[i]):  #observar que esto es unicamente si son 0 y 1 respectivamente
+            grande[i] = 1
+            j = 1
+            while(grande[i-j] == 0):   #propagamos la resta
+                grande[i-j] = 1
+                j+=1
+            grande[i-j] = 0
+        else:   #restamos normalmente
+            grande[i] -= chico[i]
+    return grande
+
+def recortar_ceros_iniciales(arr):  #para ir achicando la lista
+    for i, val in enumerate(arr):
+        if val != 0:
+            return arr[i:]
+    return np.array([], dtype=arr.dtype)
+
+resultado = resta_binaria(131, 163)
+ya_que_estamos = resta_binaria(9689, 163)
+
+print(resultado)
+print(ya_que_estamos)   
+\end{lstlisting}
+
+
+\vspace{1em}
+\noindent\textbf{Código 2.} Calculando el resultado
+\label{codigo2}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\begin{lstlisting}
+K163 = QuadraticField(-163, 'a')
+OK163 = K163.ring_of_integers()
+a = K163.gen()
+r = power_mod(163, 2^9687, 2^9689 - 1)
+p = 2^9689 - 1
+
+p163 = OK163(p)
+x = OK163(r + a)
+resultado = p163.gcd(x)
+print(resultado)
+\end{lstlisting}
+
+\vspace{1em}
+\noindent\textbf{Código 3.} Potencia numerica
+\label{codigo3}
+
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
+
+\begin{lstlisting}
+def busco_potencia_numerica(numero: int, iteraciones: int, prec_de_R: int):
+    R = RealField(prec_de_R)
+    raiz = 1
+    while(raiz < iteraciones + 1):
+        res = numero^(1/raiz)
+        print(raiz, R(res+res^(-1)))
+        raiz = raiz+1
+
+busco_potencia_numerica(1545688332149051, 20, 200)
+\end{lstlisting}
+
+\newpage
+
+\begin{equation*} \label{solucion2}
+\begin{array}{l}
+\noindent\textbf{Solución ejercicio 11:} \\
+83250108517244754631958379704346169736009070717927333661152717076768610043 \\
+54332925305504156237999402648944860482471511367497546427114931066938614310 \\
+63601894373330994412046249817232863797706783597434079965470573504747236845 \\
+48312506559576111972357424519311070561701236243581147439658472127676965209 \\
+62764442506744894217903407066796961795602023959971203575468909439143651204 \\
+40429078236276891066118990402208435946171211041961862906954844572844984140 \\
+28337213687092229363834423692456794657294141899857796332199823886688976978 \\
+16441168460334899931350398896569697234824356108695845964274413019895614057 \\
+13960149203756747970116076469933847463897211681623626531637571075739794962 \\
+21021125453522437793256114019381530238860844355639257051174510822589137213 \\
+30852316723444239079026615463065655121975250626918950835541038100333373202 \\
+79013794406125065502197916976866344914241262892787759190457600979783016878 \\
+56535114583175392343955351100932141247542145127279674285526410302492365249 \\
+90955880171046459284068927574801405665404564173300943268595999682975727177 \\
+36653086087129420198777022717344958224340755178261524941901846235896332568 \\
+97288705319201088812517312916758457637266802053149224201063207326903532878 \\
+38346185479703600416340317489511087198940097563130815098399330788611636469 \\
+63298305365750990624650207374682514435284350951496536071463217673230269214 \\
+13793191660134855343245232296119359841157283028354741388287972657089945146 \\
+2148923487030255687083976986475444970862685049813678 ^2 + 163 \cdot 15838805981600 \\
+37155614749348213488327702363871007708307190536733624647278148713436694255 \\
+40790943324335246687351795477862279550861529893558370741086932980801317328 \\
+28745913352764649844379126748772916485743891357523834352930403484561330483 \\
+12467072250126761095922129197790802311128866096926886647080689896969147985 \\
+55812060435793524996158114987223491941271438983414054545172535990331173921 \\
+38555307564984038683535994801790613869155837861634194800595359621251744648 \\
+63151024664889600570523314147491562120554151297846518628266437415185613168 \\
+71522826230841839237452002018714065095825581010558666345089395823370484776 \\
+45038255347043213310172937419173120975419021107830448590722436867041807717 \\
+95294739128968948257099168361452814288531796443802478296604736721011084475 \\
+17819168565177377298595914165632297886581611428376480651653912934395127513 \\
+70779058987437725724251135390999892314196160646143974980185584932741273525 \\
+07712236815243682161262983123289211100355372396487832066767704118898545657 \\
+51359463167950999148856978044543678441563674076983704364818722325559487088 \\
+01081522876821710018052852199045447550701318228100146254397141919977856640 \\
+58078342802290716714257936224132201215345891991491645275420107817726645086 \\
+61234781446680846883658486011912867247810843465460101608858945128763246836 \\
+25036330971567142901071669527089130748189333085609398511858013966946006288 \\
+28188856969277887360171723464015604266504792042630184125012402353281338641 \\
+39948140111815854430969832618590706173 ^2 = 2^{9698}-1 
+\end{array}
+\end{equation*}
+
+\begin{equation*} \label{solucion25}
+\begin{array}{l}
+\noindent\textbf{Solución ejercicio 25:} \\
+101041943787986597181019507863069141934440128513289455403365326172557189585 \\
+676715679665385743712020813459164774126677555944022198204046811476842090471 \\
+16292994007696886678349396097^2- 17\cdot97^2 \cdot25264196898459124852442842075115423 \\
+167539340934798316032474205305179748194350162065076985696972535123781526196 \\
+828871485645802992181329240509507734477735657580023979143458832144^2 = 1
+\end{array}
+\end{equation*}
+
+\end{document}
