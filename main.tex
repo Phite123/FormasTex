@@ -1091,15 +1091,32 @@ ahorrarme la mitad de las cuentas si calculaba una solución
 un poco mejor.
 
 
-% \subsection*{Guía 4, ejercicio 1} Tenemos $u$ un elemento de grado 
-% par con inverso multiplicativo en el álgebra de Clifford, tal que 
-% la conjugación $\rho_u$ preserva $V$. Escribamos $u=v_1\cdot v_2
-% \cdots v_k$ y veamos que $k$ es par. NO USE QUE ES DE GRADO PAR XD
-% PERO OBVIO TA MAL PQ NO VI EL CASO U=ALGUNOS VI + OTROS VI
-% LA SOL ERA NQV, HABIA QUE VER QUE TENIAS ISOMETRIA DE V, LUEGO
-% CON ESO LA ESCRIBIAS COMO PROD DE VECTORES Y PROBABAS QUE ESO ERA 
-% LO MISMO QUE U VIA VER QUE EL PRODUCTO DE UNO POR EL INVERSO DEL 
-% OTRO ERA UN ESCALAR (PQ ERA PAR EN EL CENTRO DEL ALGEBRA WTF)
+\subsection*{Guía 4, ejercicio 1} Tenemos $u$ un elemento de grado 
+par con inverso multiplicativo en el álgebra de Clifford, tal que 
+la conjugación $\rho_u$ preserva $V$. 
+
+Nos gustaria escribir $\rho_u|_V$ como composicion reflexiones y luego 
+ver que el producto de los vectores que las definen nos dará $u$.
+Ahora para eso necesitamos ver que $\rho_u\in SO(V)$, y lo vemos 
+porque preserva la forma cuadratica en $V$, es decir $q(\rho_u(v))
+=q(v)$, con eso tenemos que pertenece a $O(V)$. 
+Ahora sabemos que todo elemento
+de $SO(V)$ se puede escribir como composicion de una cantidad par de 
+trasposiciones etonces llamamos $\rho$ a nuestra $\rho_u|_V$ y podemos
+escribir $\rho=\tau_{v_1}\tau_{v_2}\cdots\tau_{v_k}$ con $k$ par.
+
+Nos falta ver que ver $\rho$ como transformacion en $\cont(V)$ 
+coincide con $\rho_u$ y vamos a ver que $u(v_1v_2\cdots v_k)^{-1}$
+conmuta con los elementos del algebra, por lo que está en el centro
+y por ser de grado par solo puede ser un escalar.
+$$u(v_1v_2\cdots v_k)^{-1}x =u\lp u^{-1}xu(v_1v_2\cdots v_k)^{-1}\rp 
+= xu(v_1v_2\cdots v_k)^{-1}$$
+donde en la segunda igualdad usamos que si $u^{-1}xu=
+(v_1v_2\cdots v_k)^{-1}x(v_1v_2\cdots v_k)$ entonces 
+$(v_1v_2\cdots v_k)^{-1}x = u^{-1}xu(v_1v_2\cdots v_k)^{-1}$.
+Ahora $u=k(v_1v_2\cdots v_k)$ pero puedo meter el escalar en alguno
+de los vectores ($\tau_v=\tau_{\lambda v}$) y tenemos el resultado.
+
 
 % Usemos el siguiente lema: si $v\in V$ entonces lo podemos ver en 
 % $\cont(V)$ y si tiene inverso entonces $\rho_v|_V=-\tau_v$. La 
@@ -1130,6 +1147,8 @@ un poco mejor.
 
 
 % $$q(\rho_u(x)) = (\rho_u(x))^2 = (uxu^{-1})^2 = (uxu^{-1})(uxu^{-1})$$
+
+
 
 
 % \subsection*{Guía 4, ejercicio 2}
