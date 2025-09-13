@@ -35,11 +35,13 @@
 
 \newcommand{\aaa}{\mathbf{a}}
 \newcommand{\bbb}{\mathbf{b}}
+\newcommand{\vvv}{\mathbf{v}}
 
 \newcommand{\OO}{\mathcal{O}}
 
 \newcommand{\leg}[2]{\left( \frac{#1}{#2} \right)}
-
+\newcommand{\minimat}[4]{\left(\begin{smallmatrix} #1 & #2 \\ #3 & #4 
+\end{smallmatrix}\right)}
 \newcommand{\lp}{\left(}
 \newcommand{\rp}{\right)}
 \newcommand{\lb}{\left|}
@@ -83,8 +85,8 @@
 
 \section*{Guía 1}
 
-4, 11 (código y output), 13 (código y output), 20 (tres ítems)
-y 25.
+% 4, 11 (código y output), 13 (código y output), 20 (tres ítems)
+% y 25.
 
 % \subsection*{Ejercicio 4}
 % Sea $f(x) = x^2 + x + N$ con $N>0$ entero.
@@ -153,12 +155,11 @@ $x^2-17\cdot 97^2\cdot y^2=1$.
 
 \section*{Guía 2}
 
-4, 8, 12, 16 (un ítem) y 22.
+% 4, 8, 12, 16 (un ítem) y 22.
 
-% \subsection*{Ejercicio 4}
-% Sea $q$ regular e isotrópica sobre $k^n$. Probar que hay 
-% $\aaa, \bbb \in k^n$ tales que
-% $q \lp \aaa + t \bbb \rp = t$.
+\subsection*{Ejercicio 4}
+Sea $q$ regular e isotrópica sobre $k^n$. Probar que hay 
+$\aaa, \bbb \in k^n$ tales que $q \lp \aaa + t \bbb \rp = t$.
 
 \subsection*{Ejercicio 8}
 Sea $q$ ternaria sobre $\QQ_p$ con $p \geq 3$ primo. 
@@ -192,15 +193,15 @@ Supongamos que $|\det(q) |_p = 1 = c_p(q)$. Probar que $q$ es isotrópica.
 %     si $p = 2$.
 % \end{enumerate}
 
-\subsection*{Ejercicio 22}
-Hallar todos los $\lambda \in \QQ$ tales que 
-$\lp \lambda + 1 \rp \lp x^2+y^2+z^2 \rp + \lambda w^2$ y 
-$x^2 + y^2 + z^2 + \lambda \lp \lambda + 1 \rp w^2$
-son equivalentes.
+% \subsection*{Ejercicio 22}
+% Hallar todos los $\lambda \in \QQ$ tales que 
+% $\lp \lambda + 1 \rp \lp x^2+y^2+z^2 \rp + \lambda w^2$ y 
+% $x^2 + y^2 + z^2 + \lambda \lp \lambda + 1 \rp w^2$
+% son equivalentes.
 
 \section*{Guía 3}
 
-3 items del 3, 5, 6(b), 8 y 9
+% 3 items del 3, 5, 6(b), 8 y 9
 
 \subsection*{Ejercicio 3} Probar las equivalencias de las siguientes
 formas cuadráticas sobre $\ZZ_2$:
@@ -247,7 +248,7 @@ equivalentes en $\ZZ_p$: $5x^2 + 13y^2 + 11z^2 + 2yz + 2xz +
 
 \section*{Guía 4}
 
-del 1 al 5
+% del 1 al 5
 
 \subsection*{Ejercicio 2} Sea $q=x^2+xy+3y^2-2z^2$. Describir 
 $\mathcal{C}(V,q)$ por generadores y relaciones. Hallar la matriz 
@@ -577,12 +578,35 @@ al cuadrado.
 \hyperref[solucion25]{$(4+\sqrt{17})^{98}\cdot(4-\sqrt{17})^{98} = 1$} 
 y será de la forma deseada.
 
+\subsection*{Guía 2, ejercicio 4}
+
+Si tenemos una forma isotropica no degenerada significa que en el
+espacio cuadratico $(V,q)$ tenemos un plano de hiperbolico incluido. 
+Esto es si $q(v)=0$ con $v\neq0$ entonces usando $v$ en la primera 
+columna de una base tengo un $0$ en la primera coordenada de la forma
+vista en esa base. Despues existirá un $w$ tal que $\phi(v,w)\neq0$
+pues $q$ era regular, y reescalando tenemos $\lco\phi\rco_B=
+\minimat{0}{1}{1}{*}$ sobre las primeras coordenadas. Para eliminar 
+el $*$ notemos que habrá un $\lambda$ tal que $q(w-\lambda v)=0$ 
+(es restar multiplos de la primera fila y columna que tienen un 1).
+
+Completando a una base, tenemos $B$ tal que $\lco\phi\rco_B=
+\minimat{0}{1}{1}{0}$ en su primer bloque de $2\times2$ y con eso 
+$q'(\aaa+t\bbb)=t$ para $\aaa=(0,1/2,0,0,\cdots)$ y $\bbb=(1,0,0,
+\cdots)$ donde $q'$ fue ver la forma en la base $B$. Para que esto 
+sea general para $q$ tenemos que:
+$$t=(\aaa +t\bbb )^T \lp C_B^T\lco\phi\rco C_B\rp(\aaa+t\bbb)=
+\lp C_B(\aaa+t\bbb)\rp^T\lco\phi\rco \lp C_B(\aaa+t\bbb)\rp$$
+y entonces con $\aaa'=C_B\aaa$ y $\bbb'=C_B\bbb$ tenemos $q(\aaa'+
+t\bbb')=t$.
+
+Observacion: asumimos que la dimension de $q$ era mayor o igual a 2
+pues la unica forma isotropica de dimension 1 no es regular.
+
 \subsection*{Guía 2, ejercicio 8}
 
 Queremos ver que $q = \lc a,b,c\rc $ con $a,b,c \in \QQ_p$ es 
 isotrópica si $|\det (q)|_p =1$ y $C_p(q) = 1$.
-
-
 
 Usaremos la propiedad de la teorica que nos dice que para ternarias,
 $q$ isotropica si y solo si $C_p(q)=(-1,-\det (q))_p$. La vuelta se 
@@ -591,8 +615,7 @@ demuestra viendo que si reescalamos $\lc a,b,c\rc \sim \lc\lambda a,
 y la ultima es isotrópica si y solo si $(-a/c,-b/c)_p = 1$. 
 Esta condicion es equivalente a la que pediamos porque:
 $$C_p(\lc a,b,-1\rc) = (a,b)(-1,a)(-1,b)=(a,b)(-1,ab)=(a,b)
-(-1,-\det(q))$$
-son iguales solo si $(a,b)=1$.
+(-1,-\det(q))$$ son iguales solo si $(a,b)=1$.
 
 Al reescalar, el invariante de Hasse y el valor de $(-1,-\det(q))_p$ 
 cambian de la siguiente forma:
@@ -609,30 +632,121 @@ pues $|d|_p =1$ y la ecuación $d x^2 + d y^2 = 1$ en
 $\FF_p$ siempre tiene solución ($d\neq 0$ en $\FF_p$), y
 podemos llevarla a $\QQ_p$ por el lema de Hensel.
 
-\subsection*{Guía 2, ejercicio 22}
+\subsection*{Guía 3, ejercicio 3} Vamos a hacer cuentitas. Para
+probar las equivalencias vamos a ``patear el determinante'' al final
+y probar que las formas que nos dan son equivalentes a $x^2+dy^2$.
 
-Calculemos los invariantes de ambas formas, sabiendo que estos 
-califican completamente las formas sobre $\QQ$: Seguro tienen 
-la misma dimensión, como estan diagonalizadas sus respectivos
-determinantes son: $\det(q_1) =\lambda (\lambda+1)^3$ y 
-$\det(q_2)= \lambda (\lambda+1)$.
+$5x^2+5y^2$: Si multiplicamos $\minimat{5}{0}{0}{5}$ por 
+$\minimat{a}{b}{c}{d}$ y su transpuesta encontramos que queremos 
+resolver el siguiente sistema de ecuaciones:
+$$\left\{
+\begin{matrix}
+    5a^2+5c^2=5b^2+5d^2 &=&1 \\
+    5(ab+cd) &=&0 \\
+    ad-bc &=&1 \\
+\end{matrix}\right.$$
 
-El invariante de Hasse cumple la siguiente propiedad que nos 
-será útil para calcularlo: $C_p(q\perp q') = C_p(q)C_p(q')
-(\det(q),\det(q'))_p$. Entonces: 
-$$C_p(q_1) = (\lambda+1,\lambda+1)_p^3 ((\lambda+1)^3,
-\lambda)_p = (\lambda+1,\lambda+1)_p(\lambda+1,\lambda)_p = 
-(\lambda+1,-\lambda)_p = 1$$
-$$C_p(q_2)=(1,1)_p^3(\lambda (\lambda+1),\lambda (\lambda+1))_p
-(\lambda(\lambda+1),1)_p = (\lambda (\lambda+1),-1)_p = 
-(\lambda,-1)_p (\lambda+1,-1)_p = $$
+La ecuacion $5x^2+5y^2\equiv 1\mod 8$ tiene como solución cualquier
+$(x,y)$ donde uno sea par y el otro impar, y esto ayuda a encontrar 
+la solución. Notamos rapidamente que no podemos poner la misma 
+solución dos veces pues la primera nos exige que el elemento par sea
+$2\mod4$ mientras la segunda precisa $0\mod4$ para tener solución 
+módulo 8. Con esa info probamos: si $a=2$ y $c=1$ entonces 
+precisamos $-2b=d$ y para el determinante nos queda $b=-\frac{1}{5}$.
+Con esto tenemos:
+$$\lp\begin{matrix}
+    2&1 \\
+    -\frac{1}{5}&\frac{2}{5} \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    5&0 \\
+    0&5 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    2&-\frac{1}{5} \\
+    1&\frac{2}{5} \\
+\end{matrix}\rp = 
+\lp\begin{matrix}
+    25&0 \\
+    0&1 \\
+\end{matrix}\rp$$
+que nos da $5x^2+5y^2\sim_{\ZZ_2} 25x^2+y^2 \sim_{\ZZ_2} x^2+y^2$ 
+con la ultima usando que $5\in \ZZ_2^\times$.
 
-Donde en $C_p(q_1)=1$ usamos que $(a,1-a)_p=1$ para $a\neq 1$ 
-pues $\lc a,1-a,-1\rc \sim \lc a,-a\rc \perp\lc 1,-1\rc $ es re
-isotrópica.
+$3x^2+6y^2$: Como antes solo que ahora con $3$ en vez de $5$ y con un 
+$2$ extra en la segunda coordenada. Lo primero cambia poco en el 
+razonamiento mientras lo segundo es mas relevante, pero igualmente 
+escribimos el sistema:
+$$\left\{
+\begin{matrix}
+    3a^2+6c^2 &=&1 \\
+    3b^2+6d^2 &=&2 \\
+    3ab+6cd &=&0 \\
+    ad-bc &=&1 \\
+\end{matrix}\right.$$
 
-\subsection*{Guía 3, ejercicio 3}
+En la segunda ecuacion, poniendo $b=2$ y $c=1$ nos queda $=18$ por 
+lo que dividiendo por 9 que es un cuadrado tenemos $b=\frac{2}{3}$
+y $c=\frac{1}{3}$, con eso por la tercera sabemos $a=-c$ y la cuarta 
+nos obliga a que sean $a=1$ y $c=-1$. Con esto nos queda $3x^2+6y^2
+\sim 9x^2+2y^2\sim x^2+2y^2$ como queriamos ver.
 
+$ux^2+y^2-z^2\sim ux^2+2yz$: Evidentemente no podemos dejar fija la
+coordenada $x$ y mover las otras. En vez de poner las letras de la $a$
+a la $i$ veamos haciendo cambios inteligentemente sobre las formas:
+
+Primero podemos cambiar en la primera $y\to y+z$ de modo que 
+$ux^2+(y+z)^2-z^2=ux^2+y^2+2yz$ que ya nos deja el término $2yz$ que 
+necesitamos. Ahora probando encontramos los siguientes cambios 
+convenientes: $x\to x+\alpha y$ nos deja $ux^2+2u\alpha xy +
+(u\alpha^2+1)y^2+2yz$ y luego $z\to z+\beta x+\gamma y$ queda
+$ux^2+2yz+2(\beta+\alpha u)xy+(2\gamma+\alpha^2u+1)y^2$ que puede 
+darnos una solución.
+
+Quiero $\beta+\alpha u=0$ y $2\gamma+\alpha^2u+1=0$. La ultima nos 
+dice que $\alpha=\pm\sqrt{\frac{-1-2\gamma}{u}}$, y para que este 
+elemento exista en $\ZZ_2$ tenemos que tener $\frac{-1-2\gamma}{u}
+\equiv 1\mod 8$, es decir $-1-2\gamma\equiv u \iff 2\gamma\equiv 
+1-u$ que tendrá solución debido a que como $u$ era una unidad 
+tiene que ser impar, y luego $1-u$ es divisible por $2$. Con eso 
+despejamos $\gamma$ y $\alpha$, aparte nos queda $\beta=-\alpha u$
+y juntando todo tenemos:
+
+$$\lp\begin{matrix}
+    u&0&-u\sqrt{\frac{-1-2\gamma}{u}} \\
+    \sqrt{\frac{-1-2\gamma}{u}}&1&\gamma \\
+    0&0&1 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    u&0&0 \\
+    0&1&1 \\
+    0&1&0 \\
+\end{matrix}\rp
+\lp\begin{matrix}
+    1&\sqrt{\frac{-1-2\gamma}{u}}&0 \\
+    0&1&0 \\
+    -u\sqrt{\frac{-1-2\gamma}{u}}&\gamma&1 \\
+\end{matrix}\rp=
+\lp\begin{matrix}
+    u&0&0 \\
+    0&0&1 \\
+    0&1&0 \\
+\end{matrix}\rp$$
+
+donde sabemos que existe un $\gamma \in \ZZ_2$ tal que 
+$\sqrt{\frac{-1-2\gamma}{u}}\in\ZZ_2$. Componiendo las dos 
+transformaciones tenemos la equivalencia de $ux^2+y^2-z^2$ a
+$ux^2+2yz$.
+
+Observamos que este ejercicio nos muestra que no hay un analogo 
+directo del teorema de cancelacion de Witt en $\ZZ_2$ pues nos 
+diria que podemos cancelar el $ux^2$ que se encuentra en ambas 
+formas, pero en este caso nos quedaría que, como probamos que las formas
+completas eran equivalentes, $y^2-z^2$ es equivalente a $2yz$ pero
+eso no es cierto en $\ZZ_2$ (la primera puede representar impares).
+Si hubiese un teorema de cancelacion de Witt en $\ZZ$ entonces 
+podriamos ver los mismos valores en $\ZZ_2$ y ya demostramos que 
+ahí no funciona.
 
 \subsection*{Guía 3, ejercicio 5}
 
@@ -784,12 +898,11 @@ tenemos $3x^2+2xy-y^2 \equiv -1$ que con (0,1) nos da y
 armamos la solución con Hensel. Luego
 tenemos $q_1 \sim 7x'^2 + ax'y' + by'^2$, y sabemos que el 
 coeficiente $a$ lo podemos cambiar transformando por 
-$\left(\begin{smallmatrix} 1 & c \\ 0 & 1 \end{smallmatrix}
-\right)$ sumando $7c$ a su variable, pero como 7 es unidad
-entonces podemos encontrar solución para $c = \frac{6-a}{7}$ 
-en $\ZZ_2$ que nos dará $q_1\sim 7x'^2 + 6x'y' + b'y'^2$ y 
-sabemos que el determinante tiene que ser el mismo asi que 
-vamos a poder encontrar $b'= 11$ y listo.
+$\minimat{1}{c}{0}{1}$ sumando $7c$ a su variable, pero como 7 
+es unidad entonces podemos encontrar solución para $c = 
+\frac{6-a}{7}$ en $\ZZ_2$ que nos dará $q_1\sim 7x'^2 + 6x'y' + 
+b'y'^2$ y sabemos que el determinante tiene que ser el mismo asi 
+que vamos a poder encontrar $b'= 11$ y listo.
 
 $\ZZ_{17}$: Vamos con otra estrategia, usando las formas 
 diagonalizadas. Como $3$ y $7$ son unidades, entonces 
@@ -871,8 +984,8 @@ queda $2a+3b-c$, sea 1. Tenemos que resolver en enteros:
 
 $$\left\{
 \begin{matrix}
-    -10a-14b+5c &=0 \\
-    2a+3b-c &=1 \\
+    -10a-14b+5c &=&0 \\
+    2a+3b-c &=&1 \\
 \end{matrix}\right.$$
 
 que sale con $a=0$, $b=5$ y $c=14$. Eso nos dice que en la 
@@ -880,10 +993,8 @@ base que encontramos ya logramos una equivalencia entera
 propia entre $q_2$ y la forma $x^2-3y^2+26yz-79z^2$.
 
 Ahora solo nos queda encontrar una equivalencia entera
-entre el bloque $\left(\begin{smallmatrix} -3 & 13 \\ 
-13 & -79 \end{smallmatrix}\right)$ y el $\left(\begin
-{smallmatrix} -3 & -1 \\ -1 & -23 \end{smallmatrix}\right)$
-que con un poco de suerte ahora va a existir.
+entre el bloque $\minimat{-3}{13}{13}{-79}$ y el $\minimat
+{-3}{-1}{-1}{-23}$ que con un poco de suerte ahora va a existir.
 
 $$\lp\begin{matrix}
     a&c \\
@@ -908,8 +1019,8 @@ tenemos que resolver:
 
 $$\left\{
 \begin{matrix}
-    -3b+13d &=-1 \\
-    -3b^2-79d^2+26bd &=-23 \\
+    -3b+13d &=&-1 \\
+    -3b^2-79d^2+26bd &=&-23 \\
 \end{matrix}\right.$$
 
 $$d=\frac{3b-1}{13}$$
@@ -979,16 +1090,118 @@ equivalentes. Viendo la matriz final, noto que tal vez podía
 ahorrarme la mitad de las cuentas si calculaba una solución 
 un poco mejor.
 
-\subsection*{Guía 4, ejercicio 2}
-Como sabemos que el álgebra de Clifford no depende de la base de 
-nuestro espacio $V$, entonces antes de arrancar diagonalicemos $q$:
-$x^2+xy+3y^2-2z^2 = (x+\frac{y}{2})^2+\frac{11}{4} y^2-2z^2$. Eso 
-es ver $q$ en la base $B=\{(1,1/2,0),(0,11/4,0),(0,0,1)\}$ y una 
-base para $\cont=\cont(V,q)$ es el producto ordenado de ellos:
+
+% \subsection*{Guía 4, ejercicio 1} Tenemos $u$ un elemento de grado 
+% par con inverso multiplicativo en el álgebra de Clifford, tal que 
+% la conjugación $\rho_u$ preserva $V$. Escribamos $u=v_1\cdot v_2
+% \cdots v_k$ y veamos que $k$ es par. NO USE QUE ES DE GRADO PAR XD
+% PERO OBVIO TA MAL PQ NO VI EL CASO U=ALGUNOS VI + OTROS VI
+% LA SOL ERA NQV, HABIA QUE VER QUE TENIAS ISOMETRIA DE V, LUEGO
+% CON ESO LA ESCRIBIAS COMO PROD DE VECTORES Y PROBABAS QUE ESO ERA 
+% LO MISMO QUE U VIA VER QUE EL PRODUCTO DE UNO POR EL INVERSO DEL 
+% OTRO ERA UN ESCALAR (PQ ERA PAR EN EL CENTRO DEL ALGEBRA WTF)
+
+% Usemos el siguiente lema: si $v\in V$ entonces lo podemos ver en 
+% $\cont(V)$ y si tiene inverso entonces $\rho_v|_V=-\tau_v$. La 
+% demostración es la siguiente cuenta:
+% $$\rho_v(x)=vxv^{-1}=\frac{vxv}{q(v)}=\lp -xv+2\phi(x,v)\rp
+% \frac{v}{q(v)} = -x+\frac{2\phi(x,v)}{q(v)}v=-\tau_v(x)$$
+
+% Un elemento $v$ de $V$ tiene inverso visto en $\cont(V)$ si y solo si 
+% $q(v)\neq 0$ y entonces podemos dividir por $q(v)$. Nos gustaria 
+% asegurarnos de que los $v_i$ que tenemos tienen inverso para usar 
+% el lema, y esto lo tenemos porque $u$ tiene inverso. Si $u=v_1v_2
+% \cdots v_k$ entonces el inverso de $v_1$ es $v_2\cdots v_ku^{-1}$
+% (para ver que es inverso a derecha $v_2\cdots v_ku^{-1}v_1 = 1$
+% multiplicando a izquierda por $v_2\cdots v_k$ nos queda obvio). 
+% Luego vemos que $v_2\cdots v_k$ tiene inverso usando el de $u$ y el
+% de $v_1$, y ese inverso será $u^{-1}v_1$:
+% $$u^{-1}v_1 \cdot v_2v_3\cdots v_k= uu^{-1}=1$$
+% $$v_1 (v_2\cdots v_k \cdot u^{-1}v_1) = uu^{-1}v_1=v_1 \implies 
+% v_2\cdots v_k \cdot u^{-1}v_1=1.$$
+% Inductivamente tenemos que cada $v_i$ tiene inverso.
+
+% Entonces sabemos que $\rho_{v_i}$ restringido a $V$ es igual a 
+% $-\tau_{v_i}$, luego escribiendo $\rho_u=\rho_{v_1}\circ\rho_{v_2}
+% \circ\cdots\circ \rho_{v_k}$ tenemos que, restringido a $V$ tiene 
+% que ser una composicion de reflexiones, y como cada una tiene 
+% determinante $-1$ entonces deben ser una cantidad par para que la 
+% composicion quede trivial (en particular de determinante 1).
 
 
+% $$q(\rho_u(x)) = (\rho_u(x))^2 = (uxu^{-1})^2 = (uxu^{-1})(uxu^{-1})$$
 
 
+% \subsection*{Guía 4, ejercicio 2}
+% Como sabemos que el álgebra de Clifford no depende de la base de 
+% nuestro espacio $V$, entonces antes de arrancar diagonalicemos $q$:
+% $x^2+xy+3y^2-2z^2 = (x+\frac{y}{2})^2+\frac{11}{4} y^2-2z^2$. Tambien 
+% podemos meter el $\frac{1}{4}$ en la variable asi quedan enteros los 
+% coeficientes. Si pensamos en los generadores $v_1$, $v_2$ y $v_3$ 
+% sabemos que $v_i\cdot v_j=-v_j\cdot v_i$ si $i\neq j$ (porque 
+% diagonalizamos) y que $v^2_1=1$, $v^2_2=11$ y $v^2_3=-2$. Esto es
+% suficiente para presentar el álgebra sobre $\QQ$. 
+
+% Ahora para encontrar $\tilde{q}(u)=u\varepsilon(u)$ escribamos la 
+% base $B=\{1,v_1,v_2,v_3,v_1v_2,v_1v_3,v_2v_3,$
+% $v_1v_2v_3\}$ y veamos como se comportan con la multiplicacion por 
+% $\varepsilon(u)$ los generadores. Por ejemplo
+% $$v_1v_2v_3\varepsilon(v_1v_2v_3)=v_1v_2v_3v_3v_2v_1=
+% q(v_3)v_1v_2v_2v_1=q(v_3)q(v_2)q(v_1)$$
+% Con eso tenemos los valores de la diagonal de $\tilde{q}$:
+% \begin{itemize}
+%     \item $\tilde{q}(1)=q(1)=1$
+%     \item $\tilde{q}(v_1)=q(v_1)=1$
+%     \item $\tilde{q}(v_2)=q(v_2)=11$
+%     \item $\tilde{q}(v_3)=q(v_3)=-2$
+%     \item $\tilde{q}(v_1v_2)=q(v_1)q(v_2)=11$
+%     \item $\tilde{q}(v_1v_3)=q(v_1)q(v_3)=-2$
+%     \item $\tilde{q}(v_2v_3)=q(v_2)q(v_3)=-22$
+%     \item $\tilde{q}(v_1v_2v_3)=q(v_1)q(v_2)q(v_3)=-22$
+% \end{itemize}
+% que corresponden a la diagonal. Si nos interesa esta forma cuadratica
+% como la norma espinoral entonces esto es suficiente pues solo será 
+% evaluada sobre elementos de $O_q$ que no tienen sumas (toda 
+% transformación se puede escribir como producto de reflexiones).
+
+% Los productos cruzados de vectores nos quedarán con componentes en el 
+% álgebra de dimension mayor a 0, entonces estos son los unicos valores 
+% que pertenecen a $\QQ$.
+
+% \subsection*{Guía 4, ejercicio 4}
+
+% Como $(V,q)$ es regular entonces la podemos diagonalizar, siendo 
+% $B_V:= \{ v_1,v_2,v_3 \}$ una base ortogonal, con $q(v_i)=a_i$ tales 
+% que $a_1a_2a_3\equiv d (k^\times)^2$; y una base del álgebra
+% será $B_\cont\{ 1,v_1,v_2,v_3,v_1v_2,v_1v_3,v_2v_3,v_1v_2v_3 \}$.
+
+% Observamos en la teórica que el centro del algebra tiene siempre a 
+% los escalares (obvio) y a la componente de mayor grado del algebra si
+% la dimensión del espacio era impar (3 en nuestro caso), asi que 
+% veamos que el elemento $\vvv := v_1v_2v_3$ (que ya sabemos que está 
+% en el centro) cumple $\vvv^2 \equiv -d (k^\times)^2$:
+% $$\vvv^2=(v_1v_2v_3)(v_1v_2v_3) = v_1v_2(-v_1v_3)v_2v_3=
+% v_1(v_1v_2)(-v_2v_3)v_3 = a_1(-a_2)a_3\equiv -d (k^\times)^2$$
+
+% Ahora para el siguiente punto supongamos que $(V,q)$ es isotropico,
+% asi que vamos a cambiar su base a una que haga uso de ello. Sabemos 
+% que ahora tiene un plano hiperbolico incluido, y por ser de 
+% dimensión 3 y regular entonces $H^\perp=\lc z\rc$ es de dimensión 1.
+% Si llamamos $v$ y $w$ a la base que nos da el $H$ entonces en $\cont$
+% valen:
+
+% $v^2=w^2=0$
+% $vw+wv=2$
+% $z^2=a\neq 0$
+% $vz=-zv$ 
+% $wz=-zw$
+
+% y la base para $\cont_0(V)$ es $\{1,vw,vz,wz\}$, veamos a que matrices
+% podemos asignarlos: para que sea un isomorfismo $\phi(1)=I$, luego 
+% $(vz)^2=vz(-zv)=0\cdot a=0$ y de la misma forma $(wz)^2=0$, tambien
+% $(vw)^2=vw(2-wv)=2vw$ y $vw\cdot wz=0vz=0$. 
+
+% El iso saale pero la condicion extra no 
 
 
 

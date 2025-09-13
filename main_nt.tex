@@ -1,0 +1,128 @@
+\documentclass[12pt]{amsart}
+
+%Fuente
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{epigraph}
+\usepackage{lipsum}
+\usepackage[a4paper, margin=2.5cm]{geometry}
+\usepackage{multicol}
+\usepackage{amsmath}
+\usepackage{enumerate}
+\usepackage{amssymb}
+\usepackage[shortlabels]{enumitem}
+\usepackage{listings}
+\DeclareMathOperator{\mcd}{mcd}
+
+\renewcommand{\refname}{Bibliografía}
+
+%diagramas
+\usepackage{tikz-cd}
+
+%enumerar páginas y encabezados
+\pagestyle{headings}
+
+%Comandos para escribir C más rápido
+\usepackage{mathrsfs}
+\newcommand{\CC}{\mathbb{C}}
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\FF}{\mathbb{F}}
+\newcommand{\cont}{\mathcal{C}}
+
+\newcommand{\aaa}{\mathbf{a}}
+\newcommand{\bbb}{\mathbf{b}}
+
+\newcommand{\OO}{\mathcal{O}}
+
+\newcommand{\leg}[2]{\left( \frac{#1}{#2} \right)}
+\newcommand{\minimat}[4]{\left(\begin{smallmatrix} #1 & #2 \\ #3 & #4 
+\end{smallmatrix}\right)}
+\newcommand{\lp}{\left(}
+\newcommand{\rp}{\right)}
+\newcommand{\lb}{\left|}
+\newcommand{\rb}{\right|}
+\newcommand{\lc}{\left<}
+\newcommand{\rc}{\right>}
+\newcommand{\lco}{\left[}
+\newcommand{\rco}{\right]}
+
+%dobles implicaciones
+\usepackage{csquotes}
+
+%Entornos con estilo 'tipo teorema'
+\theoremstyle{plain}
+\newtheorem{teo}[equation]{Teorema}
+\newtheorem{ej}[equation]{Ejercicio}
+\newtheorem{prop}[equation]{Proposición}
+\newtheorem{lem}[equation]{Lema}
+\newtheorem{coro}[equation]{Corolario}
+\newtheorem{defi}[equation]{Definición}
+\newtheorem{obs}[equation]{Observación}
+\newtheorem*{nota*}{Notación}
+\renewcommand*{\proofname}{Demostración}
+
+
+
+%Hipervínculos cliqueables, en color azul
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+
+\title{Entrega de ejercicios de teoría de números}
+
+\author{Pedro Nicolas Peña}
+
+\begin{document}
+
+% \begin{abstract}
+%     Buee quien era
+% \end{abstract}
+
+\maketitle
+
+\section*{Guía 1}
+
+\subsection*{Ejercicio 4}
+Implementar el siguiente algoritmo en SAGE: Para encontrar un $\alpha$
+perteneciente al anillo de enteros de un cuerpo de números $K$ de 
+grado $n$, dado $R=\lc \alpha_1,\cdots,\alpha_n\rc\subseteq\OO_K$ un 
+$\ZZ$-módulo de rango $n$ que no es $\OO_K$. Encontrar el primo $p$ 
+tal que $p^2|\Delta_K$ y los enteros $c_1,c_2,\cdots,c_n$ entre $0$ 
+y $p$ tales que
+$$\frac{1}{p}\sum_{i=1}^n c_i\alpha_i$$
+pertenece a $\OO_K$.
+
+% \begin{enumerate}[1.]
+% \item Probar que las formas cuadráticas
+%     \begin{itemize}
+%         \item $g(x,y)=3x^2+2xy+23y^2$
+%         \item $h(x,y)=7x^2+6xy+11y^2$
+%     \end{itemize}
+%     estan en el mismo género pero no son equivalentes.
+% \item Probar que las formas ternarias indefinidas $z^2-g(x,y)$ y 
+%     $z^2-h(x,y)$ son equivalentes propiamente.
+
+%     \textit{Sugerencia: hallar un vector no canonico de norma 1 para 
+%     la segunda y hacer un cambio de variables.}
+% \end{enumerate}
+
+
+
+
+
+
+\newpage
+
+\section*{Soluciones}
+
+\subsection*{Guía 1, ejercicio 4}
+Un poco hablemos de la solución del ejercicio que presenta el resultado
+teorico para explicar el cálculo. Primeramente sabemos que como 
+$R \subsetneq \OO_K$ es un orden (por definicion subanillo de $\OO_K$
+de rango máximo)
+
+
+\end{document}
