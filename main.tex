@@ -250,10 +250,17 @@ equivalentes en $\ZZ_p$: $5x^2 + 13y^2 + 11z^2 + 2yz + 2xz +
 
 % del 1 al 5
 
-\subsection*{Ejercicio 2} Sea $q=x^2+xy+3y^2-2z^2$. Describir 
-$\mathcal{C}(V,q)$ por generadores y relaciones. Hallar la matriz 
-de $\tilde{q}$, la forma cuadrática inducida por $\tilde{q}:=u
-\varepsilon (u)$.
+\subsection*{Ejercicio 1} Sean $(V, q)$ un espacio cuadrático y 
+$u \in \cont_0(V )$ un elemento de grado par en el álgebra de Clifford 
+$\cont(V )$. Supongamos que $u$ tiene inverso multiplicativo en 
+$\cont(V )$ y que la conjugación $\rho_u:\cont(V)\to\cont(V)$, 
+$x \mapsto uxu^{-1}$ preserva $V$. Probar que $u$ se puede escribir
+como $v_1v_2 \cdots v_k$ con $v_i \in V$ y $k$ par.
+
+% \subsection*{Ejercicio 2} Sea $q=x^2+xy+3y^2-2z^2$. Describir 
+% $\mathcal{C}(V,q)$ por generadores y relaciones. Hallar la matriz 
+% de $\tilde{q}$, la forma cuadrática inducida por $\tilde{q}:=u
+% \varepsilon (u)$.
 
 
 
@@ -332,7 +339,7 @@ método simplificador lo metemos en sage
 ($\texttt{power\_mod(163, 2\^{}9687, 2\^{}9689-1)}$) y nos
 da un número de 2917 cifras que llamaremos $r$.
 
-Tomando un consejo de un sabio, miremos un poco el ejercicio anterior, 
+Tomando el consejo de un sabio, miremos un poco el ejercicio anterior, 
 que para encontrar solución a $a^2 +b^2 = p$ nos hace calcular
 $d=\mcd(p,c+i)$ para $c$ una raíz de $-1\mod p$. Ayudándonos de
 $\overline{d} = \mcd\lp\overline{p},\overline{c+i}\rp = \mcd\lp p,c-i\rp$ 
@@ -378,28 +385,28 @@ por el grupo de Galois), y el otro factor es una potencia de
 una unidad por lo que $u$ es produto de unidades. Pero esta
 unidad vive en un lugar particular. Notemos que al aplicar los 
 automorfismos de Galois $\sigma_j: \xi_{p}^n \to \xi_{p}^{jn}$
-(como $\QQ(\xi_p) = \QQ(\xi_{2p})$ estos son todos),
+(como $\QQ(\xi_p) = \QQ(\xi_{2p})$ estos son todos)
 se factorizan por el producto, si $j$ es un cuadrado dejan
 fijo a $u$ y sinó lo invierten:
-
 $$\sigma_a(u) = \prod_{k=1}^{p-1} \sigma_a \lp
 (\xi_{2p}^k - \xi_{2p}^{-k})^{\lp\frac{k}{p}\rp}
 \rp = \prod_{k=1}^{p-1} \lp\sigma_a \lp\xi_{2p}^k\rp
 - \sigma_a \lp\xi_{2p}^{-k}\rp\rp^{\lp\frac{k}{p}\rp} = $$
 
 $$=\prod_{k=1}^{p-1} \lp\xi_{2p}^{ak}
-- \xi_{2p}^{-ak}\rp^{\lp\frac{k}{p}\rp}=\prod_{k=1}^{p-1}
-\lp\xi_{2p}^{k} - \xi_{2p}^{-k}\rp^{\lp\frac{a}{p}\rp} = 
-u^{\lp\frac{a}{p}\rp}$$
+- \xi_{2p}^{-ak}\rp^{\lp\frac{k}{p}\rp}=\prod_{j=1}^{p-1}
+\lp\xi_{2p}^{j} - \xi_{2p}^{-j}\rp^
+{\lp\frac{j}{p}\rp \lp\frac{a^{-1}}{p}\rp} = 
+u^{\lp\frac{a^{-1}}{p}\rp} = u^{\lp\frac{a}{p}\rp}$$
 
 Entonces $u$ vive en el subcuerpo que fijan los $\sigma_a$ con
-$a$ un resto cuadrático$\mod p$, que es el que queremos: 
-$\QQ(\sqrt{p})$, y tambien es una unidad allí pues lo era en
+$a$ un resto cuadrático mód $p$, que es el que queremos: 
+$\QQ(\sqrt{p})$, y también es una unidad allí pues lo era en
 el cuerpo más grande. Y $u^{-1}$ pertenece a $\QQ(\sqrt{p})$
-por la misma razón y aparte cumple que $u^{-1}=\bar{u}$ (la
-norma en $\QQ(\sqrt{p})$ es $u\bar{u}=1$). Si $u=x+\sqrt{p}y$
-entonces $u^{-1}=x-\sqrt{p}y$ y el producto tiene la forma 
-que queremos. Y luego $u+\bar{u}=2x$ es la forma de encontrar
+por la misma razón (la misma cuenta) y aparte cumple que $u^{-1}
+=\bar{u}$ (la norma en $\QQ(\sqrt{p})$ es $u\bar{u}=1$). Si 
+$u=x+\sqrt{p}y$ entonces $u^{-1}=x-\sqrt{p}y$ y el producto tiene 
+la forma que queremos. Y luego $u+\bar{u}=2x$ es la forma de encontrar
 la solución a la ecuación $x^2-py^2=1$. 
 
 No necesariamente $u$
@@ -412,14 +419,12 @@ necesariamente $x$ es entero).
 
 Por otro lado, en el ejercicio 13, cuando calculamos para 
 $p=1093$ el $u$:
-
 $$u= \prod^{1092}_{k=1} \sen\lp\frac{k\pi}{1093}\rp ^{-\lp
 \frac{k}{1093} \rp}$$
 
 nos queda (casi) impar $u = 1545688332149050.999999999999999353
 \cdots$, sabemos que $u+u^{-1} = 1545688332149051$. Esto nos 
 dice que la solución a la ecuación que obtuvimos es:
-
 $$\lp\frac{1545688332149051}{2}\rp^2 - 1093 
 \lp\frac{46753254507927}{2}\rp^2 = 1$$
 
@@ -429,32 +434,29 @@ en números enteros y tampoco nos dio la más pequeña posible.
 Primero busquemos la más chica: sabemos que si $u$ es unidad 
 en $\QQ(\sqrt{1093})$, entonces tiene que ser una potencia de 
 la unidad fundamental pues $\OO_{\QQ(\sqrt{p})}$ tiene 
-dimensión 1; y podemos buscar esta potencia numericamente.
+dimensión 1; y podemos buscar esta potencia numéricamente.
 Con un simple \hyperref[codigo3]{código} encontramos que $u$
 es potencia quinta de la solución fundamental, y tenemos 
 la siguiente solución:
-
 $$\lp\frac{1091}{2}\rp^2 - 1093 \lp\frac{33}{2}\rp^2 = 1$$
 
 Como las soluciones son potencias de la más pequeña,
 elevando al cubo $\frac{1091}{2} + \sqrt{1093}
 \frac{33}{2}$ (esto siempre funciona para sacar los 
 denominadores) nos queda:
-
 $$\lp\frac{1091}{2}\rp^3 +3\cdot1093
 \lp\frac{1091}{2}\rp \lp\frac{33}{2}\rp^2 + \sqrt{1093} 
 \lp 3\lp\frac{1091}{2}\rp^2\lp\frac{33}{2}\rp + 1093
 \lp\frac{33}{2}\rp^3\rp$$
 
-y viendo módulo 8 nos quedan enteras las coordenadas, es decir
-encontramos la solución a la ecuación de Pell que buscabamos:
-
+y viendo módulo 8 los numeradores nos quedan enteras las 
+coordenadas, es decir encontramos la solución a la ecuación 
+de Pell que buscabamos:
 $$649296649^2 - 1093\cdot19639620^2 = 1$$
 
-Si no hubiesemos querido la menor solución podriamos haber 
-encontrado tambien una con el $u$ que habíamos encontrado
+Si no hubiésemos querido la menor solución podríamos haber 
+encontrado también una con el $u$ que habíamos encontrado
 elevandolo al cubo, y esta sería:
-
 $$1846442509769358115211770346218978772257666249^2 - $$
 $$1093\cdot 55850325578557669515530976378442112225078100^2 = 1$$
 
@@ -545,7 +547,7 @@ $$1093\cdot 55850325578557669515530976378442112225078100^2 = 1$$
 
 Para encontrar un elemento que genere el grupo de unidades de
 $\OO=\ZZ[\sqrt{17}]$ primero notemos que $4^2-17\cdot 1=-1$. 
-Entonces facilmente tenemos $\OO^\times = \{\pm 1\} \times 
+Entonces fácilmente tenemos $\OO^\times = \{\pm 1\} \times 
 \lc4+\sqrt{17}\rc_\ZZ$. 
 
 Ahora usemos algunos resultados teoricos para facilitar el calculo de 
@@ -571,7 +573,7 @@ $(4+\sqrt{17})^{49}$ tiene el coeficiente que acompaña a $\sqrt{17}$
 divisible por $97$ (¿tal vez era obvio que iba a ser $\frac{97+1}{2}$?)
 por lo que tiene que generar las unidades de $\ZZ[97\sqrt{17}]$.
 
-El número obtenido tiene norma $-1$, porque tambien la tenía el 
+El número obtenido tiene norma $-1$, porque también la tenía el 
 $4+\sqrt{17}$, por lo que para obtener una solución a 
 $x^2+17\cdot97^2\cdot y^2 = 1$ todavía necesitamos elevar el generador
 al cuadrado. 
@@ -580,8 +582,8 @@ y será de la forma deseada.
 
 \subsection*{Guía 2, ejercicio 4}
 
-Si tenemos una forma isotropica no degenerada significa que en el
-espacio cuadratico $(V,q)$ tenemos un plano de hiperbolico incluido. 
+Si tenemos una forma isotrópica no degenerada significa que en el
+espacio cuadratico $(V,q)$ tenemos un plano de hiperbólico incluido. 
 Esto es si $q(v)=0$ con $v\neq0$ entonces usando $v$ en la primera 
 columna de una base tengo un $0$ en la primera coordenada de la forma
 vista en esa base. Despues existirá un $w$ tal que $\phi(v,w)\neq0$
@@ -600,8 +602,8 @@ $$t=(\aaa +t\bbb )^T \lp C_B^T\lco\phi\rco C_B\rp(\aaa+t\bbb)=
 y entonces con $\aaa'=C_B\aaa$ y $\bbb'=C_B\bbb$ tenemos $q(\aaa'+
 t\bbb')=t$.
 
-Observacion: asumimos que la dimension de $q$ era mayor o igual a 2
-pues la unica forma isotropica de dimension 1 no es regular.
+Observación: asumimos que la dimensión de $q$ era mayor o igual a 2
+pues la única forma isotrópica de dimensión 1 no es regular.
 
 \subsection*{Guía 2, ejercicio 8}
 
@@ -609,11 +611,11 @@ Queremos ver que $q = \lc a,b,c\rc $ con $a,b,c \in \QQ_p$ es
 isotrópica si $|\det (q)|_p =1$ y $C_p(q) = 1$.
 
 Usaremos la propiedad de la teorica que nos dice que para ternarias,
-$q$ isotropica si y solo si $C_p(q)=(-1,-\det (q))_p$. La vuelta se 
+$q$ isotrópica si y solo si $C_p(q)=(-1,-\det (q))_p$. La vuelta se 
 demuestra viendo que si reescalamos $\lc a,b,c\rc \sim \lc\lambda a,
-\lambda b,\lambda c\rc \sim \lc-a/c,-b/c,-1\rc$ preserva isotropia, 
-y la ultima es isotrópica si y solo si $(-a/c,-b/c)_p = 1$. 
-Esta condicion es equivalente a la que pediamos porque:
+\lambda b,\lambda c\rc \sim \lc-a/c,-b/c,-1\rc$ preserva isotropía, 
+y la última es isotrópica si y solo si $(-a/c,-b/c)_p = 1$. 
+Esta condición es equivalente a la que pediamos porque:
 $$C_p(\lc a,b,-1\rc) = (a,b)(-1,a)(-1,b)=(a,b)(-1,ab)=(a,b)
 (-1,-\det(q))$$ son iguales solo si $(a,b)=1$.
 
@@ -646,11 +648,11 @@ $$\left\{
     ad-bc &=&1 \\
 \end{matrix}\right.$$
 
-La ecuacion $5x^2+5y^2\equiv 1\mod 8$ tiene como solución cualquier
+La ecuación $5x^2+5y^2\equiv 1\mod 8$ tiene como solución cualquier
 $(x,y)$ donde uno sea par y el otro impar, y esto ayuda a encontrar 
-la solución. Notamos rapidamente que no podemos poner la misma 
+la solución. Notamos rápidamente que no podemos poner la misma 
 solución dos veces pues la primera nos exige que el elemento par sea
-$2\mod4$ mientras la segunda precisa $0\mod4$ para tener solución 
+$2$ mód $4$ mientras la segunda precisa $0$ mód $4$ para tener solución 
 módulo 8. Con esa info probamos: si $a=2$ y $c=1$ entonces 
 precisamos $-2b=d$ y para el determinante nos queda $b=-\frac{1}{5}$.
 Con esto tenemos:
@@ -671,7 +673,7 @@ $$\lp\begin{matrix}
     0&1 \\
 \end{matrix}\rp$$
 que nos da $5x^2+5y^2\sim_{\ZZ_2} 25x^2+y^2 \sim_{\ZZ_2} x^2+y^2$ 
-con la ultima usando que $5\in \ZZ_2^\times$.
+con la última usando que $5\in \ZZ_2^\times$.
 
 $3x^2+6y^2$: Como antes solo que ahora con $3$ en vez de $5$ y con un 
 $2$ extra en la segunda coordenada. Lo primero cambia poco en el 
@@ -685,7 +687,7 @@ $$\left\{
     ad-bc &=&1 \\
 \end{matrix}\right.$$
 
-En la segunda ecuacion, poniendo $b=2$ y $c=1$ nos queda $=18$ por 
+En la segunda ecuación, poniendo $b=2$ y $c=1$ nos queda $=18$ por 
 lo que dividiendo por 9 que es un cuadrado tenemos $b=\frac{2}{3}$
 y $c=\frac{1}{3}$, con eso por la tercera sabemos $a=-c$ y la cuarta 
 nos obliga a que sean $a=1$ y $c=-1$. Con esto nos queda $3x^2+6y^2
@@ -698,12 +700,13 @@ a la $i$ veamos haciendo cambios inteligentemente sobre las formas:
 Primero podemos cambiar en la primera $y\to y+z$ de modo que 
 $ux^2+(y+z)^2-z^2=ux^2+y^2+2yz$ que ya nos deja el término $2yz$ que 
 necesitamos. Ahora probando encontramos los siguientes cambios 
-convenientes: $x\to x+\alpha y$ nos deja $ux^2+2u\alpha xy +
-(u\alpha^2+1)y^2+2yz$ y luego $z\to z+\beta x+\gamma y$ queda
-$ux^2+2yz+2(\beta+\alpha u)xy+(2\gamma+\alpha^2u+1)y^2$ que puede 
-darnos una solución.
+convenientes: $x\to x+\alpha y$ nos deja 
+$$ux^2+2u\alpha xy + (u\alpha^2+1)y^2+2yz$$
+y luego $z\to z+\beta x+\gamma y$ queda
+$$ux^2+2yz+2(\beta+\alpha u)xy+(2\gamma+\alpha^2u+1)y^2$$ 
+que puede darnos una solución.
 
-Quiero $\beta+\alpha u=0$ y $2\gamma+\alpha^2u+1=0$. La ultima nos 
+Quiero $\beta+\alpha u=0$ y $2\gamma+\alpha^2u+1=0$. La última nos 
 dice que $\alpha=\pm\sqrt{\frac{-1-2\gamma}{u}}$, y para que este 
 elemento exista en $\ZZ_2$ tenemos que tener $\frac{-1-2\gamma}{u}
 \equiv 1\mod 8$, es decir $-1-2\gamma\equiv u \iff 2\gamma\equiv 
@@ -739,14 +742,14 @@ transformaciones tenemos la equivalencia de $ux^2+y^2-z^2$ a
 $ux^2+2yz$.
 
 Observamos que este ejercicio nos muestra que no hay un analogo 
-directo del teorema de cancelacion de Witt en $\ZZ_2$ pues nos 
+directo del teorema de cancelación de Witt en $\ZZ_2$ pues nos 
 diria que podemos cancelar el $ux^2$ que se encuentra en ambas 
 formas, pero en este caso nos quedaría que, como probamos que las formas
 completas eran equivalentes, $y^2-z^2$ es equivalente a $2yz$ pero
 eso no es cierto en $\ZZ_2$ (la primera puede representar impares).
-Si hubiese un teorema de cancelacion de Witt en $\ZZ$ entonces 
-podriamos ver los mismos valores en $\ZZ_2$ y ya demostramos que 
-ahí no funciona.
+Si hubiese un teorema de cancelación de Witt en $\ZZ$ entonces 
+podríamos ver los mismos valores en $\ZZ_2$ y ya demostramos que 
+ahí no funciona (en este caso, que podría venir de $\ZZ$).
 
 \subsection*{Guía 3, ejercicio 5}
 
@@ -768,7 +771,7 @@ representar el $1$ entonces nuestra forma cuadrática es
 equivalente a $x^2+ d y^2$ para $d$ el determinante, que 
 era $5\cdot 11 = 55$, la otra forma que teniamos. 
 
-En $\ZZ_2$ veamos que tambien podemos representar el 1, que 
+En $\ZZ_2$ veamos que también podemos representar el 1, que 
 basta verlo para las formas módulo 8, y con eso repetimos el 
 razonamiento anterior. Probando un poquito vemos que $5x^2
 +3y^2$ es congruente a 1 en el vector $(1,2)$.
@@ -777,7 +780,7 @@ Es facil ver que las formas no son equivalentes sobre $\ZZ$
 porque la primera puede representar primitivamente el $5$ o el 
 $11$ con los vectores $(1,0)$ o $(0,1)$ mientras que la segunda
 no pues $x^2 + 55y^2 < 55 \iff y=0$ pero en ese caso solo 
-podemos representar cuadrados. Tambien porque son formas
+podemos representar cuadrados. También porque son formas
 reducidas del mismo discriminante y definidas positivas, pero 
 no iguales.
 
@@ -802,7 +805,7 @@ $$\phi_2 = \lp
 \end{multicols}
 
 Diagonalicemos las formas cuadráticas (las operaciones 
-marcadas se realizan en filas y en columnas tambien):
+marcadas se realizan en filas y en columnas también):
 
 $$
 \lp\begin{matrix}
@@ -852,7 +855,7 @@ si 5 es unidad y podemos usarlo en la variable, es decir
 para todo $\ZZ_p$ con $p\neq 5$. Notemos que los coeficientes 
 solo tienen multiplos de 3 y 5 asi que para cualquier $p$ que
 no sea 2, 3, 5 ni $\infty$ las formas van a ser equivalentes 
-en $\ZZ_p$. Tambien descartemos rapidamente $\infty$ pues 
+en $\ZZ_p$. También descartemos rápidamente $\infty$ pues 
 ambas formas son definidas positivas.
 
 Primero veamos $\ZZ_5$, donde las formas asi como las 
@@ -884,23 +887,24 @@ $C_2(q_1)\neq C_2(q_2)$ y no son equivalentes sobre $\QQ_2$
 
 
 \subsection*{Guía 3, ejercicio 8} 
-Las formas son $q_1=3x^2+2xy+23y^2\sim 3x^2+\frac{68}{3}y^2$ 
-y $q_2=7x^2+6xy+11y^2\sim7x^2+\frac{68}{7}y^2$. Son 
+Las formas $q_1=3x^2+2xy+23y^2\sim 3x^2+\frac{68}{3}y^2$ 
+y $q_2=7x^2+6xy+11y^2\sim7x^2+\frac{68}{7}y^2$ son 
 equivalentes en $\ZZ_p$ para todo $p\neq2,17$ por ser el 
 determinante una unidad (ambas son $\ZZ_p$ equivalentes 
 a $x^2+68y^2$ porque siempre podemos poner el determinante
-como el ultimo coeficiente y todo el resto unos). Veamos 
+como el último coeficiente y todo el resto unos). Veamos 
 esos primos aparte:
 
 $\ZZ_2$: Existe una solución de $q_1(x,y)=7$ para hacer 
-el primer cambio de coordenadas, porque mirando módulo 8 
-tenemos $3x^2+2xy-y^2 \equiv -1$ que con (0,1) nos da y 
-armamos la solución con Hensel. Luego
+el primer cambio de coordenadas, porque podemos usar la escitura
+$3x^2+\frac{68}{3}y^2$ y con $y=1$ queremos $x^2=\frac{21-68}{9}=
+-\frac{47}{9}$ y $-47$ es un cuadrado por ser $1$ mód $8$. Luego
 tenemos $q_1 \sim 7x'^2 + ax'y' + by'^2$, y sabemos que el 
 coeficiente $a$ lo podemos cambiar transformando por 
-$\minimat{1}{c}{0}{1}$ sumando $7c$ a su variable, pero como 7 
+$\minimat{1}{c}{0}{1}$ sumando $14c$ a su variable (osea $7c$ 
+en cada coordenada de la matriz), pero como 7 
 es unidad entonces podemos encontrar solución para $c = 
-\frac{6-a}{7}$ en $\ZZ_2$ que nos dará $q_1\sim 7x'^2 + 6x'y' + 
+\frac{3-a}{7}$ en $\ZZ_2$ que nos dará $q_1\sim 7x'^2 + 6x'y' + 
 b'y'^2$ y sabemos que el determinante tiene que ser el mismo asi 
 que vamos a poder encontrar $b'= 11$ y listo.
 
@@ -909,7 +913,7 @@ diagonalizadas. Como $3$ y $7$ son unidades, entonces
 $3x^2+\frac{68}{3}y^2\sim 3x^2+3\cdot68y^2$ y lo mismo con
 la otra. Tomando la descomposición canonica, como
 necesitamos ver que cada componente de distinta valuación 
-$17$-adica es equivalente, nos queda unicamente ver que 
+$17$-adica es equivalente, nos queda únicamente ver que 
 $\lc3\rc \sim\lc7\rc$. Veamos que $\leg{3}{17}=\leg{7}{17}$:
 
 $$\leg{3}{17} = \leg{17}{3} = \leg{2}{3} =-1$$
@@ -928,7 +932,7 @@ otra.
 
 Es facil ver que $q_2(1,1,z)=z^2-24$ entonces poniendo la 
 variable $z=5$ tenemos una representación del 1 no canonica.
-Entonces si transformamos la matriz de $q_2$ tendremos un 
+Con esto si transformamos la matriz de $q_2$ tendremos un 
 uno en la primera casilla, y con eso podemos buscar la 
 transformación a $q_1$ con matrices en $\ZZ$:
 
@@ -978,7 +982,7 @@ $$\lp\begin{matrix}
     C&*&* \\
 \end{matrix}\rp$$
 
-donde en $C$ nos queda $-10a-14b+5c$, pero tambien tenemos 
+donde en $C$ nos queda $-10a-14b+5c$, pero también tenemos 
 que asegurarnos que el determinante de la matriz, que nos 
 queda $2a+3b-c$, sea 1. Tenemos que resolver en enteros:
 
@@ -1013,8 +1017,8 @@ $$\lp\begin{matrix}
     -1&-23 \\
 \end{matrix}\rp$$
 
-Para hacerla facil ponemos el (1,0) en la primera columna que
-como el $-3$ esta en la primera casilla va bien, y luego 
+Para hacerla facil ponemos el (1,0) en la primera columna que,
+como el $-3$ está en la primera casilla, va bien, y luego 
 tenemos que resolver:
 
 $$\left\{
@@ -1093,19 +1097,19 @@ un poco mejor.
 
 \subsection*{Guía 4, ejercicio 1} Tenemos $u$ un elemento de grado 
 par con inverso multiplicativo en el álgebra de Clifford, tal que 
-la conjugación $\rho_u$ preserva $V$. 
+la conjugación $\rho_u$ preserva $V$.
 
-Nos gustaria escribir $\rho_u|_V$ como composicion reflexiones y luego 
+Nos gustaria escribir $\rho_u|_V$ como composición reflexiones y luego 
 ver que el producto de los vectores que las definen nos dará $u$.
-Ahora para eso necesitamos ver que $\rho_u\in SO(V)$, y lo vemos 
-porque preserva la forma cuadratica en $V$, es decir $q(\rho_u(v))
-=q(v)$, con eso tenemos que pertenece a $O(V)$. 
-Ahora sabemos que todo elemento
-de $SO(V)$ se puede escribir como composicion de una cantidad par de 
-trasposiciones etonces llamamos $\rho$ a nuestra $\rho_u|_V$ y podemos
+Ahora para eso necesitamos ver que $\rho_u|_V\in SO(V)$, y lo vemos 
+porque preserva la forma cuadratica en $V$, es decir $q(\rho_u(v))=
+uvu^{-1}uvu^{-1}=uq(v)u^{-1} =q(v)$ porque $q(v)$ es escalar, con eso
+tenemos que pertenece a $O(V)$. Ahora sabemos que todo elemento
+de $SO(V)$ se puede escribir como composición de una cantidad par de 
+trasposiciones entonces llamamos $\rho$ a nuestra $\rho_u|_V$ y podemos
 escribir $\rho=\tau_{v_1}\tau_{v_2}\cdots\tau_{v_k}$ con $k$ par.
 
-Nos falta ver que ver $\rho$ como transformacion en $\cont(V)$ 
+Nos falta ver que ver $\rho$ como transformación en $\cont(V)$ 
 coincide con $\rho_u$ y vamos a ver que $u(v_1v_2\cdots v_k)^{-1}$
 conmuta con los elementos del algebra, por lo que está en el centro
 y por ser de grado par solo puede ser un escalar.
