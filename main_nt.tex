@@ -198,27 +198,71 @@ porque $\zeta$ es raiz de $X^4+X^3+X^2+X+1 = \frac{X^5-1}{X-1}$.
 Como ahora sabemos que $\zeta^2+\zeta^3$ tiene norma 1 y es suma de 
 enteros algebraicos pues (de vuelta) $\zeta$ es raiz de un polinomio con
 coeficientes enteros, entonces pertenece a las unidades del anillo de 
-enteros. Pero tambien como vemos que su valor no es cero y es real 
-(geometricamente $\bar{\zeta^2}=\zeta^{-2} = \zeta^3$ o sino porque 
+enteros. Pero tambien como vemos que su valor no es ni 0 ni 1 ni -1 y 
+es real (geometricamente porque $\bar{\zeta^2}=\zeta^{-2} = 
+\zeta^3$ o sino porque 
 $(\zeta^2+\zeta^3)^2=\zeta^4+\zeta^1+2$ entonces $\zeta^2+\zeta^3$ 
-será raiz de $X^2+X-1$ que es el famoso $\varphi$ que cae en 
-$\QQ[\sqrt{5}]\subseteq \RR$) entonces todas sus potencias serán distintas
-y tendrán la misma norma, dando lugar a infinitos elementos en 
-$\OO_K^\times$.
+será raiz de $X^2+X-1$ que es el famoso $\bar{\varphi}$ que cae en 
+$\QQ[\sqrt{5}]\subseteq \RR$) entonces todas sus potencias serán 
+distintas y tendrán la misma norma, dando lugar a infinitos 
+elementos en $\OO_K^\times$.
 
+
+\subsection*{Guía 2, ejercicio 4}
 
 \subsection*{Guía 2, ejercicio 5}
 
 Queremos ver que dado un ideal $\aaa = \pp_1^{e_1}\cdots\pp_n^{e_n}$ 
 esta generado por un solo elemento $\alpha$. Vamos a usar la 
-definicion de dominio de Dedekind que nos dice que todo ideal BLA
+definicion de dominio de Dedekind que nos dice que todo ideal se 
+factroriza de forma unica como producto de ideales primos.
 Como los ideales primos son finitos vamos a escribirlos como $\pp_1$
 hasta $\pp_n$ de modo que en las factorizaciones aparezcan todos (los
-numeros $e_i$ pueden ser $0$).
+exponentes pueden ser $0$).
 
-Ahora tomo $\alpha \in \aaa$ tal que $\alpha = p_1^{e_1}\cdots 
-p_n^{e_n}$ y quiero ver que $(\alpha) = \aaa$. Obviamente $(\alpha) 
-\subseteq \aaa$ porque el elemento pertenece al ideal.
+Ahora tomo $\alpha$ como el que nos da el ejercicio anterior, con las 
+valuaciones iguales a la factorizacion de nuestro ideal. Por tener 
+factorizacion unica en ideales primos entonces $(\alpha)$ se escribirá
+de una unica forma como $\pp_1^{f_1}\cdots\pp_n^{f_n}$
+
+FALTA
+
+
+\subsection*{Guía 3, ejercicio 10}
+
+Sea $f\in \ZZ[X]$. Si $f(0)=1$ entonces, como el coeficiente 
+independiente es 1, al evaluar el polinomio en multiplos de $m$ y 
+tomar módulo $m$ solo nos quedará el coeficiente independiente. Ahora,
+visto en $\ZZ$ el polinomio no puede valer infinitas veces $1$ pues 
+sería constante (si $n$ es el grado del polinomio entonces en $f(m), 
+f(2m), \cdots, f(nm), f((n+1)m)$ debe haber alguno distinto a 1 
+porque sinó $f-1$ tendria el mismo grado y mas de $n$ raices). 
+
+Supongamos que $f$ tiene una raiz solamente en finitos primos $p_1,
+\cdots, p_n$, tomemos $m=\prod p_i$ y veamos $f(km) = jm+1$ donde en
+algun momento $j$ será distinto de 0, entonces $jm+1$ no va a ser 
+divisible por ninguno de los $p_i$, es decir que en su factorizacion 
+en primos va a aparecer algun $p_{n+1}$ nuevo, y en $\FF_{p_{n+1}}$
+el polinomio tendrá una raíz.
+
+Ahora si $f(0) = n$ no nos podemos asegurar que $f(km) = jm+n$ no 
+sea un multiplo de los primos de $m$ pues puede darse que $n$ sea un
+multiplo de $m$, pero esto se soluciona sacando de $m$ los primos que 
+dividan a $n$ (que deberiamos incluirlos porque ahí obviamente vale 
+$f(0)\equiv 0$). En resumen: defino $m$ como el producto de los primos
+donde $\bar{f}$ tiene una raíz (asumiendo que son finitos) salvo 
+aquellos que dividan a el coeficiente independiente, luego como 
+$f(km) \equiv n \mod m$ en algun momento valdrá en $\ZZ$ que 
+$f(km) = jm+n$ y ese valor tendrá factores primos distintos a los de 
+$m$ (si $p|jm+n$ y $p|m$ entonces tambien $p|n$ pero esos los 
+excluimos), llegando así a un absurdo pues $\bar{f}$ tendría una raíz 
+en ese $\FF_p$.
+
+Ahora pasemos al lenguaje de teoría de números. Dado $K$ un cuerpo de 
+números, sabemos que podemos escribir $K=\QQ(\alpha)$ y llamemos $f$ al
+polinomio minimal de $\alpha$ (o bien $K=desc(f|\QQ)$). Ahora tenemos la
+conexión de que si nuestro polinomio tiene una raiz en $\FF_p$ 
+entonces el primo $P$ de $\OO_K$ que se encuentre sobre $p$...
 
 
 
