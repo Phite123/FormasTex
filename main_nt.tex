@@ -10,7 +10,6 @@
 \usepackage[a4paper, margin=2.5cm]{geometry}
 \usepackage{multicol}
 \usepackage{amsmath}
-\usepackage{enumerate}
 \usepackage{amssymb}
 \usepackage[shortlabels]{enumitem}
 \usepackage{listings}
@@ -34,8 +33,10 @@
 \newcommand{\FF}{\mathbb{F}}
 \newcommand{\cont}{\mathcal{C}}
 
-\newcommand{\aaa}{\mathbf{a}}
-\newcommand{\bbb}{\mathbf{b}}
+\newcommand{\pp}{\mathfrak{p}}
+
+\newcommand{\aaa}{\mathfrak{a}}
+\newcommand{\bbb}{\mathfrak{b}}
 
 \newcommand{\OO}{\mathcal{O}}
 
@@ -95,20 +96,79 @@ y $p$ tales que
 $$\frac{1}{p}\sum_{i=1}^n c_i\alpha_i$$
 pertenece a $\OO_K$.
 
-% \begin{enumerate}[1.]
-% \item Probar que las formas cuadráticas
-%     \begin{itemize}
-%         \item $g(x,y)=3x^2+2xy+23y^2$
-%         \item $h(x,y)=7x^2+6xy+11y^2$
-%     \end{itemize}
-%     estan en el mismo género pero no son equivalentes.
-% \item Probar que las formas ternarias indefinidas $z^2-g(x,y)$ y 
-%     $z^2-h(x,y)$ son equivalentes propiamente.
+\subsection*{Ejercicio 15}
+Sea $K=\QQ(\zeta)$ con $\zeta = e^{2\pi i /5}$
+\begin{enumerate}[a)]
+    \item Probar $\zeta^2+\zeta^3 \in \OO_K^\times$.
+    \item Deducir que $\OO_K^\times$ es infinito.
+\end{enumerate}
 
-%     \textit{Sugerencia: hallar un vector no canonico de norma 1 para 
-%     la segunda y hacer un cambio de variables.}
-% \end{enumerate}
+\section*{Guía 2}
 
+\subsection*{Ejercicio 4} $\textit{Teorema de aproximacion débil}$
+
+Sea $\OO$ un dominio de Dedekind. Sean $\pp_1, \cdots ,\pp_n \unlhd \OO$
+primos no nulos distintos dos a dos, y para cada $1\leq i \leq n$ sea 
+$e_i\in \NN_0$.
+
+Probar que existe $\alpha \in \OO$ tal que 
+$$val_{\pp_i}(\alpha)=e_i, \ 1\leq i \leq n.$$
+$\textit{Sugerencia: usar el teorema chino del resto.}$
+
+\subsection*{Ejercicio 5} Sea $\OO$ un dominio Dedekind que tiene un 
+número finito de ideales primos.
+
+Probar que $\OO$ es un DIP.
+
+\section*{Guía 3}
+
+\subsection*{Ejercicio 6} Sean $m,n$ enteros libres de cuadrados con 
+$m\neq n$. Sea $K=\QQ(\sqrt{n}, \sqrt{m})$. \textit{Observar que 
+$K/\QQ$ tiene exactamente tres subextensiones cuadráticas}.
+
+Sea $p$ un primo.
+
+\begin{enumerate}[a)]
+    \item Dar ejemplos en los que:
+    \begin{enumerate}
+        \item[\textup{i.}] $p$ se parta completamente en $K$.
+        \item[\textup{ii.}] $p\OO_K=P_1^2P_2^2$, con $P_1,P_2\unlhd
+        \OO_K$ primos.
+    \end{enumerate}
+
+    \item Probar que no puede suceder que:
+    \begin{enumerate}
+        \item[\textup{i.}] $p$ sea inerte en $K$.
+        \item[\textup{ii.}] $p$ sea impar y totalmente ramificado en
+        $K$.
+    \end{enumerate}
+\end{enumerate}
+
+\subsection*{Ejercicio 10} Sea $f \in \ZZ[X]$.
+
+\begin{enumerate}[a)]
+    \item Probar que existen infinitos primos $p$ tales que $\bar{f}\in
+    \FF_p[X]$ tiene al menos una raíz en $\FF_p$.
+
+    \textit{Sugerencia: probarlo primero en el caso en que $f(0) = 1$, 
+    notando que en tal caso para todo $m \geq 2$ se tiene que 
+    $f(km)\equiv 1 (mod\ m)$ para todo $k\in \ZZ$}.
+    
+    \item \begin{enumerate}
+        \item[\textup{i)}] Probar que si $K/\QQ$ es un cuerpo de números, existen 
+        infinitos primos $P$ de $\OO_K$ tales que $f(P|P\cap\ZZ)=1$.
+
+        \item[\textup{ii)}] Probar que si $K\subseteq L$ son cuerpos de números, 
+        existen infinitos primos $P$ de $\OO_K$ tales que para todo 
+        primo $Q$ de $\OO_L$ con $Q\cap K = P$ se tiene que $f(Q|P)=1$.
+
+        \textit{Sugerencia: probarlo primero para el caso en que $L/K$
+        es Galois}.
+    \end{enumerate}
+    
+    \item Probar que existen infinitos primos $p$ tal que $\bar{f}\in
+    \FF_p[X]$ tiene $todas$ sus raices en $\FF_p$.
+\end{enumerate}
 
 
 
@@ -122,7 +182,44 @@ pertenece a $\OO_K$.
 Un poco hablemos de la solución del ejercicio que presenta el resultado
 teorico para explicar el cálculo. Primeramente sabemos que como 
 $R \subsetneq \OO_K$ es un orden (por definicion subanillo de $\OO_K$
-de rango máximo)
+de rango máximo). Entonces cumple que $\Delta_R = \Delta_K [\OO_K:R]$
+
+
+\subsection*{Guía 1, ejercicio 15}
+Los conjugados de $\zeta$ son sus potencias, entonces calcular la norma
+de $\zeta^2+\zeta^3$ va a ser multiplicar lo siguiente:
+$$(\zeta^2+\zeta^3)(\zeta^4+\zeta^6)(\zeta^6+\zeta^9)(\zeta^8+\zeta^{12})
+= (\zeta^2+\zeta^3)(\zeta^4+\zeta^1)(\zeta^1+\zeta^4)(\zeta^3+\zeta^2)=$$
+$$=\lp(\zeta^2+\zeta^3)(\zeta^4+\zeta^1)\rp^2=
+(\zeta^6+\zeta^3+\zeta^7+\zeta^4)^2=(\zeta^1+\zeta^3+\zeta^2+\zeta^4)^2=
+1$$
+porque $\zeta$ es raiz de $X^4+X^3+X^2+X+1 = \frac{X^5-1}{X-1}$.
+
+Como ahora sabemos que $\zeta^2+\zeta^3$ tiene norma 1 y es suma de 
+enteros algebraicos pues (de vuelta) $\zeta$ es raiz de un polinomio con
+coeficientes enteros, entonces pertenece a las unidades del anillo de 
+enteros. Pero tambien como vemos que su valor no es cero y es real 
+(geometricamente $\bar{\zeta^2}=\zeta^{-2} = \zeta^3$ o sino porque 
+$(\zeta^2+\zeta^3)^2=\zeta^4+\zeta^1+2$ entonces $\zeta^2+\zeta^3$ 
+será raiz de $X^2+X-1$ que es el famoso $\varphi$ que cae en 
+$\QQ[\sqrt{5}]\subseteq \RR$) entonces todas sus potencias serán distintas
+y tendrán la misma norma, dando lugar a infinitos elementos en 
+$\OO_K^\times$.
+
+
+\subsection*{Guía 2, ejercicio 5}
+
+Queremos ver que dado un ideal $\aaa = \pp_1^{e_1}\cdots\pp_n^{e_n}$ 
+esta generado por un solo elemento $\alpha$. Vamos a usar la 
+definicion de dominio de Dedekind que nos dice que todo ideal BLA
+Como los ideales primos son finitos vamos a escribirlos como $\pp_1$
+hasta $\pp_n$ de modo que en las factorizaciones aparezcan todos (los
+numeros $e_i$ pueden ser $0$).
+
+Ahora tomo $\alpha \in \aaa$ tal que $\alpha = p_1^{e_1}\cdots 
+p_n^{e_n}$ y quiero ver que $(\alpha) = \aaa$. Obviamente $(\alpha) 
+\subseteq \aaa$ porque el elemento pertenece al ideal.
+
 
 
 \end{document}
