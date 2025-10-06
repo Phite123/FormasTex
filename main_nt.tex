@@ -86,14 +86,8 @@
 
 \section*{Guía 1}
 
-\subsection*{Ejercicio 4}
-Implementar el siguiente algoritmo en SAGE: Para encontrar un $\alpha$
-perteneciente al anillo de enteros de un cuerpo de números $K$ de 
-grado $n$, dado $R=\lc \alpha_1,\cdots,\alpha_n\rc\subseteq\OO_K$ un 
-$\ZZ$-módulo de rango $n$ que no es $\OO_K$. Encontrar el primo $p$ 
-tal que $p^2|\Delta_K$ y los enteros $c_1,c_2,\cdots,c_n$ entre $0$ 
-y $p$ tales que
-$$\frac{1}{p}\sum_{i=1}^n c_i\alpha_i$$
+\subsection*{Ejercicio 4}Implementar el siguiente algoritmo en SAGE: Para encontrar un $\alpha$ perteneciente al anillo de enteros de un cuerpo de números $K$ de grado $n$, dado $R=\lc \alpha_1,\cdots,\alpha_n\rc\subseteq\OO_K$ un $\ZZ$-módulo de rango $n$ que no es $\OO_K$. Encontrar el primo $p$ tal que $p^2|\Delta_K$ y los enteros $c_1,c_2,\cdots,c_n$ entre $0$ y $p$ tales que 
+$$\frac{1}{p}\sum_{i=1}^n c_i\alpha_i$$ 
 pertenece a $\OO_K$.
 
 \subsection*{Ejercicio 15}
@@ -170,9 +164,11 @@ Sea $p$ un primo.
     \FF_p[X]$ tiene $todas$ sus raices en $\FF_p$.
 \end{enumerate}
 
+\section*{Guía 4}
 
+\subsection*{Ejercicio 4} 
 
-
+\subsection*{Ejercicio 11} 
 
 \newpage
 
@@ -210,6 +206,28 @@ elementos en $\OO_K^\times$.
 
 \subsection*{Guía 2, ejercicio 4}
 
+El teorema chino del resto dice que si $\aaa = \aaa_1 \cdots \aaa_r$ 
+son ideales coprimos (en 
+nuestro caso seran $\pp_i^{e_i+1}$ primos distintos) entonces 
+$$\OO / \aaa \cong \bigoplus_{i=1}^r \OO / \aaa_i$$
+y en la demostracion se prueba que el morfismo $\varphi:\OO\to
+\oplus_{i=1}^r \OO / \aaa_i$ dado por $\lp\varphi(\alpha)\rp_i=\alpha\mod 
+\aaa_i$ tiene nucleo $\aaa$ y es sobreyectivo.
+
+Para resolver el problema es suficiente probar que existe un elemento 
+$\alpha \in \OO$ tal que $\alpha \equiv0\mod \pp_i^{e_i}$ pero 
+$\alpha \not\equiv 0 \mod \pp_i^{e_i+1}$ 
+simultaneamene para todo $i$ y la gran ventaja que da el teorema es que 
+basta verlo en cada coordenada y luego tomar preimagen. Ahora como 
+$\pp_i^{e_i+1} \subsetneq \pp_i^{e_i}$ (son distintos porque estan 
+factorizados
+como producto de primos y sus factorizaciones son distintas), entonces 
+existen elementos $\alpha_i \in \pp_i^{e_i} - \pp_i^{e_i+1}$ para todo $i$.
+Luego tomamos $\alpha \in \bigoplus_{i=1}^r \OO / \pp_i^{e_i+1}$ tal que
+$(\alpha)_i \mod \bar\alpha_i\mod \pp_i^{e_i+1}$ y el elemento $\varphi^{-1}
+(\alpha)$ cumplirá lo que queremos (cualquier representante en $\OO$).
+
+
 \subsection*{Guía 2, ejercicio 5}
 
 Queremos ver que dado un ideal $\aaa = \pp_1^{e_1}\cdots\pp_n^{e_n}$ 
@@ -223,9 +241,13 @@ exponentes pueden ser $0$).
 Ahora tomo $\alpha$ como el que nos da el ejercicio anterior, con las 
 valuaciones iguales a la factorizacion de nuestro ideal. Por tener 
 factorizacion unica en ideales primos entonces $(\alpha)$ se escribirá
-de una unica forma como $\pp_1^{f_1}\cdots\pp_n^{f_n}$
+de una unica forma como $\pp_1^{f_1}\cdots\pp_n^{f_n}$.
 
-FALTA
+Por ser $\OO$ un Dedekind vale que el producto de ideales primos es la 
+interseccion, y como $\alpha \in \pp_i^{e_i}$ (por definicion de valuacion)
+para todo $i$ entonces $\alpha \in \aaa$ con lo que $(\alpha)\subseteq\aaa$.
+Es decir $f_i\geq e_i$. Pero como $\alpha \notin \pp_i^{e_i+1}$ entonces 
+debe ser que $f_i=e_i$ para todo $i$.
 
 
 \subsection*{Guía 3, ejercicio 10}
@@ -260,9 +282,40 @@ en ese $\FF_p$.
 
 Ahora pasemos al lenguaje de teoría de números. Dado $K$ un cuerpo de 
 números, sabemos que podemos escribir $K=\QQ(\alpha)$ y llamemos $f$ al
-polinomio minimal de $\alpha$ (o bien $K=desc(f|\QQ)$). Ahora tenemos la
-conexión de que si nuestro polinomio tiene una raiz en $\FF_p$ 
-entonces el primo $P$ de $\OO_K$ que se encuentre sobre $p$...
+polinomio minimal de $\alpha$. Tenemos la
+conexión de que si nuestro polinomio $f$ se factoriza como 
+producto de irreducibles módulo $p$ como $f_1^{e_1}\cdots f_r^{e_r}$ 
+entonces los ideales $\pp_i = p\OO + f_i(\alpha)\OO$ son primos distintos
+sobre $p$ con grado de inercia $gr(f_i)$ y $p\OO$ se factoriza como
+$\pp_1^{e_1}\cdots \pp_r^{e_r}$. En particular, si $f$ tiene una raíz 
+en $\FF_p$ entonces su fatorizacion módulo $p$ tendrá un componente 
+lineal y eso nos dirá que el grado de inercia es 1. Por el punto $a$ esto
+sucede para infinitos primos.
+
+Si tenemos $\QQ\subseteq K\subseteq L$ entonces ya vimos que hay primos
+$Q \unlhd \OO_L$ sobre un $p$ tales que $f(Q | p)=1$ y como el grado 
+de inercia es multiplicativo en torres entonces 
+tenemos que $f(Q | P)f(P|p)=1$ y son ambos 1. Como en las extensiones de 
+Galois todos los primos sobre un determinado $P$ tienen el mismo grado 
+de ramificacion y de inercia, entonces valdrá para el resto de los $Q|P$.
+Luego si $K\subseteq L$ no es Galois podemos hacer el mismo razonamiento
+partiendo de una $L\subseteq L'$ Galois sobre $K$ y $f(Q' | Q)f(Q | P)
+f(P|p)=1$ nos dice que son todos $1$ para todo $Q'|P$ primo de $\OO_{L'}$.
+
+Al usar la teoria ramificacion de primos en extensiones junto con Galois probamos que hay infinitos primos que son totalmente ramificados y, volviendo al lenguaje de nuestro polinomio $f$, esto nos dice que $\bar{f}\in \FF_p[X]$ se factoriza como producto de lineales, es decir tiene todas sus raices en el cuerpo.
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
