@@ -84,6 +84,8 @@
 
 \maketitle
 
+% con Alt + Z te acomoda las lineas
+
 \section*{Guía 1}
 
 \subsection*{Ejercicio 4}Implementar el siguiente algoritmo en SAGE: Para encontrar un $\alpha$ perteneciente al anillo de enteros de un cuerpo de números $K$ de grado $n$, dado $R=\lc \alpha_1,\cdots,\alpha_n\rc\subseteq\OO_K$ un $\ZZ$-módulo de rango $n$ que no es $\OO_K$. Encontrar el primo $p$ tal que $p^2|\Delta_K$ y los enteros $c_1,c_2,\cdots,c_n$ entre $0$ y $p$ tales que 
@@ -178,7 +180,14 @@ Sea $p$ un primo.
 Un poco hablemos de la solución del ejercicio que presenta el resultado
 teorico para explicar el cálculo. Primeramente sabemos que como 
 $R \subsetneq \OO_K$ es un orden (por definicion subanillo de $\OO_K$
-de rango máximo). Entonces cumple que $\Delta_R = \Delta_K [\OO_K:R]$
+de rango máximo) entonces cumple que $\Delta_R = \Delta_K [\OO_K:R]^2$, y podemos usar ese cuadrado para nuestro favor. 
+
+Teoricamente, si el indice es mayor a 1, habrá un elemento no trivial en el cociente, que corresponderá a un elemento en $\OO_K$ y no en $R$, y seguro de orden $p$ para un primo que divida a $[\OO_K:R]$ por el teorema de Cauchy. Podemos buscar ese primo entre los que al cuadrado dividen al valor de $\Delta_R$; y si justo $p^2$ dividia a $\Delta_K$ mala suerte, lo descartamos y seguimos probando.
+
+Para pasar del resultado teorico existencial de un elemento no trivial en $\OO_K/R$ a construir un elemento en $\OO_K$ y no en $R$ notamos que es un $\alpha \in \OO_K - R$ tal que $p\alpha \in R$, asi que podemos iterar por los elementos de la forma $\beta /p$ con $\beta\in R$ hasta que alguno pertenezca a $\OO_K$. Este proceso será finito pues consiste en variar los coeficientes de una combinacion lineal de los elementos de la base de $R$ por los valores entre $1$ y $p$, ya que pasarnos de eso es simplemente sumar un elemento de $R$ (un multiplo entero de un coeficiente de la base).
+
+Una vez dicho eso, el \hyperref[codigo1]{código} es bastante directo. Estamos usando el orden generado por las potencias del generador de la extension, que es una forma que no falla en crearnos un orden dentro de $\OO_K$, que luego iremos agrandando hasta llegar a todo el anillo de enteros. Probamos con el cuerpo $\QQ(\sqrt{-11}, \sqrt{13}) = Desc(x^4-x^2+36)$ cuyo tag en lmfdb es 4.0.20449.1, porque es el primero que aparece con primos 2 y 3 ``inesenciales'' (dividen a $\Delta_R$ y no a $\Delta_K$) para iterar varias veces el bloque for. Tambien con este cuerpo vimos que el codigo tardo mucho mas de lo que deberia porque despues de encontrar el anillo de enteros siguio iterando por el resto de primos (11 y 13 porque sus cuadrados dividian al discriminante).
+
 
 
 \subsection*{Guía 1, ejercicio 15}
@@ -194,14 +203,14 @@ porque $\zeta$ es raiz de $X^4+X^3+X^2+X+1 = \frac{X^5-1}{X-1}$.
 Como ahora sabemos que $\zeta^2+\zeta^3$ tiene norma 1 y es suma de 
 enteros algebraicos pues (de vuelta) $\zeta$ es raiz de un polinomio con
 coeficientes enteros, entonces pertenece a las unidades del anillo de 
-enteros. Pero tambien como vemos que su valor no es ni 0 ni 1 ni -1 y 
+enteros. Pero tambien como vemos que su valor no es ni 0, ni 1, ni -1 y 
 es real (geometricamente porque $\bar{\zeta^2}=\zeta^{-2} = 
 \zeta^3$ o sino porque 
 $(\zeta^2+\zeta^3)^2=\zeta^4+\zeta^1+2$ entonces $\zeta^2+\zeta^3$ 
 será raiz de $X^2+X-1$ que es el famoso $\bar{\varphi}$ que cae en 
 $\QQ[\sqrt{5}]\subseteq \RR$) entonces todas sus potencias serán 
 distintas y tendrán la misma norma, dando lugar a infinitos 
-elementos en $\OO_K^\times$.
+elementos distintos en $\OO_K^\times$.
 
 
 \subsection*{Guía 2, ejercicio 4}
@@ -223,8 +232,8 @@ $\pp_i^{e_i+1} \subsetneq \pp_i^{e_i}$ (son distintos porque estan
 factorizados
 como producto de primos y sus factorizaciones son distintas), entonces 
 existen elementos $\alpha_i \in \pp_i^{e_i} - \pp_i^{e_i+1}$ para todo $i$.
-Luego tomamos $\alpha \in \bigoplus_{i=1}^r \OO / \pp_i^{e_i+1}$ tal que
-$(\alpha)_i \mod \bar\alpha_i\mod \pp_i^{e_i+1}$ y el elemento $\varphi^{-1}
+Entonces tomamos $\alpha \in \bigoplus_{i=1}^r \OO / \pp_i^{e_i+1}$ tal que
+$(\alpha)_i = \bar\alpha_i\mod \pp_i^{e_i+1}$ y el elemento $\varphi^{-1}
 (\alpha)$ cumplirá lo que queremos (cualquier representante en $\OO$).
 
 
@@ -280,7 +289,7 @@ $m$ (si $p|jm+n$ y $p|m$ entonces tambien $p|n$ pero esos los
 excluimos), llegando así a un absurdo pues $\bar{f}$ tendría una raíz 
 en ese $\FF_p$.
 
-Ahora pasemos al lenguaje de teoría de números. Dado $K$ un cuerpo de 
+Ahora pasemos al lenguaje de ramificacion de los primos. Dado $K$ un cuerpo de 
 números, sabemos que podemos escribir $K=\QQ(\alpha)$ y llamemos $f$ al
 polinomio minimal de $\alpha$. Tenemos la
 conexión de que si nuestro polinomio $f$ se factoriza como 
@@ -308,11 +317,65 @@ Al usar la teoria ramificacion de primos en extensiones junto con Galois probamo
 
 
 
+% con alt + z te acomoda las lineas
 
 
+\newpage
 
+\vspace{1em}
+\noindent\textbf{Código 1.} Anillo de enteros
+\label{codigo1}
 
+\lstset{
+    language=Python,
+    basicstyle=\ttfamily\small,
+    frame=single,
+    breaklines=true
+}
 
+\begin{lstlisting}
+# para chequear que hayan puesto una numberfield (nomas)
+from sage.rings.number_field.number_field import NumberField_generic
+
+# para iterar por los c_i
+from itertools import product
+
+def anillo_de_enteros(K):
+    # chequeamos que sea number field
+    if not isinstance(K, NumberField_generic):
+        raise TypeError("K debe ser un cuerpo de numeros.")
+
+    # Una base que nos va a dar siempre un orden en el cuerpo de numeros es la de 1, a, a^2, ... para a el generador de la extension
+    # para saber cuantas potencias de a poner debemos saber el grado de la extension
+    n = K.degree()
+    R = K.order([a^i for i in range(n)])
+    primos_que_al_cuadrado_dividen_a_dk = []
+    terminamos = false
+    # ahora generamos el orden con la base [1, a, ... , a^(n-1)]
+    while not terminamos:
+        base = R.basis()
+        p = next((q for q, e in R.discriminant().factor() if e > 1 and q not in primos_que_al_cuadrado_dividen_a_dk), None)
+        if p == None:
+            terminamos = true
+            break
+
+        for los_c_i in product(range(int(p)), repeat=n):
+            if not any(los_c_i): # saltear (0,...,0)
+                continue
+            alpha = sum(ai*ci for ai, ci in zip(base, los_c_i)) / p
+            if alpha.is_integral():
+                R = K.order(base + [alpha])
+                break
+        else: # no sabia que existia esto, es para cuando paso todo el for sin un break.
+            primos_que_al_cuadrado_dividen_a_dk.append(p)
+
+    return R.basis()
+
+K.<a> = NumberField(x^4-x^2+36)
+print(anillo_de_enteros(K))
+print(K.ring_of_integers().basis())
+
+\end{lstlisting}
 
 
 
