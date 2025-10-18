@@ -259,6 +259,29 @@ Es decir $f_i\geq e_i$. Pero como $\alpha \notin \pp_i^{e_i+1}$ entonces
 debe ser que $f_i=e_i$ para todo $i$.
 
 
+\subsection*{Guía 3, ejercicio 6}
+
+Las tres subextensiones cuadraticas de $\QQ(\sqrt{n},\sqrt{m})$ son $\QQ(\sqrt{n})$, $\QQ(\sqrt{m})$ y $\QQ(\sqrt{nm})$. Recordemos que en las extensiones cuadraticas tenemos completamente caracterizado el comportamiento de la ramificacion de los primos con el simbolo de Legendre: En $\QQ(\sqrt{D})$
+\begin{itemize}
+    \item Si $\leg{D}{p}=0$, es decir $p|D$, entonces ramifica: $p\OO_K = \pp^2$.
+    \item Si $\leg{D}{p}=1$ entonces se parte: $p\OO_K = \pp\bar{\pp}$ (ideales distintos).
+    \item Si $\leg{D}{p}=-1$ entonces es inerte: $p\OO_K$ es primo.
+\end{itemize}
+
+Ahora, como $n$ y $m$ son coprimos vamos a poder fabricarnos los primos que pide el enunciado con facilidad viendo como se comportan $\leg{n}{p}$ y $\leg{m}{p}$ por separado:
+
+Para conseguir un primo que se parta completamente en $K$ podemos tomar un $p$ tal que $\leg{n}{p} = \leg{m}{p} = 1$ y entonces $p\OO_{\QQ(\sqrt{n})} = \pp \bar{\pp}$ y $p\OO_{\QQ(\sqrt{m})} =\pp' \bar{\pp}'$.
+
+
+
+
+
+
+% Dato: $\QQ(\sqrt{n}) = \QQ(\sqrt{m})$ sii $n=m$ (para libres de cuadrados).
+% Demo: por contrarreciproco, si $n \neq m$ y los cuerpos son idem entonces $\sqrt{n} = a+b\sqrt{m}$ y tenes que $a\neq 0$ pq sino $\sqrt{n} = b\sqrt{m} = \sqrt{b^2m}$ no es libre de cuadrados y $b\neq 0$ pq sino $\sqrt{n} = a$ te queda $n=a^2$ no libre de cuadrados. Con eso elevas al cuadrado $n = a^2+b^2m+ab\sqrt{m}$ es racional = racional + irracional absurdo.
+
+
+
 \subsection*{Guía 3, ejercicio 10}
 
 Sea $f\in \ZZ[X]$. Si $f(0)=1$ entonces, como el coeficiente 
