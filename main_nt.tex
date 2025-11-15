@@ -336,7 +336,7 @@ visto en $\ZZ$ el polinomio no puede valer infinitas veces $1$ pues
 sería constante (si $n$ es el grado del polinomio entonces en $f(m), 
 f(2m), \cdots, f(nm), f((n+1)m)$ debe haber alguno distinto a 1 
 porque sinó $f-1$ tendria el mismo grado y mas de $n$ raices). 
-
+    
 Supongamos que $f$ tiene una raiz solamente en finitos primos $p_1,
 \cdots, p_n$, tomemos $m=\prod p_i$ y veamos $f(km) = jm+1$ donde en
 algun momento $j$ será distinto de 0, entonces $jm+1$ no va a ser 
@@ -376,7 +376,10 @@ Luego si $K\subseteq L$ no es Galois podemos hacer el mismo razonamiento
 partiendo de una $L\subseteq L'$ Galois sobre $K$ y $f(Q' | Q)f(Q | P)
 f(P|p)=1$ nos dice que son todos $1$ para todo $Q'|P$ primo de $\OO_{L'}$.
 
-Al usar la teoria ramificacion de primos en extensiones junto con Galois probamos que hay infinitos primos que se parten completamente y, volviendo al lenguaje de nuestro polinomio $f$, esto nos dice que $\bar{f}\in \FF_p[X]$ se factoriza como producto de lineales, es decir tiene todas sus raices en el cuerpo.
+Si consideramos para un polinomio $f$ su cuerpo de descomposicion será un cuerpo de numeros (Galois sobre $\QQ$) y habrá infinitos primos de $\QQ$ que se partan completamente, resultando que $\bar{f} \in \FF_p$ se factorice linealmente para esos primos, que es lo mismo que tener todas las raices en el cuerpo (incluso es más, son todas distintas, pero los primos que ramifican donde podrian no serlo son finitos).
+
+
+
 
 \subsection*{Guía 4, ejercicio 4}
 
@@ -400,10 +403,7 @@ Si consideramos el algebra de cuaterniones de Hamilton $H=\{ a+bi+cj+dk : a,b,c,
 
 \subsection*{Guía 4, ejercicio 11}
 
-% d par, negativo, libre de cuadrados. h_d no mult de 3 
-% Vamos a escribir todo lo mismo para $d>0$ pero con el $-1$ correspondiente.
-
-Reescribamos en $\QQ(\sqrt{-d})$ la ecuacion $y^2=x^3-d$ como $(y-\sqrt{-d})(y+\sqrt{-d})=x^3$, y ahora lo que estamos buscando es probar que solo puede haber a lo sumo un $y\in \NN$ tal que $(y-\sqrt{-d})(y+\sqrt{-d})$ es un cubo. 
+Reescribamos en $\QQ(\sqrt{-d})$ (vamos a tomar $d>0$ y escribir $-d$) la ecuacion $y^2=x^3-d$ como $(y-\sqrt{-d})(y+\sqrt{-d})=x^3$, y ahora lo que estamos buscando es probar que solo puede haber a lo sumo un $y\in \NN$ tal que $(y-\sqrt{-d})(y+\sqrt{-d})$ es un cubo. 
 
 El camino a seguir en el ejercicio será el siguiente: ver que los ideales generados son coprimos, con eso y la hipotesis de que $3\nmid h_d$ tendremos que son cubos de ideales principales y luego viendo en funcion de los generadores tendremos solo una posibilidad para $y$.
 
@@ -419,22 +419,41 @@ Ahora $\lc y+\sqrt{-d}\rc = \aaa^3$ para algun ideal, y $\aaa$ es principal porq
     \pm \sqrt{-d} &=& (3a^2b - b^3d)\sqrt{-d}\\
 \end{matrix}\right.\]
 
-De la segunda ecuacion obtenemos que $b$ debe dividir a 1 (porque es factor comun de una resta que da 1), luego si $b=1$ queda $1=\pm(3a^2-d)$ pero solo uno de esos será posible pues $d\pm 1$ debe ser divisible por 3, y si $b=-1$ queda $1=\mp(3a^2-d)$ que nos lleva a lo mismo. Para los valores que queden tenemos que $3a^2=\pm 1 + d$, que solo una tendrá dos soluciones para $a$ (si es que tiene) que generarán el mismo $y$ en la primera ecuacion: $y=\pm(a^3+3ad) = \mp({(-a)}^3 + 3(-a)d)$ y solo uno será positivo. 
+De la segunda ecuacion obtenemos que $b$ debe dividir a 1 (porque es factor comun de una resta que da 1), luego si $b=1$ queda $1=\pm(3a^2-d)$ pero solo uno de esos será posible pues $d\pm 1$ debe ser divisible por 3, y si $b=-1$ queda $1=\mp(3a^2-d)$ que nos lleva a lo mismo. Para los valores que queden tenemos que $3a^2=\pm 1 + d$, que solo una tendrá dos soluciones para $a$ (si es que tiene) que generarán el mismo $y$ en la primera ecuacion: $y=\pm(a^3+3ad) = \mp({(-a)}^3 + 3(-a)d)$ y solo uno será positivo dando lugar a (como mucho) una solucion al problema original. 
 
 
-\subsection*{Guía 5, ejercicio 1}
+% \subsection*{Guía 5, ejercicio 1}
 
-Previo a comenzar con la solucion, notemos que en el nucleo del morfismo $l$ se encuentran todas las raices de la unidad que estén en $K$, y no necesariamente estas están en $G$, por lo que habrá que agregarselas. Esto es porque, si vemos $l: \OO_K^\times \to \Lambda$ (incluso antes de cocientar), vale que $\ker(l')=\mu_K$.
+% Previo a comenzar con la solucion, notemos que en el nucleo del morfismo $l$ se encuentran todas las raices de la unidad que estén en $K$, y no necesariamente estas están en $G$, por lo que habrá que agregarselas. Esto es porque, si vemos $l: \OO_K^\times \to \Lambda$ (incluso antes de cocientar), vale que $\ker(l')=\mu_K$.
 
-Queremos 
+% Queremos 
 
+\subsection*{Guía 5, ejercicio 3}
 
+Primero veamos el caso $L=M$ osea que $L/K$ sea Galois. Sean $A=\{ \pp \unlhd \OO_K : \text{se parte completamente en $L$} \}$ y $B=\{ \mathfrak{P}\unlhd \OO_L : \mathfrak{P}\cap \OO_K \in A \}$. Queremos ver que $\rho(A) = 1/[L:K]$. Recordemos:
 
+\[
+\zeta_{A,K}(s) = \prod_{\pp\in A} \frac{1}{1-{\mathcal{N}(\mathfrak{P})}^{-s}}
+\]
+
+Si $\mathfrak{P} \in B$ con $\mathfrak{P}\cap \OO_K = \pp$ entonces $\mathcal{N}(\mathfrak{P})=\mathcal{N}(\pp)$ porque dijimos que se parten completamtente. Entonces $\zeta_{K,A}^{[L:K]} = \zeta_{L,B}$ porque es la cantidad en la que se parte cada primo, por lo que bastaria ver que $\rho(B)=1$ (entonces $\zeta_{K,A}^{[L:K]}$ tendria un polo de orden 1 alrededor de $s=1$). Veamos $\rho(B^c)=0$ que es lo mismo, pero $B^c$ son los primos ramificados (finitos, no afectan la densidad) o cuya norma no es un primo (sino una potencia). 
+
+Lema: El conjunto de los primos cuya norma no es primo tiene densidad 0. Basta ver que $\prod {(1- {\mathcal{N}(\pp)}^{-s} )}^{-1}$ es holomorfa y no nula en $s=1$
 
 
 
 
 \subsection*{Guía 5, ejercicio 4}
+
+Lo que tenemos que probar en este ejercicio es que dos extensiones de Galois distintas deben tener necesariamente distintos primos que se parten completamente. Este resultado lo vamos a tener de los valores asintoticos de estas cantidades. Segun mi carpeta, esto es un paso hacia demostrar el teorema de Chebotarev.
+
+Primero recordemos que si $L$ y $L'$ son extensiones de Galois de $K$ entonces $LL'$ tambien lo es. Si $L \neq L'$ entonces alguna (supongamos que es $L$) estará contenida estrictamente en $LL'$ y su grado será menor ($[K:L] < [K:LL']$).
+
+El ejercicio anterior nos dice que el conjunto de primos que se parte completamente en $L$ tendrá densidad polar $1/[K:L]$ mientras que el conjunto de los que se parten completamente en $LL'$ tendrá densidad polar
+$1/[K:LL']$ que es menor, es decir no pueden ser los mismos los primos. Pero sabiendo que los primos que se parten completamente en $LL'$ deben hacerlo tambien en $L$ (y en $L'$) entonces necesariamente debe haber primos que se parten completamente en $L$ que no lo hacen en $LL'$. 
+
+Finalmente nos falta decir que si un primo se parte completamente en $L$ y $L'$ tambien lo hará en $LL'$ (con esto, necesariamente los de $L$ que no estan en $LL'$ no estarán en $L'$). Notemos $\mathfrak{P} \unlhd \OO_{LL'}$ sobre $P \unlhd \OO_L$ y $P' \unlhd \OO_{L'}$ y todos sobre $p$ primo de $\ZZ$; y los grupos de Galois $G=Gal(LL'/K)$, $H=Gal(LL'/L)$ y $H'=Gal(LL'/L')$ de forma que $G/H = Gal(L/K)$. Entonces el grupo de descomposicion de $\mathfrak{P}$ sobre $K$ (que queremos ver que es trivial) visto en $G/H$ es trivial porque corresponde al grupo de descomposicion de $P$ sobre $K$ (trivial por hipotesis de que $P$ se parte completamente) y lo mismo sobre $G/H'$, por lo que pertenece a $H \cap H'$. Pero $H\cap H'$ es el grupo trivial por teoria de Galois (fija los cuerpos $L$ y $L'$ y entonces fija $LL'$ que era el cuerpo de arriba).
+
 
 
 
