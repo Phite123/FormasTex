@@ -1,3 +1,5 @@
+%LTeX: language=es-AR
+
 \documentclass[12pt]{amsart}
 
 %Fuente
@@ -41,7 +43,7 @@
 
 \newcommand{\OO}{\mathcal{O}}
 
-\newcommand{\leg}[2]{\left( \frac{#1}{#2} \right)}
+\newcommand{\leg}[2]{\left(\frac{#1}{#2} \right)}
 \newcommand{\minimat}[4]{\left(\begin{smallmatrix} #1 & #2 \\ #3 & #4 
 \end{smallmatrix}\right)}
 \newcommand{\lp}{\left(}
@@ -75,7 +77,7 @@
 
 \title{Entrega de ejercicios de teoría de números}
 
-\author{Pedro Nicolas Peña}
+\author{Pedro Nicolás Peña}
 
 \begin{document}
 
@@ -89,7 +91,7 @@
 
 \section*{Guía 1}
 
-\subsection*{Ejercicio 4}Implementar el siguiente algoritmo en SAGE: Para encontrar un $\alpha$ perteneciente al anillo de enteros de un cuerpo de números $K$ de grado $n$, dado $R=\lc \alpha_1,\cdots,\alpha_n\rc\subseteq\OO_K$ un $\ZZ$-módulo de rango $n$ que no es $\OO_K$. Encontrar el primo $p$ tal que $p^2|\Delta_K$ y los enteros $c_1,c_2,\cdots,c_n$ entre $0$ y $p$ tales que 
+\subsection*{Ejercicio 4} Implementar el siguiente algoritmo en SAGE: Para encontrar un $\alpha$ perteneciente al anillo de enteros de un cuerpo de números $K$ de grado $n$, dado $R=\lc \alpha_1,\cdots,\alpha_n\rc\subseteq\OO_K$ un $\ZZ$-módulo de rango $n$ que no es $\OO_K$. Encontrar el primo $p$ tal que $p^2|\Delta_K$ y los enteros $c_1,c_2,\cdots,c_n$ entre $0$ y $p$ tales que 
 \[\frac{1}{p}\sum_{i=1}^n c_i\alpha_i\] 
 pertenece a $\OO_K$.
 
@@ -164,7 +166,7 @@ Sea $p$ un primo.
     \end{enumerate}
     
     \item Probar que existen infinitos primos $p$ tal que $\bar{f}\in
-    \FF_p[X]$ tiene $todas$ sus raices en $\FF_p$.
+    \FF_p[X]$ tiene $todas$ sus raíces en $\FF_p$.
 \end{enumerate}
 
 \section*{Guía 4}
@@ -173,7 +175,7 @@ Sea $p$ un primo.
 \begin{enumerate}[a)]
     \item Probar que existen $r,s\in\ZZ$ tales que $r^2+s^2+1\equiv0 \mod p$.
     
-    \item Para $r,s$ como en el item anterior, consideremos el reticulo
+    \item Para $r,s$ como en el ítem anterior, consideremos el retículo
     
     $L=\lc (p,0,0,0),(0,p,0,0),(r,s,1,0),(s,-r,0,1) \rc_\ZZ \subseteq \ZZ^4$.
     \begin{enumerate}
@@ -188,28 +190,42 @@ Sea $p$ un primo.
 \textit{Nota: usando que la norma en el álgebra de cuaterniones de Hamilton es multiplicativa, de (c) se sigue el teorema de Lagrange: todo $n\in\NN$ es suma de cuatro cuadrados en $\ZZ$}.
 
 
-\subsection*{Ejercicio 11} Sea $d<0$ un entero libre de cuadrados. Denotemos por $h_d$ al numero de clases de $\QQ(\sqrt{d})$.
+\subsection*{Ejercicio 11} Sea $d<0$ un entero libre de cuadrados. Denotemos por $h_d$ al número de clases de $\QQ(\sqrt{d})$.
 
-Probar que si $d$ es par y $3 \nmid h_d$, entonces la ecuacion
+Probar que si $d$ es par y $3 \nmid h_d$, entonces la ecuación
 \[y^2=x^3+d\]
-tiene a lo sumo una solucion $(x,y)\in\ZZ\times\NN$.
+tiene a lo sumo una solución $(x,y)\in\ZZ\times\NN$.
 
 \section*{Guía 5}
 
-\subsection*{Ejercicio 1} Sea $K$ un cuerpo de numeros.
+% \subsection*{Ejercicio 1} Sea $K$ un cuerpo de números.
 
-Sea $t=r+s-1$, y sean $u_1, \cdots ,u_t \in \OO_K^\times$. Sea $G=\lc u_1, \cdots ,u_t \rc_\ZZ$.
+% Sea $t=r+s-1$, y sean $u_1, \cdots ,u_t \in \OO_K^\times$. Sea $G=\lc u_1, \cdots ,u_t \rc_\ZZ$.
 
+% \begin{enumerate}[a)]
+%     \item Consideremos $\ell: \OO_K^\times \to \RR^t$, y sea $\Lambda_G=\ell(G)$. Probar que $\ell$ induce un isomorfismo entre $\OO_K^\times / G$ y $\Lambda / \Lambda_G$.
+%     \item Probar que $\Lambda_G$ es un reticulo de dimension $t$ si y solo si $\OO_K^\times / G$ es finito.
+%     \item Definamos el $regulador$ reg$(G)$ tal como lo hacemos en el caso en que $G=\OO_K^\times$. Probar que esta bien definido.
+%     \item Probar que $\OO_K^\times / G$ es finito si y solo si reg$(G)\neq 0$. Mas aun, probar que en tal caso 
+%     \[\text{reg} (G) = [\OO_K^\times : G]\text{ reg} (R).\]
+% \end{enumerate}
+
+\subsection*{Ejercicio 3} Sea $K$ un cuerpo de números.
 \begin{enumerate}[a)]
-    \item Consideremos $\ell: \OO_K^\times \to \RR^t$, y sea $\Lambda_G=\ell(G)$. Probar que $\ell$ induce un isomorfismo entre $\OO_K^\times / G$ y $\Lambda / \Lambda_G$.
-    \item Probar que $\Lambda_G$ es un reticulo de dimension $t$ si y solo si $\OO_K^\times / G$ es finito.
-    \item Definamos el $regulador$ reg$(G)$ tal como lo hacemos en el caso en que $G=\OO_K^\times$. Probar que esta bien definido.
-    \item Probar que $\OO_K^\times / G$ es finito si y solo si reg$(G)\neq 0$. Mas aun, probar que en tal caso 
-    \[\text{reg} (G) = [\OO_K^\times : G]\text{ reg} (R).\]
+    \item Sea $L/K$ finita con clausura de Galois $M$. Probar que el conjunto de primos de $K$ que se parten completamente en $L$ tiene densidad polar $1/[M:K]$.
+    \item Sea $f \in\OO_K[X]$ mónico e irreducible, y sea $M/K$ su cuerpo de descomposición. Sea
+    
+    \[ 
+    A=\{ \pp \unlhd \OO_K: f \text{ se factoriza linealmente módulo }\pp\}.
+    \]
+
+    Probar que $A$ tiene densidad polar $1/[M:K]$.
 \end{enumerate}
 
-\subsection*{Ejercicio 4} Sea $K$ un cuerpo de numeros. Probar que considerar para cada $L/K$ Galois los primos de $K$ que se parten completamente en $L$ nos da una inyeccion
-\[ \{ L \text{ extension galoisiana de }K \} \hookrightarrow \PP (\{ \pp \unlhd \OO_K \}) \]
+
+\subsection*{Ejercicio 4} Sea $K$ un cuerpo de números. Probar que considerar para cada $L/K$ Galois los primos de $K$ que se parten completamente en $L$ nos da una inyección
+
+\[ \{ L \text{ extensión galoisiana de }K \} \hookrightarrow \PP (\{ \pp \unlhd \OO_K \}) \]
 
 
 
@@ -220,15 +236,15 @@ Sea $t=r+s-1$, y sean $u_1, \cdots ,u_t \in \OO_K^\times$. Sea $G=\lc u_1, \cdot
 
 \subsection*{Guía 1, ejercicio 4}
 Un poco hablemos de la solución del ejercicio que presenta el resultado
-teorico para explicar el cálculo. Primeramente sabemos que como 
-$R \subsetneq \OO_K$ es un orden (por definicion subanillo de $\OO_K$
+teórico para explicar el cálculo. Primeramente, sabemos que como 
+$R \subsetneq \OO_K$ es un orden (por definición subanillo de $\OO_K$
 de rango máximo) entonces cumple que $\Delta_R = \Delta_K [\OO_K:R]^2$, y podemos usar ese cuadrado para nuestro favor. 
 
-Teoricamente, si el indice es mayor a 1, habrá un elemento no trivial en el cociente, que corresponderá a un elemento en $\OO_K$ y no en $R$, y seguro de orden $p$ para un primo que divida a $[\OO_K:R]$ por el teorema de Cauchy. Podemos buscar ese primo entre los que al cuadrado dividen al valor de $\Delta_R$; y si justo $p^2$ dividia a $\Delta_K$ mala suerte, lo descartamos y seguimos probando.
+Teóricamente, si el índice es mayor a 1, habrá un elemento no trivial en el cociente, que corresponderá a un elemento en $\OO_K$ y no en $R$, y seguro de orden $p$ para un primo que divida a $[\OO_K:R]$ por el teorema de Cauchy. Podemos buscar ese primo entre los que al cuadrado dividen al valor de $\Delta_R$; y si justo $p^2$ dividía a $\Delta_K$ mala suerte, lo descartamos y seguimos probando.
 
-Para pasar del resultado teorico existencial de un elemento no trivial en $\OO_K/R$ a construir un elemento en $\OO_K$ y no en $R$ notamos que es un $\alpha \in \OO_K - R$ tal que $p\alpha \in R$, asi que podemos iterar por los elementos de la forma $\beta /p$ con $\beta\in R$ hasta que alguno pertenezca a $\OO_K$. Este proceso será finito pues consiste en variar los coeficientes de una combinacion lineal de los elementos de la base de $R$ por los valores entre $1$ y $p$, ya que pasarnos de eso es simplemente sumar un elemento de $R$ (un multiplo entero de un coeficiente de la base).
+Para pasar del resultado teórico existencial de un elemento no trivial en $\OO_K/R$ a construir un elemento en $\OO_K$ y no en $R$ notamos que es un $\alpha \in \OO_K - R$ tal que $p\alpha \in R$, así que podemos iterar por los elementos de la forma $\beta /p$ con $\beta\in R$ hasta que alguno pertenezca a $\OO_K$. Este proceso será finito, pues consiste en variar los coeficientes de una combinación lineal de los elementos de la base de $R$ por los valores entre $1$ y $p$, ya que pasarnos de eso es simplemente sumar un elemento de $R$ (un múltiplo entero de un coeficiente de la base).
 
-Una vez dicho eso, el \hyperref[codigo1]{código} es bastante directo. Estamos usando el orden generado por las potencias del generador de la extension, que es una forma que no falla en crearnos un orden dentro de $\OO_K$, que luego iremos agrandando hasta llegar a todo el anillo de enteros. Probamos con el cuerpo $\QQ(\sqrt{-11}, \sqrt{13}) = Desc(x^4-x^2+36)$ cuyo tag en lmfdb es 4.0.20449.1, porque es el primero que aparece con primos 2 y 3 ``inesenciales'' (dividen a $\Delta_R$ y no a $\Delta_K$) para iterar varias veces el bloque for. Tambien con este cuerpo vimos que el codigo tardo mucho mas de lo que deberia porque despues de encontrar el anillo de enteros siguio iterando por el resto de primos (11 y 13 porque sus cuadrados dividian al discriminante).
+Una vez dicho eso, el \hyperref[codigo1]{código} es bastante directo. Estamos usando el orden generado por las potencias del generador de la extensión, que es una forma que no falla en crearnos un orden dentro de $\OO_K$, que luego iremos agrandando hasta llegar a todo el anillo de enteros. Probamos con el cuerpo $\QQ(\sqrt{-11}, \sqrt{13}) = Desc(x^4-x^2+36)$ cuyo tag en lmfdb es 4.0.20449.1, porque es el primero que aparece con primos 2 y 3 ``inesenciales'' (dividen a $\Delta_R$ y no a $\Delta_K$) para iterar varias veces el bloque for. También con este cuerpo vimos que el código tardo mucho más de lo que debería porque después de encontrar el anillo de enteros siguió iterando por el resto de primos (11 y 13 porque sus cuadrados dividían al discriminante).
 
 
 
@@ -240,16 +256,16 @@ de $\zeta^2+\zeta^3$ va a ser multiplicar lo siguiente:
 \[=\lp(\zeta^2+\zeta^3)(\zeta^4+\zeta^1)\rp^2=
 {(\zeta^6+\zeta^3+\zeta^7+\zeta^4)}^2={(\zeta^1+\zeta^3+\zeta^2+\zeta^4)}^2=
 1\]
-porque $\zeta$ es raiz de $X^4+X^3+X^2+X+1 = \frac{X^5-1}{X-1}$.
+porque $\zeta$ es raíz de $X^4+X^3+X^2+X+1 = \frac{X^5-1}{X-1}$.
 
 Como ahora sabemos que $\zeta^2+\zeta^3$ tiene norma 1 y es suma de 
-enteros algebraicos pues (de vuelta) $\zeta$ es raiz de un polinomio con
+enteros algebraicos pues (de vuelta) $\zeta$ es raíz de un polinomio con
 coeficientes enteros, entonces pertenece a las unidades del anillo de 
-enteros. Pero tambien como vemos que su valor no es ni 0, ni 1, ni -1 y 
-es real (geometricamente porque $\bar{\zeta^2}=\zeta^{-2} = 
+enteros. Pero también como vemos que su valor no es ni 0, ni 1, ni -1 y 
+es real (geométricamente porque $\bar{\zeta^2}=\zeta^{-2} = 
 \zeta^3$ o sino porque 
 ${(\zeta^2+\zeta^3)}^2=\zeta^4+\zeta^1+2$ entonces $\zeta^2+\zeta^3$ 
-será raiz de $X^2+X-1$ que es el famoso $\bar{\varphi}$ que cae en 
+será raíz de $X^2+X-1$ que es el famoso $\bar{\varphi}$ que cae en 
 $\QQ[\sqrt{5}]\subseteq \RR$) entonces todas sus potencias serán 
 distintas y tendrán la misma norma, dando lugar a infinitos 
 elementos distintos en $\OO_K^\times$.
@@ -259,18 +275,18 @@ elementos distintos en $\OO_K^\times$.
 
 El teorema chino del resto dice que si $\aaa = \aaa_1 \cdots \aaa_r$ 
 son ideales coprimos (en 
-nuestro caso seran $\pp_i^{e_i+1}$ primos distintos) entonces 
+nuestro caso serán $\pp_i^{e_i+1}$ primos distintos) entonces 
 \[\OO / \aaa \cong \bigoplus_{i=1}^r \OO / \aaa_i\]
-y en la demostracion se prueba que el morfismo $\varphi:\OO\to
+y en la demostración se prueba que el morfismo $\varphi:\OO\to
 \oplus_{i=1}^r \OO / \aaa_i$ dado por $\lp\varphi(\alpha)\rp_i=\alpha\mod 
-\aaa_i$ tiene nucleo $\aaa$ y es sobreyectivo.
+\aaa_i$ tiene núcleo $\aaa$ y es sobreyectivo.
 
 Para resolver el problema es suficiente probar que existe un elemento 
-$\alpha \in \OO$ tal que $\alpha \equiv0\mod \pp_i^{e_i}$ pero 
+$\alpha \in \OO$ tal que $\alpha \equiv0\mod \pp_i^{e_i}$, pero 
 $\alpha \not\equiv 0 \mod \pp_i^{e_i+1}$ 
-simultaneamene para todo $i$ y la gran ventaja que da el teorema es que 
+simultáneamente para todo $i$ y la gran ventaja que da el teorema es que 
 basta verlo en cada coordenada y luego tomar preimagen. Ahora como 
-$\pp_i^{e_i+1} \subsetneq \pp_i^{e_i}$ (son distintos porque estan 
+$\pp_i^{e_i+1} \subsetneq \pp_i^{e_i}$ (son distintos porque están 
 factorizados
 como producto de primos y sus factorizaciones son distintas), entonces 
 existen elementos $\alpha_i \in \pp_i^{e_i} - \pp_i^{e_i+1}$ para todo $i$.
@@ -282,20 +298,20 @@ $(\alpha)_i = \bar\alpha_i\mod \pp_i^{e_i+1}$ y el elemento $\varphi^{-1}
 \subsection*{Guía 2, ejercicio 5}
 
 Queremos ver que dado un ideal $\aaa = \pp_1^{e_1}\cdots\pp_n^{e_n}$ 
-esta generado por un solo elemento $\alpha$. Vamos a usar la 
-definicion de dominio de Dedekind que nos dice que todo ideal se 
-factroriza de forma unica como producto de ideales primos.
+está generado por un solo elemento $\alpha$. Vamos a usar la 
+definición de dominio de Dedekind que nos dice que todo ideal se 
+factoriza de forma única como producto de ideales primos.
 Como los ideales primos son finitos vamos a escribirlos como $\pp_1$
 hasta $\pp_n$ de modo que en las factorizaciones aparezcan todos (los
 exponentes pueden ser $0$).
 
 Ahora tomo $\alpha$ como el que nos da el ejercicio anterior, con las 
-valuaciones iguales a la factorizacion de nuestro ideal. Por tener 
-factorizacion unica en ideales primos entonces $(\alpha)$ se escribirá
-de una unica forma como $\pp_1^{f_1}\cdots\pp_n^{f_n}$.
+valuaciones iguales a la factorización de nuestro ideal. Por tener 
+factorización única en ideales primos entonces $(\alpha)$ se escribirá
+de una única forma como $\pp_1^{f_1}\cdots\pp_n^{f_n}$.
 
 Por ser $\OO$ un Dedekind vale que el producto de ideales primos es la 
-interseccion, y como $\alpha \in \pp_i^{e_i}$ (por definicion de valuacion)
+intersección, y como $\alpha \in \pp_i^{e_i}$ (por definición de valuación)
 para todo $i$ entonces $\alpha \in \aaa$ con lo que $(\alpha)\subseteq\aaa$.
 Es decir $f_i\geq e_i$. Pero como $\alpha \notin \pp_i^{e_i+1}$ entonces 
 debe ser que $f_i=e_i$ para todo $i$.
@@ -303,9 +319,9 @@ debe ser que $f_i=e_i$ para todo $i$.
 
 \subsection*{Guía 3, ejercicio 6}
 
-Probemos previamente un lema que vamos a estar usando todo el ejercicio: si $n$ y $m$ son coprimos libres de cuadrados entonces $\QQ(\sqrt{n}) = \QQ(\sqrt{m})$ si y solo si $n=m$. La vuelta es obvia y la ida la demostraremos por contrarreciproco: si $n \neq m$ y los cuerpos son iguales entonces $\sqrt{n} = a+b\sqrt{m}$. Tenes que $a\neq 0$ porque sino $\sqrt{n} = b\sqrt{m} = \sqrt{b^2m}$ no es libre de cuadrados, y que $b\neq 0$ porque sino $\sqrt{n} = a$ te queda $n=a^2$ no libre de cuadrados. Con eso, elevando al cuadrado vemos que $n = a^2+b^2m+ab\sqrt{m}$, osea $n-a^2-b^2m = ab\sqrt{m}$ donde el lado izquierdo es racional y el derecho irracional, llegando a un absurdo.
+Probemos previamente un lema que vamos a estar usando todo el ejercicio: si $n$ y $m$ son coprimos libres de cuadrados entonces $\QQ(\sqrt{n}) = \QQ(\sqrt{m})$ si y solo si $n=m$. La vuelta es obvia y la ida la demostraremos por contrarrecíproco: si $n \neq m$ y los cuerpos son iguales entonces $\sqrt{n} = a+b\sqrt{m}$. Tenemos que $a\neq 0$ porque si no $\sqrt{n} = b\sqrt{m} = \sqrt{b^2m}$ no es libre de cuadrados, y que $b\neq 0$ porque si no $\sqrt{n} = a$ te queda $n=a^2$ no libre de cuadrados. Con eso, elevando al cuadrado vemos que $n = a^2+b^2m+ab\sqrt{m}$, y luego $n-a^2-b^2m = ab\sqrt{m}$ donde el lado izquierdo es racional y el derecho irracional, llegando a un absurdo.
 
-Las tres subextensiones cuadraticas de $\QQ(\sqrt{n},\sqrt{m})$ son $\QQ(\sqrt{n})$, $\QQ(\sqrt{m})$ y $\QQ(\sqrt{nm})$. Recordemos que en las extensiones cuadraticas tenemos completamente caracterizado el comportamiento de la ramificacion de los primos con el simbolo de Legendre: En $\QQ(\sqrt{D})$
+Las tres subextensiones cuadráticas de $\QQ(\sqrt{n},\sqrt{m})$ son $\QQ(\sqrt{n})$, $\QQ(\sqrt{m})$ y $\QQ(\sqrt{nm})$. Recordemos que en las extensiones cuadráticas tenemos completamente caracterizado el comportamiento de la ramificación de los primos con el símbolo de Legendre: En $\QQ(\sqrt{D})$
 \begin{itemize}
     \item Si $\leg{D}{p}=0$, es decir $p|D$, entonces ramifica: $p\OO_K = \pp^2$.
     \item Si $\leg{D}{p}=1$ entonces se parte: $p\OO_K = \pp\bar{\pp}$ (ideales distintos).
@@ -314,76 +330,76 @@ Las tres subextensiones cuadraticas de $\QQ(\sqrt{n},\sqrt{m})$ son $\QQ(\sqrt{n
 
 Ahora, como $n$ y $m$ son coprimos vamos a poder fabricarnos los primos que pide el enunciado con facilidad viendo como se comportan $\leg{n}{p}$ y $\leg{m}{p}$ por separado:
 
-Para conseguir un primo que se parta completamente en $K$ podemos tomar un $p$ tal que $\leg{n}{p} = \leg{m}{p} = 1$ y entonces $p\OO_{\QQ(\sqrt{n})} = \pp \bar{\pp}$ y $p\OO_{\QQ(\sqrt{m})} =\pp' \bar{\pp}'$. En particular si un primo no ramifica en dos extensiones entonces no va a ramificar en la composicion, y con eso ya nos aseguramos de que $p$ se parta completamente en $\QQ(\sqrt{n},\sqrt{m})$. Esta proposicion la probamos en la teorica. Un ejemplo puede ser el numero 11 en la extension $\QQ(\sqrt{3},\sqrt{5})$, que se factoriza como:
+Para conseguir un primo que se parta completamente en $K$ podemos tomar un $p$ tal que $\leg{n}{p} = \leg{m}{p} = 1$ y entonces $p\OO_{\QQ(\sqrt{n})} = \pp \bar{\pp}$ y $p\OO_{\QQ(\sqrt{m})} =\pp' \bar{\pp}'$. En particular si un primo no ramifica en dos extensiones entonces no va a ramificar en la composición, y con eso ya nos aseguramos de que $p$ se parta completamente en $\QQ(\sqrt{n},\sqrt{m})$. Esta proposición la probamos en la teórica. Un ejemplo puede ser el número 11 en la extensión $\QQ(\sqrt{3},\sqrt{5})$, que se factoriza como:
 \[\lp-\frac{3}{2}+\sqrt{3}-\frac{\sqrt{5}}{2}\rp
 \lp\frac{5}{2}+\sqrt{3}-\frac{\sqrt{5}}{2}\rp
 \lp\frac{1}{2}-\frac{\sqrt{3}}{2}+\frac{\sqrt{5}}{2}+\frac{\sqrt{15}}{2}\rp
 \lp\frac{5}{2}-2\sqrt{3}+\frac{3\sqrt{5}}{2}-\sqrt{15}\rp\]
 
-Para conseguir un primo que se factorice como $\pp^2\pp'^2$ busquemos uno que en una extension se parta como producto de dos distintos y luego en otra lo haga como un primo al cuadrado. Para esto precisamos que divida a uno de los discriminantes y que sea un cuadrado en el otro. Un ejemplo puede ser el numero 3 en la extension $\QQ(\sqrt{3},\sqrt{7})$, que se factoriza como:
+Para conseguir un primo que se factorice como $\pp^2\pp'^2$ busquemos uno que en una extensión se parta como producto de dos distintos y luego en otra lo haga como un primo al cuadrado. Para esto precisamos que divida a uno de los discriminantes y que sea un cuadrado en el otro. Un ejemplo puede ser el número 3 en la extensión $\QQ(\sqrt{3},\sqrt{7})$, que se factoriza como:
 \[3= \lp 1 +\frac{\sqrt{3}}{2} + \frac{\sqrt{7}}{2}\rp^2\lp   1 -\frac{\sqrt{3}}{2} + \frac{\sqrt{7}}{2}\rp^2\]
 
-Para que $p$ sea inerte en $K = \QQ(\sqrt{n},\sqrt{m})$ entonces debe serlo en todas sus subextensiones, y para ello debe darse que $\leg{n}{p}=-1$, $\leg{m}{p}=-1$ y $\leg{nm}{p}=-1$. Ahora, como $\leg{n}{p}\leg{m}{p}=\leg{nm}{p}$ entonces no pueden ser los tres simultaneamente $-1$.
+Para que $p$ sea inerte en $K = \QQ(\sqrt{n},\sqrt{m})$ entonces debe serlo en todas sus subextensiones, y para ello debe darse que $\leg{n}{p}=-1$, $\leg{m}{p}=-1$ y $\leg{nm}{p}=-1$. Ahora, como $\leg{n}{p}\leg{m}{p}=\leg{nm}{p}$ entonces no pueden ser los tres simultáneamente $-1$.
 
-En el caso $D_K=4n$ se puede obviar el factor de $\leg{4}{p}$ porque vale siempre 1 para primos impares (pues el 4 es siempre $2^2$), pero esto no es cierto si el primo es igual a $2$. Para el resto de primos, para que sea totalmente ramificado entonces deberia serlo en todas las subextensiones, es decir deberia ser $\leg{n}{p}= 0$ y $\leg{m}{p}= 0$ pero eso ocurre cuando $p|n$ y $p|m$ simultaneamente y, como habiamos pedido $n$ y $m$ coprimos, esto no sucede.
+En el caso $D_K=4n$ se puede obviar el factor de $\leg{4}{p}$ porque vale siempre 1 para primos impares (pues el 4 es siempre $2^2$), pero esto no es cierto si el primo es igual a $2$. Para el resto de primos, para que sea totalmente ramificado entonces debería serlo en todas las subextensiones, es decir debería ser $\leg{n}{p}= 0$ y $\leg{m}{p}= 0$, pero eso ocurre cuando $p|n$ y $p|m$ simultáneamente y, como habíamos pedido $n$ y $m$ coprimos, esto no sucede.
 
 \subsection*{Guía 3, ejercicio 10}
 
 Sea $f\in \ZZ[X]$. Si $f(0)=1$ entonces, como el coeficiente 
-independiente es 1, al evaluar el polinomio en multiplos de $m$ y 
+independiente es 1, al evaluar el polinomio en múltiplos de $m$ y 
 tomar módulo $m$ solo nos quedará el coeficiente independiente. Ahora,
-visto en $\ZZ$ el polinomio no puede valer infinitas veces $1$ pues 
+visto en $\ZZ$ el polinomio no puede valer infinitas veces $1$, pues 
 sería constante (si $n$ es el grado del polinomio entonces en $f(m), 
 f(2m), \cdots, f(nm), f((n+1)m)$ debe haber alguno distinto a 1 
-porque sinó $f-1$ tendria el mismo grado y mas de $n$ raices). 
+porque, sino $f-1$ tendría el mismo grado y más de $n$ raíces). 
     
-Supongamos que $f$ tiene una raiz solamente en finitos primos $p_1,
+Supongamos que $f$ tiene una raíz solamente en finitos primos $p_1,
 \cdots, p_n$, tomemos $m=\prod p_i$ y veamos $f(km) = jm+1$ donde en
-algun momento $j$ será distinto de 0, entonces $jm+1$ no va a ser 
-divisible por ninguno de los $p_i$, es decir que en su factorizacion 
-en primos va a aparecer algun $p_{n+1}$ nuevo, y en $\FF_{p_{n+1}}$
+algún momento $j$ será distinto de 0, entonces $jm+1$ no va a ser 
+divisible por ninguno de los $p_i$, es decir que en su factorización 
+en primos va a aparecer algún $p_{n+1}$ nuevo, y en $\FF_{p_{n+1}}$
 el polinomio tendrá una raíz.
 
 Ahora si $f(0) = n$ no nos podemos asegurar que $f(km) = jm+n$ no 
-sea un multiplo de los primos de $m$ pues puede darse que $n$ sea un
-multiplo de $m$, pero esto se soluciona sacando de $m$ los primos que 
-dividan a $n$ (que deberiamos incluirlos porque ahí obviamente vale 
+sea un múltiplo de los primos de $m$, pues puede darse que $n$ sea un
+múltiplo de $m$, pero esto se soluciona sacando de $m$ los primos que 
+dividan a $n$ (que deberíamos incluirlos porque ahí obviamente vale 
 $f(0)\equiv 0$). En resumen: defino $m$ como el producto de los primos
 donde $\bar{f}$ tiene una raíz (asumiendo que son finitos) salvo 
-aquellos que dividan a el coeficiente independiente, luego como 
-$f(km) \equiv n \mod m$ en algun momento valdrá en $\ZZ$ que 
+aquellos que dividan al coeficiente independiente, luego como 
+$f(km) \equiv n \mod m$ en algún momento valdrá en $\ZZ$ que 
 $f(km) = jm+n$ y ese valor tendrá factores primos distintos a los de 
-$m$ (si $p|jm+n$ y $p|m$ entonces tambien $p|n$ pero esos los 
-excluimos), llegando así a un absurdo pues $\bar{f}$ tendría una raíz 
+$m$ (si $p|jm+n$ y $p|m$ entonces también $p|n$, pero esos los 
+excluimos), llegando así a un absurdo, pues $\bar{f}$ tendría una raíz 
 en ese $\FF_p$.
 
-Ahora pasemos al lenguaje de ramificacion de los primos. Dado $K$ un cuerpo de números, sabemos que podemos escribir $K=\QQ(\alpha)$ y llamemos $f$ al
-polinomio minimal de $\alpha$. Tenemos la
+Ahora pasemos al lenguaje de ramificación de los primos. Dado $K$ un cuerpo de números, sabemos que podemos escribir $K=\QQ(\alpha)$ y llamemos $f$ al
+polinomio mínima de $\alpha$. Tenemos la
 conexión de que si nuestro polinomio $f$ se factoriza como 
 producto de irreducibles módulo $p$ como $f_1^{e_1}\cdots f_r^{e_r}$ 
 entonces los ideales $\pp_i = p\OO + f_i(\alpha)\OO$ son primos distintos
 sobre $p$ con grado de inercia $gr(f_i)$ y $p\OO$ se factoriza como
 $\pp_1^{e_1}\cdots \pp_r^{e_r}$. En particular, si $f$ tiene una raíz 
-en $\FF_p$ entonces su fatorizacion módulo $p$ tendrá un componente 
+en $\FF_p$ entonces su factorización módulo $p$ tendrá un componente 
 lineal y eso nos dirá que el grado de inercia es 1. Por el punto $a$ esto
 sucede para infinitos primos.
 
 Si tenemos $\QQ\subseteq K\subseteq L$ entonces ya vimos que hay primos $Q \unlhd \OO_L$ sobre un $p$ tales que $f(Q | p)=1$ y como el grado 
 de inercia es multiplicativo en torres entonces 
 tenemos que $f(Q | P)f(P|p)=1$ y luego son ambos 1. Como en las extensiones de Galois todos los primos sobre un determinado $P$ tienen el mismo grado 
-de ramificacion y de inercia, entonces valdrá para el resto de los $Q|P$.
+de ramificación y de inercia, entonces valdrá para el resto de los $Q|P$.
 Luego si $K\subseteq L$ no es Galois podemos hacer el mismo razonamiento
 partiendo de una $L\subseteq L'$ Galois sobre $K$ y $f(Q' | Q)f(Q | P)
 f(P|p)=1$ nos dice que son todos $1$ para todo $Q'|P$ primo de $\OO_{L'}$.
 
-Si consideramos para un polinomio $f$ su cuerpo de descomposicion será un cuerpo de numeros (Galois sobre $\QQ$) y habrá infinitos primos de $\QQ$ que se partan completamente, resultando que $\bar{f} \in \FF_p$ se factorice linealmente para esos primos, que es lo mismo que tener todas las raices en el cuerpo (incluso es más, son todas distintas, pero los primos que ramifican donde podrian no serlo son finitos).
+Si consideramos para un polinomio $f$ su cuerpo de descomposición será un cuerpo de números (Galois sobre $\QQ$) y habrá infinitos primos de $\QQ$ que se partan completamente, resultando que $\bar{f} \in \FF_p$ se factorice linealmente para esos primos, que es lo mismo que tener todas las raíces en el cuerpo (incluso es más, son todas distintas, pero los primos que ramifican donde podrían no serlo son finitos).
 
 
 
 
 \subsection*{Guía 4, ejercicio 4}
 
-Si consideramos para $r,s\in \FF_p$ los conjuntos $\{r^2\}$ y $\{-s^2-1\}$ tienen ambos $\frac{p+1}{2}$ elementos distintos, asi que deben tener interseccion no vacia, que nos da una solucion a $r^2+s^2+1\equiv0 \mod p$.
+Si consideramos para $r,s\in \FF_p$ los conjuntos $\{r^2\}$ y $\{-s^2-1\}$ tienen ambos $\frac{p+1}{2}$ elementos distintos, así que deben tener intersección no vacía, que nos da una solución a $r^2+s^2+1\equiv0 \mod p$.
 
 Si $v\in \lc (p,0,0,0),(0,p,0,0),(r,s,1,0),(s,-r,0,1) \rc_\ZZ$ entonces sabemos que 
 \[v=(\alpha p + \gamma r + \delta s , \beta p + \gamma s - \delta r ,\gamma,\delta)\]
@@ -392,26 +408,26 @@ para algunos enteros $\alpha,\beta,\gamma,\delta$. Calculemos su norma 2 viendo 
 \[\equiv \gamma^2 r^2 + \delta^2 s^2 + 2\gamma r \delta s
 + \gamma^2 s^2 + \delta^2 r^2 - 2\gamma s \delta r
 +\gamma^2+\delta^2 = \gamma^2(r^2+s^2+1) + \delta^2(r^2+s^2+1)\]
-donde la expresion final es multiplo de $p$ porque lo era cada factor de $(r^2+s^2+1)$. 
+donde la expresión final es múltiplo de $p$ porque lo era cada factor de $(r^2+s^2+1)$. 
 
 El volumen del retículo será el determinante de la base, que como la que nos brinda el enunciado es triangular inferior, su cálculo es directo: vol$(L)=p^2$.
 
-Consideremos la bola de centro 0 y radio $2p-\varepsilon$ en $\RR^4$, que tiene volumen $\frac{1}{2}\pi^2 (2p-\varepsilon)^2>16p^2$. El teorema de Minkowski nos dice que si en un espacio de dimension $n$ tenemos un conjunto $X$ simetrico medible y convexo (como la bola) y un reticulo $L$ tales que $\mu(X)>2^n$vol$(L)$ entonces hay algun elemento de $L$ que está en $X$ aparte del cero. Utilizando ese teorema sabemos que hay algun elemento de $L$ de norma menor a $2p$, pero como todos sus elementos tenian norma multiplo de $p$ entonces debe ser exactamente igual. Como la norma de un elemento de coordenadas enteras es una suma de cuatro cuadrados entonces encontramos una forma de escribir a $p$ como suma de cuatro cuadrados.
+Consideremos la bola de centro 0 y radio $2p-\varepsilon$ en $\RR^4$, que tiene volumen $\frac{1}{2}\pi^2 (2p-\varepsilon)^2>16p^2$. El teorema de Minkowski nos dice que si en un espacio de dimensión $n$ tenemos un conjunto $X$ simétrico medible y convexo (como la bola) y un retículo $L$ tales que $\mu(X)>2^n$vol$(L)$ entonces hay algún elemento de $L$ que está en $X$ aparte del cero. Utilizando ese teorema sabemos que hay algún elemento de $L$ de norma menor a $2p$, pero como todos sus elementos tenían norma múltiplo de $p$ entonces debe ser exactamente igual. Como la norma de un elemento de coordenadas enteras es una suma de cuatro cuadrados entonces encontramos una forma de escribir a $p$ como suma de cuatro cuadrados.
 
-Si consideramos el algebra de cuaterniones de Hamilton $H=\{ a+bi+cj+dk : a,b,c,d\in \ZZ, i^2=j^2=k^2=ijk=-1 \}$ con la norma $|a+bi+cj+dk|^2=a^2+b^2+c^2+d^2$, entonces probamos que existen elementos de norma $p$ para todo primo. Como la norma es multiplicativa, entonces para cualquier $n\in \NN$ habra un elemento en $H$ de norma $n$ que podemos armar multiplicando elementos de norma $p$ para la factorizacion en primos de $n$, y entonces por ser la norma de este elemento le estamos dando a $n$ una escritura como suma de cuatro cuadrados.
+Si consideramos el álgebra de cuaterniones de Hamilton $H=\{ a+bi+cj+dk : a,b,c,d\in \ZZ, i^2=j^2=k^2=ijk=-1 \}$ con la norma $|a+bi+cj+dk|^2=a^2+b^2+c^2+d^2$, entonces probamos que existen elementos de norma $p$ para todo primo. Como la norma es multiplicativa, entonces para cualquier $n\in \NN$ habrá un elemento en $H$ de norma $n$ que podemos armar multiplicando elementos de norma $p$ para la factorización en primos de $n$, y entonces por ser la norma de este elemento le estamos dando a $n$ una escritura como suma de cuatro cuadrados.
 
 
 \subsection*{Guía 4, ejercicio 11}
 
-Reescribamos en $\QQ(\sqrt{-d})$ (vamos a tomar $d>0$ y escribir $-d$) la ecuacion $y^2=x^3-d$ como $(y-\sqrt{-d})(y+\sqrt{-d})=x^3$, y ahora lo que estamos buscando es probar que solo puede haber a lo sumo un $y\in \NN$ tal que $(y-\sqrt{-d})(y+\sqrt{-d})$ es un cubo. 
+Reescribamos en $\QQ(\sqrt{-d})$ (vamos a tomar $d>0$ y escribir $-d$) la ecuación $y^2=x^3-d$ como $(y-\sqrt{-d})(y+\sqrt{-d})=x^3$, y ahora lo que estamos buscando es probar que solo puede haber a lo sumo un $y\in \NN$ tal que $(y-\sqrt{-d})(y+\sqrt{-d})$ es un cubo. 
 
-El camino a seguir en el ejercicio será el siguiente: ver que los ideales generados son coprimos, con eso y la hipotesis de que $3\nmid h_d$ tendremos que son cubos de ideales principales y luego viendo en funcion de los generadores tendremos solo una posibilidad para $y$.
+El camino a seguir en el ejercicio será el siguiente: ver que los ideales generados son coprimos, con eso y la hipótesis de que $3\nmid h_d$ tendremos que son cubos de ideales principales y luego viendo en función de los generadores tendremos solo una posibilidad para $y$.
 
-De la ecuacion $(y-\sqrt{-d})(y+\sqrt{-d})=x^3$ tenemos la igualdad de ideales 
+De la ecuación $(y-\sqrt{-d})(y+\sqrt{-d})=x^3$ tenemos la igualdad de ideales 
 \[ \lc y-\sqrt{-d}\rc\lc y+\sqrt{-d}\rc=\lc x\rc^3. \]
-Si tenemos un ideal primo que divide a ambos entonces divide a $\lc x\rc$ y tambien a $\lc 2\sqrt{-d}\rc$ que es la resta, y a $\lc 2d\rc$ que es menor. Pero los elementos $x$ y $2d$ son coprimos: $x$ impar porque sino $x^3\equiv 0 \mod 4$ y nos queda $y^2 \equiv 2\mod 4$ ($d$ era par libre de cuadrados entonces es $2\mod 4$) que no tiene solucion; y $x$ coprimo con $d$ porque $y^2=x^3-d$ nos dice que si $p$ divide a ambos, entonces $p^2$ tambien pero $d$ era libre de cuadrados. Entonces $\lc x\rc$ y $\lc 2d\rc$ son coprimos, y como $\lc d\rc=\lc \sqrt{-d}\rc^2$ nos queda $\lc x\rc$ y $\lc 2\sqrt{-d}\rc$ son coprimos y finalmente nuestros ideales $\lc y-\sqrt{-d}\rc$ y $\lc y+\sqrt{-d}\rc$ eran coprimos.
+Si tenemos un ideal primo que divide a ambos entonces divide a $\lc x\rc$ y también a $\lc 2\sqrt{-d}\rc$ que es la resta, y a $\lc 2d\rc$ que es menor. Pero los elementos $x$ y $2d$ son coprimos: $x$ impar porque si no $x^3\equiv 0 \mod 4$ y nos queda $y^2 \equiv 2\mod 4$ ($d$ era par libre de cuadrados entonces es $2\mod 4$) que no tiene solución; y $x$ coprimo con $d$ porque $y^2=x^3-d$ nos dice que si $p$ divide a ambos, entonces $p^2$ también, pero $d$ era libre de cuadrados. Entonces $\lc x\rc$ y $\lc 2d\rc$ son coprimos, y como $\lc d\rc=\lc \sqrt{-d}\rc^2$ nos queda $\lc x\rc$ y $\lc 2\sqrt{-d}\rc$ son coprimos y finalmente nuestros ideales $\lc y-\sqrt{-d}\rc$ y $\lc y+\sqrt{-d}\rc$ eran coprimos.
 
-Ahora $\lc y+\sqrt{-d}\rc = \aaa^3$ para algun ideal, y $\aaa$ es principal porque si lo miramos en el grupo de clases cumple que ${[\aaa]}^3=1$ pero como no puede tener orden $3$ entonces tiene orden $1$. Sea $\alpha$ el generador, que será un $\alpha=a+b\sqrt{-d}$ entonces $ y+\sqrt{-d}=\pm{(a+b\sqrt{-d})}^3$ (el $\pm$ viene de la unidad, que solo puede ser $\pm 1$ para un cuadratico imaginario que no sea $\QQ(i)$ ni $\QQ(\sqrt{-3})$) y tenemos el siguiente sistema:
+Ahora $\lc y+\sqrt{-d}\rc = \aaa^3$ para algún ideal, y $\aaa$ es principal porque si lo miramos en el grupo de clases cumple que ${[\aaa]}^3=1$, pero como no puede tener orden $3$ entonces tiene orden $1$. Sea $\alpha$ el generador, que será un $\alpha=a+b\sqrt{-d}$ entonces $ y+\sqrt{-d}=\pm{(a+b\sqrt{-d})}^3$ (el $\pm$ viene de la unidad, que solo puede ser $\pm 1$ para un cuadrático imaginario que no sea $\QQ(i)$ ni $\QQ(\sqrt{-3})$) y tenemos el siguiente sistema:
 
 \[\left\{
 \begin{matrix}
@@ -419,7 +435,7 @@ Ahora $\lc y+\sqrt{-d}\rc = \aaa^3$ para algun ideal, y $\aaa$ es principal porq
     \pm \sqrt{-d} &=& (3a^2b - b^3d)\sqrt{-d}\\
 \end{matrix}\right.\]
 
-De la segunda ecuacion obtenemos que $b$ debe dividir a 1 (porque es factor comun de una resta que da 1), luego si $b=1$ queda $1=\pm(3a^2-d)$ pero solo uno de esos será posible pues $d\pm 1$ debe ser divisible por 3, y si $b=-1$ queda $1=\mp(3a^2-d)$ que nos lleva a lo mismo. Para los valores que queden tenemos que $3a^2=\pm 1 + d$, que solo una tendrá dos soluciones para $a$ (si es que tiene) que generarán el mismo $y$ en la primera ecuacion: $y=\pm(a^3+3ad) = \mp({(-a)}^3 + 3(-a)d)$ y solo uno será positivo dando lugar a (como mucho) una solucion al problema original. 
+De la segunda ecuación obtenemos que $b$ debe dividir a 1 (porque es factor común de una resta que da 1), luego si $b=1$ queda $1=\pm(3a^2-d)$, pero solo uno de esos será posible, pues $d\pm 1$ debe ser divisible por 3, y si $b=-1$ queda $1=\mp(3a^2-d)$ que nos lleva a lo mismo. Para los valores que queden tenemos que $3a^2=\pm 1 + d$, que solo una tendrá dos soluciones para $a$ (si es que tiene) que generarán el mismo $y$ en la primera ecuación: $y=\pm(a^3+3ad) = \mp({(-a)}^3 + 3(-a)d)$ y solo uno será positivo dando lugar a (como mucho) una solución al problema original. 
 
 
 % \subsection*{Guía 5, ejercicio 1}
@@ -430,29 +446,45 @@ De la segunda ecuacion obtenemos que $b$ debe dividir a 1 (porque es factor comu
 
 \subsection*{Guía 5, ejercicio 3}
 
-Primero veamos el caso $L=M$ osea que $L/K$ sea Galois. Sean $A=\{ \pp \unlhd \OO_K : \text{se parte completamente en $L$} \}$ y $B=\{ \mathfrak{P}\unlhd \OO_L : \mathfrak{P}\cap \OO_K \in A \}$. Queremos ver que $\rho(A) = 1/[L:K]$. Recordemos:
+Primero veamos el caso $L=M$ osea que $L/K$ sea Galois. Sean $A=\{ \pp \unlhd \OO_K : \text{se parte completamente en }L \}$ y $B=\{ \mathfrak{P}\unlhd \OO_L : \mathfrak{P}\cap \OO_K \in A \}$. Queremos ver que $\rho(A) = 1/[L:K]$. Recordemos:
 
 \[
 \zeta_{A,K}(s) = \prod_{\pp\in A} \frac{1}{1-{\mathcal{N}(\mathfrak{P})}^{-s}}
 \]
 
-Si $\mathfrak{P} \in B$ con $\mathfrak{P}\cap \OO_K = \pp$ entonces $\mathcal{N}(\mathfrak{P})=\mathcal{N}(\pp)$ porque dijimos que se parten completamtente. Entonces $\zeta_{K,A}^{[L:K]} = \zeta_{L,B}$ porque es la cantidad en la que se parte cada primo, por lo que bastaria ver que $\rho(B)=1$ (entonces $\zeta_{K,A}^{[L:K]}$ tendria un polo de orden 1 alrededor de $s=1$). Veamos $\rho(B^c)=0$ que es lo mismo, pero $B^c$ son los primos ramificados (finitos, no afectan la densidad) o cuya norma no es un primo (sino una potencia). 
+Si $\mathfrak{P} \in B$ con $\mathfrak{P}\cap \OO_K = \pp$ entonces $\mathcal{N}(\mathfrak{P})=\mathcal{N}(\pp)$ porque dijimos que se parten completamente. Entonces $\zeta_{K,A}^{[L:K]} = \zeta_{L,B}$ porque es la cantidad en la que se parte cada primo, por lo que bastaría ver que $\rho(B)=1$ (entonces $\zeta_{K,A}^{[L:K]}$ tendría un polo de orden 1 alrededor de $s=1$). Veamos $\rho(B^c)=0$ que es lo mismo, pero $B^c$ son los primos ramificados (finitos, no afectan la densidad) o cuya norma no es un primo (sino una potencia). 
 
-Lema: El conjunto de los primos cuya norma no es primo tiene densidad 0. Basta ver que $\prod {(1- {\mathcal{N}(\pp)}^{-s} )}^{-1}$ es holomorfa y no nula en $s=1$
+Lema: El conjunto de los primos cuya norma no es primo tiene densidad 0. Basta ver que $\prod {(1- {\mathcal{N}(\pp)}^{-s} )}^{-1}$ es holomorfa y no nula en $s=1$, donde el producto recorre todos estos primos. Tomemos logaritmo formalmente y usemos su Taylor en 1 (eventualmente el módulo del sumando es menor a 1):
+
+\[
+\log \lp \lim_{s\to 1} \prod {(1- {\mathcal{N}(\pp)}^{-s} )}^{-1}\rp = 
+\lim_{s\to 1} \sum \log \lp {(1- {\mathcal{N}(\pp)}^{-s} )}^{-1}\rp \leq 
+\lim_{s\to 1} - \sum_{p\ primo} -\sum_{n\geq 1} \frac{1}{np^{2sn}}
+\]
+\[
+\leq \lim_{s\to 1} \sum_{p\ primo} \frac{1}{p^2} \sum_{n\geq 1} \frac{1}{p^{ns}} \leq 2 \sum_{p\ primo} \frac{1}{p^2} < \infty
+\]
+
+En la segunda desigualdad usamos la bruta cota de sumar sobre todos los primos y ponerles exponente 2, y luego en la cuarta acotamos por el primo más chico (el 2) usando que si sumábamos desde $n=0$ con $s=1$ la suma daba 2. 
+
+Para el caso en que $L$ no era Galois, usamos el hecho de que un primo se parte completamente en una extensión si y solo si lo hace en su clausura normal. Esto es porque el primo seguirá partiéndose completamente en $\sigma(L)$ los embeddings y luego la clausura normal será la composición de todos ellos. Usamos el lema de que un primo se parte completamente en dos extensiones si y solo si lo hace en la composición (probado en el siguiente ejercicio, perdón el desorden).
+
+Para la parte $b$ usamos directamente la versión Galois porque un cuerpo de descomposición es siempre normal. El resultado sigue directo del teorema que nos dice como se comportan los primos en el cuerpo de descomposición de un polinomio respecto a como se factoriza ese polinomio módulo ese primo, cuyo caso particular nos dice: $f$ se factoriza linealmente módulo $p$ si y solo si $p$ se parte completamente en $Desc(f)$. Luego el conjunto $A$ tiene la misma densidad que el del punto anterior.
+
 
 
 
 
 \subsection*{Guía 5, ejercicio 4}
 
-Lo que tenemos que probar en este ejercicio es que dos extensiones de Galois distintas deben tener necesariamente distintos primos que se parten completamente. Este resultado lo vamos a tener de los valores asintoticos de estas cantidades. Segun mi carpeta, esto es un paso hacia demostrar el teorema de Chebotarev.
+Lo que tenemos que probar en este ejercicio es que dos extensiones de Galois distintas deben tener necesariamente distintos primos que se parten completamente. Este resultado lo vamos a tener de los valores asintóticos de estas cantidades. Según mi carpeta, esto es un paso hacía demostrar el teorema de Chebotarev.
 
-Primero recordemos que si $L$ y $L'$ son extensiones de Galois de $K$ entonces $LL'$ tambien lo es. Si $L \neq L'$ entonces alguna (supongamos que es $L$) estará contenida estrictamente en $LL'$ y su grado será menor ($[K:L] < [K:LL']$).
+Primero recordemos que si $L$ y $L'$ son extensiones de Galois de $K$ entonces $LL'$ también lo es. Si $L \neq L'$ entonces alguna (supongamos que es $L$) estará contenida estrictamente en $LL'$ y su grado será menor ($[K:L] < [K:LL']$).
 
 El ejercicio anterior nos dice que el conjunto de primos que se parte completamente en $L$ tendrá densidad polar $1/[K:L]$ mientras que el conjunto de los que se parten completamente en $LL'$ tendrá densidad polar
-$1/[K:LL']$ que es menor, es decir no pueden ser los mismos los primos. Pero sabiendo que los primos que se parten completamente en $LL'$ deben hacerlo tambien en $L$ (y en $L'$) entonces necesariamente debe haber primos que se parten completamente en $L$ que no lo hacen en $LL'$. 
+$1/[K:LL']$ que es menor, es decir no pueden ser los mismos los primos. Pero sabiendo que los primos que se parten completamente en $LL'$ deben hacerlo también en $L$ (y en $L'$) entonces necesariamente debe haber primos que se parten completamente en $L$ que no lo hacen en $LL'$. 
 
-Finalmente nos falta decir que si un primo se parte completamente en $L$ y $L'$ tambien lo hará en $LL'$ (con esto, necesariamente los de $L$ que no estan en $LL'$ no estarán en $L'$). Notemos $\mathfrak{P} \unlhd \OO_{LL'}$ sobre $P \unlhd \OO_L$ y $P' \unlhd \OO_{L'}$ y todos sobre $p$ primo de $\ZZ$; y los grupos de Galois $G=Gal(LL'/K)$, $H=Gal(LL'/L)$ y $H'=Gal(LL'/L')$ de forma que $G/H = Gal(L/K)$. Entonces el grupo de descomposicion de $\mathfrak{P}$ sobre $K$ (que queremos ver que es trivial) visto en $G/H$ es trivial porque corresponde al grupo de descomposicion de $P$ sobre $K$ (trivial por hipotesis de que $P$ se parte completamente) y lo mismo sobre $G/H'$, por lo que pertenece a $H \cap H'$. Pero $H\cap H'$ es el grupo trivial por teoria de Galois (fija los cuerpos $L$ y $L'$ y entonces fija $LL'$ que era el cuerpo de arriba).
+Finalmente, nos falta decir que si un primo se parte completamente en $L$ y $L'$ también lo hará en $LL'$ (con esto, necesariamente los de $L$ que no están en $LL'$ no estarán en $L'$). Notemos $\mathfrak{P} \unlhd \OO_{LL'}$ sobre $P \unlhd \OO_L$ y $P' \unlhd \OO_{L'}$ y todos sobre $p$ primo de $\ZZ$; y los grupos de Galois $G=Gal(LL'/K)$, $H=Gal(LL'/L)$ y $H'=Gal(LL'/L')$ de forma que $G/H = Gal(L/K)$. Entonces el grupo de descomposición de $\mathfrak{P}$ sobre $K$ (que queremos ver que es trivial) visto en $G/H$ es trivial porque corresponde al grupo de descomposición de $P$ sobre $K$ (trivial por hipótesis de que $P$ se parte completamente) y lo mismo sobre $G/H'$, por lo que pertenece a $H \cap H'$. Pero $H\cap H'$ es el grupo trivial por teoría de Galois (fija los cuerpos $L$ y $L'$ y entonces fija $LL'$ que era el cuerpo de arriba).
 
 
 
